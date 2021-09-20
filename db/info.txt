@@ -1,0 +1,5 @@
+Servidor de BD
+host: my01.winhost.com
+database: mysql_17753_nsftcc
+user: nsftcc
+password: nsf@tcc
