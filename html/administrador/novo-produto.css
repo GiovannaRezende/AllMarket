@@ -94,6 +94,7 @@ textarea {
     border-radius: 1.1em;
     height: 8em;
     width: 18em;
+    outline: none;
 }
 
 button {
