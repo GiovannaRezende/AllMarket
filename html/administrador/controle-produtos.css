@@ -1,3 +1,7 @@
+body {
+    margin: 0px;
+}
+
 .controle-produtos {
 display: flex;
 flex-direction: column;
@@ -32,13 +36,13 @@ height: 100vh;
 .corpo {
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 2em;
 }
 
 .corpo-pt1 {
     font: 1.5em Montserrat;
     font-weight: bold;
-    padding: 1em 0em;
+    padding: .8em 0em;
 }
 
 .corpo-pt2 {
@@ -89,7 +93,6 @@ height: 100vh;
 .botoes {
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
     align-items: center;
 }
 
