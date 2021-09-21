@@ -19,11 +19,11 @@ height: 100vh;
 }
 
 .nome-adm {
-    font: 500 .9em Montserrat;
+    font: 500 .9em Roboto;
 }
 
 .nome-adm span {
-    font: 700 .9em Montserrat;
+    font: 700 .9em Roboto;
     margin-right: .5em;
 }
 
@@ -40,9 +40,9 @@ height: 100vh;
 }
 
 .corpo-pt1 {
-    font: 1.5em Montserrat;
+    font: 1.5em Roboto;
     font-weight: bold;
-    padding: .8em 0em;
+    padding: 0em 0em .8em 0em;
 }
 
 .corpo-pt2 {
@@ -82,12 +82,12 @@ height: 100vh;
 }
 
 .produto {
-    font: 900 1em Montserrat;
+    font: 900 1em Roboto;
     line-height: 1.6em;
 }
 
 .peso {
-    font: 500 .8em Montserrat;
+    font: 500 .8em Roboto;
 }
 
 .botoes {
@@ -102,7 +102,7 @@ height: 100vh;
     background-color: #00F90A;
     padding: .7em 1.5em;
     border-radius: .7em;
-    font: 800 .8em Montserrat;
+    font: 800 .8em Roboto;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -113,7 +113,7 @@ height: 100vh;
     background-color: #F90000;
     padding: .7em 1.5em;
     border-radius: .7em;
-    font: 800 .8em Montserrat;
+    font: 800 .8em Roboto;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-left: .7em;
