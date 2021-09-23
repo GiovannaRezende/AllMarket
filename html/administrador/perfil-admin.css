@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500;600;700&display=swap');
+
+* {box-sizing: border-box;}
+
+body {
+    margin: 0px;
+}
+
+img {
+    cursor: pointer;
+}
+
+b {
+
+}
+
+.admin-cabecalho {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-perfil {
+    margin: 30px;
+    font-family: Athiti;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.admin-sair img {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 120px;
+    margin: 20px;
+    margin-left: 63em;
+}
+
+.admin-conteudo {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FB8500;
+    margin-right: 3em;
+    padding: 1em;
+    margin-top: 80px;
+    margin-left: 60px;
+    width: 550px;
+    border-radius: 20px;
+}
+
+.admin-img img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-top: -8.5em;
+    margin-bottom: 25px;
+}
+
+.admin-fundo {
+    display: flex;
+    background-color: #14213D;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
+    padding: 50px;
+    border-radius: 20px;
+    width: 550px;
+    height: 150px;
+    margin-top: -20px;
+}
+
+.admin-informacoes-nome {
+    font-family: Athiti;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0.5em;
+    background-color: #219EBC;
+    padding: 1em;
+    padding-right: 7em;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.admin-informacoes-nome b {
+    margin-left: 5px;
+}
+
+.admin-informacoes-cpf {
+    font-family: Athiti;
+    font-size: 20px;
+    margin-left: 0.5em;
+    background-color: #219EBC;
+    padding: 1em;
+    padding-right: 7.5em;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.admin-informacoes-cpf b {
+    margin-left: 5px;
+}
+
+.admin-informacoes-email {
+    font-family: Athiti;
+    font-size: 20px;
+    margin-left: 0.5em;
+    background-color: #219EBC;
+    padding: 1em;
+    padding-right: 4em;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.admin-informacoes-email b {
+    margin-left: 5px; 
+}
+
+.admin-informacoes-tel {
+    font-family: Athiti;
+    font-size: 20px;
+    margin-left: 0.5em;
+    background-color: #219EBC;
+    padding: 1em;
+    padding-right: 5.4em;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.admin-informacoes-tel b {
+    margin-left: 5px;
+}
+
+.admin-informacoes-cargo {
+    font-family: Athiti;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0.5em;
+    background-color: #219EBC;
+    padding: 1em;
+    padding-right: 7.5em;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.admin-informacoes-cargo b {
+    margin-left: 5px;
+}
