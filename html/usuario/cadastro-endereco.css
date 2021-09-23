@@ -12,24 +12,41 @@ body {
 .cabecalho {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1em;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.logo-empresa, img {
+.logo-empresa img {
     width: 3em;
     height: 3em;
+
+    border-radius: 4em;
+    margin-top: 1em;
+    margin-left: 0.5em;
 }
 
 .nome-usuario {
-    font: 500 1em;
+    font: 500 1em Roboto;
+    margin-left: 84.5em;
+    margin-top: -2em;
 }
 
-.nome-usuario, span {
-    font: 500 1em;
+.nome-usuario span {
+    font: 500 1em Roboto;
+    margin-right: 0.5em;
 }
 
-.imagem-usuario, img {
+.imagem-usuario img {
     width: 3em;
     height: 3em;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: 90em;
+    margin-top: -2em;
 }
 
 .container {
@@ -39,12 +56,14 @@ body {
 
 .container-texto {
     padding: 1em 0em;
-    font: 700 1.5em;
+    font: 700 1.5em Roboto;
+    margin-left: 0.5em;
 }
 
 .container-input {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .container-conteudo-1 {
@@ -61,27 +80,48 @@ body {
     flex-direction: column;
 }
 
+.input-5 {
+    margin-left: 25em;
+    margin-top: -23.7em;
+}
+
+.input-6, .input-7 {
+    margin-left: 25em;
+    margin-top: 1em;
+}
+
 .input-texto {
     margin: 0.5em;
+    margin-left: 2em;
+
     color: #525050;
-    font: 500 1em;
+    font: 500 1em Roboto;
 }
 
 input {
+    width: 340px;
+    height: 45px;
+    margin-left: 2em;
+
     background: #F9F9F9;
     border: 1px solid #E5E5E5;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em;
-
     outline: none;
 }
 
 button {
+    width: 160px;
+    height: 35px;
+
     background-color: #FB8500;
     color: white;
 
-    border-radius: 1em;
+    border-radius: 0.5em;
+    border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font: 500 1em Roboto;
+    margin-left: 80em;
+    margin-top: 10em;
 }
