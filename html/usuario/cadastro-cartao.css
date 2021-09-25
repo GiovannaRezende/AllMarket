@@ -13,11 +13,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     width: 100%;
     padding: 1em;
-
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo-empresa img {
@@ -33,11 +30,6 @@ body {
     font: 500 1em Roboto;
     margin-left: 84.5em;
     margin-top: -2em;
-}
-
-.nome-usuario span {
-    font: 500 1em Roboto;
-    margin-right: 0.5em;
 }
 
 .imagem-usuario img {
