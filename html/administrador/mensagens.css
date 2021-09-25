@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.mensagens-cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 98.2vw;
+    box-shadow: 0px 2px  rgba(0, 0, 0, 0.25);
+}
+
+.mensagens-img img {
+    margin-right: 4em;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+
+.mensagens-mensa {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.6em;
+}
+
+.mensagens-chat {
+    margin-left: 1em;
+}
+
+.mensagens-msg1 {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    width: 95vw;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+
+}
+
+.mensagens-msg1:hover {
+    transition: 0.8s;
+    border-radius: 30px;
+    box-shadow: 0px 4px  rgba(0, 0, 0, 0.5);
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    
+}
+
+.mensagens-text {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: mixed;
+}
+
+
+
+.msg-img1 img {
+    margin-right: 20px;
+}
+
+.info-nome {
+    font-weight: bold;
+    color: #525050;
+    font-size: 20px;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.msg-contador {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    background-color: #FB8500;
+    border-radius: 100px;
+    padding: 15px;
+    height: 40px;
+    width: 40px;
+    margin-top: 1em;
+    color: white;
+}
+
+.msg-infos {
+    margin-right: 47em;
+}
+
+.msg2 {
+    margin-left: 10.2em;
+    height: 40px;
+    width: 40px;
+    background-color: #FB8500;
+    border-radius: 100px;
+    padding: 15px;
+    margin-top: 1em;
+    color: white;
+}
+
+.msg3 {
+    margin-left: 12.5em;
+    height: 40px;
+    width: 40px;
+    background-color: #FB8500;
+    border-radius: 100px;
+    padding: 15px;
+    margin-top: 1em;
+    color: white;
+}
+
+.msg4 {
+    margin-left: 6em;
+    height: 40px;
+    width: 40px;
+    background-color: #FB8500;
+    border-radius: 100px;
+    padding: 15px;
+    margin-top: 1em;
+    color: white;
+}
+
+.msg5 {
+    margin-left: 7.7em;
+    height: 40px;
+    width: 40px;
+    background-color: #FB8500;
+    border-radius: 100px;
+    padding: 15px;
+    margin-top: 1em;
+    color: white;
+}
