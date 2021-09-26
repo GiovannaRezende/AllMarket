@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.AprovacaoDeCompras-container {
+  background-color: #ffffff;
+  width: auto;
+  height: 630px;
+}
+
+.AprovacaoDeCompras-cabecalho {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
+  width: 98.2vw;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.199);
+  color: black;
+}
+
+.AprovacaoDeCompras-img img {
+  margin-right: 3em;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.mensagens-text {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: mixed;
+}
+
+img {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.botao-quadrado button {
+  position: absolute;
+  left: 35px;
+  height: 30px;
+  width: 33px;
+  cursor: pointer;
+  transform: translateY(10px);
+  border-color: black;
+  border-radius: 20%;
+  background-color: white;
+  box-shadow: black;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.AprovacaoDeCompras-aprovarCompras {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  margin-left: 0.6em;
+  color: black;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.25);
+}
+.AprovacaoDeCompras-InformacoesCliente {
+  font-family: Roboto;
+  cursor: pointer;
+  width: 50vw;
+  height: 180px;
+  padding: 1em;
+  margin-bottom: 1em;
+  margin-left: 4.5em;
+  margin-top: 25px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0px 3px rgba(0, 0, 0, 0.18);
+  color: black;
+  font-size: 20px;
+}
+
+.compras-infoCliente1 {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: row;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.356);
+}
+
+.infoCliente1-nome {
+  position: absolute;
+  left: 215px;
+  transform: translateY(-45px);
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.199);
+}
+
+.compras-infoCliente2 {
+  display: flex;
+  flex-direction: row;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.199);
+}
+
+.botao-AprovarEntregas button {
+  border: none;
+  color: white;
+  background-color: #fb8500;
+  padding: 0.7em 1.5em;
+  border-radius: 0.7em;
+  font: 16px Roboto;
+  position: absolute;
+  right: 40px;
+  transform: translateY(-60px);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
