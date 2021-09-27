@@ -100,23 +100,28 @@ body {
 }
 
 .status, .itens, .valor, .destino {
-  font: 500 1.1em Roboto;
+  font: 400 1.1em Roboto;
+  color: #525050;
   line-height: 1.5em;
 }
 .status span {
   font: 600 1em Roboto;
+  color: #525050;
 }
 
 .itens span {
   font: 600 1em Roboto;
+  color: #525050;
 }
 
 .valor span {
   font: 600 1em Roboto;
+  color: #525050;
 }
 
 .destino span {
   font: 600 1em Roboto;
+  color: #525050;
 }
 
 .botao button {
@@ -128,6 +133,7 @@ body {
   color: white;
   font: 500 .9em Roboto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .botao {
