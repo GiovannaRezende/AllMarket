@@ -1,97 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.GerenciarEntregas-container {
-    background-color: #ffffff;
-    width: auto;
-    height: 600px;
+body {
+    margin: 0px;
 }
 
-
-.GerenciarEntregas-cabecalho {
+.container-entregar {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: right;
-    align-items: center;
-    width: 98.2vw;
-    box-shadow: 0px 2px  rgba(0, 0, 0, 0.25);
-    color: black;
-    font-size: 16px;
-}
-
-.GerenciarEntregas-aprovarCompras {
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 1em;
-    margin-top: 10px;
-    margin-left: 0.6em;
-    color: black;
-}
-
-.GerenciarEntregas-img img {
-    margin-right: 4em;
-    margin-left: 2em;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
-}
-
-mensagens-text {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: mixed;
-}
-
-img {
-    height: 60px;
-    width: 60px;
-    border-radius: 30px;
-    cursor: pointer;
-}      
-
-.GerenciarEntregas-pedido1 {
-    font-family: Roboto;
-    display: flex;
-    flex-direction: row;
-    width: 88vw;
-    height: 80px;
-    padding: 1.6em;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    background-color: #F9F9F9;
-    border-radius: 15px;
-    box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
-    color: #000;
-} 
-.pedido1-fotoPerfil {
-padding: 10px;
-font-size:16px;
-
-}
-.pedido1-InfoMsg {
-    display: flex;
-    flex-direction: row;
     flex-direction: column;
-    position: absolute;
-    transform: translateY(40px);
-    font-size: 16px;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 98%;
+    padding: .8em;
+    justify-content: space-between;
+}
+
+.itens-cab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nome-adm {
+    font: 500 .9em Roboto;
+}
+
+.nome-adm span {
+    font: 700 .9em Roboto;
+    margin-right: .5em;
+}
+
+.foto-adm img {
+    width: 3em;
+    height: 3em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: .3em;
+}
+
+.conteudo-entregas {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.cab-conteudo {
+    font: 600 1.7em Roboto;
+    margin: .5em .5em;
+}
+
+.box-entregas {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border-radius: 1em;
+    padding: 1em;
+    width: 98%;
+    height: 5.3em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: .5em 0em;
+}
+
+.pedido {
+    font: 900 1em Roboto;
+    margin: 0em 0em .3em 0em;
+}
+
+.foto-texto-botao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.foto-textos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.foto img {
+    height: 2.8em;
+    width: 2.8em;
+}
+
+.foto {
+    background-color: #FB8500;
+    border-radius: 4em;
+    padding: .4em .6em;
+    margin-right: .7em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.textos {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-destino {
+    font: 500 1em Roboto;
+}
+.texto-destino span {
+    font: 600 1em Roboto;
+}
+
+.texto-status {
+    font: 500 1em Roboto;
+}
+.texto-status span{
+    font: 600 1em Roboto;
+}
+
+.botao button {
+    background-color: #FB8500;
+    border: none;
+    outline: none;
+    padding: .7em 1em;
+    border-radius: .8em;
+    color: white;
+    font: 500 .9em Roboto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .botao {
-    display: flex;
-    flex-direction: row;
+    align-self: flex-end;
 }
-
-.botao-AtualizarStatus button {
-    border: none;
-    color: white;
-    background-color: #FB8500;
-    padding: .7em 1.5em;
-    border-radius: .7em;
-    font: 16px Roboto;
-    position: absolute;
-    right: 70px;
-    transform: translateY(50px);
-    cursor: pointer;
-    box-shadow: 0px 2px  rgba(0, 0, 0, 0.15);
-}
-
