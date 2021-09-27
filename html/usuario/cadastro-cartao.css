@@ -7,88 +7,81 @@ body {
 .container-cadastro-cartao {
     display: flex;
     flex-direction: column;
+
+    height: 100vh;
+    font-family: Roboto, sans-serif;
 }
 
 .cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    padding: 1em;
+    align-items: center;
+
+    padding: 0.5em 1em;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.logo-empresa img {
-    width: 3em;
-    height: 3em;
-
-    border-radius: 4em;
-    margin-top: 1em;
-    margin-left: 0.5em;
+.logo-allmarket img {
+    width: 49px;
+    height: 44px;
 }
 
-.nome-usuario {   
-    font: 500 1em Roboto;
-    margin-left: 84.5em;
-    margin-top: -2em;
+.cacebalho-direita img {
+    width: 45px;
+    height: 47px;
 }
 
-.imagem-usuario img {
-    width: 3em;
-    height: 3em;
+.cacebalho-direita {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-    margin-left: 90em;
-    margin-top: -2em;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.imagem-usuario {
+    margin-left: .7em;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+
+    padding: 1em;
 }
 
 .container-texto {
     font: 700 1.5em Roboto;
-    padding: 1em 0em;
-    margin-left: 0.5em;
+
+    margin-top: .6em;
 }
 
 .container-input {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    margin: 1em 2em;
 }
 
 .container-conteudo-1 {
     display: flex;
     flex-direction: column;
+
+    margin-right: 3em;
 }
 
-.input-1, .input-2, .input-3, .input-4 {
-    padding: 0.5em 0em;
-}
-
-.container-conteudo-2 {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-5 {
-    margin-left: 25em;
-    margin-top: -23.7em;
+.input-1, .input-2, .input-3, .input-4, .input-5 {
+    margin: 1em 0em;
 }
 
 .input-texto {
-    font: 500 1em Roboto;
     color: #525050;
-
-    margin: 0.5em;
-    margin-left: 2em;
 }
 
 input {
     width: 340px;
     height: 45px;
-    margin-left: 2em;
+    padding: 0em .6em;
 
     background: #F9F9F9;
     border: 1px solid #E5E5E5;
@@ -96,6 +89,11 @@ input {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em;
     outline: none;
+}
+
+.botao-cadastro {
+    display: flex;
+    justify-content: end;
 }
 
 button {
@@ -109,6 +107,6 @@ button {
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font: 500 1em Roboto;
-    margin-left: 80em;
-    margin-top: 22em;
+
+    margin-top: 4em;
 }
