@@ -13,6 +13,12 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 98%;
     padding: .8em;
+    justify-content: space-between;
+}
+
+.itens-cab {
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -29,6 +35,7 @@ body {
     width: 3em;
     height: 3em;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: .5em;
 }
 
 .corpo {
@@ -104,7 +111,6 @@ button {
     padding: 1em 1.4em;
     border-radius: .8em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font: 600 1em Roboto;
     margin-left: 4em;
 }

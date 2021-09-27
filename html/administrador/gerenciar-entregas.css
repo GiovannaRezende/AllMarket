@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.GerenciarEntregas-container {
+    background-color: #ffffff;
+    width: auto;
+    height: 600px;
+}
+
+
+.GerenciarEntregas-cabecalho {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: center;
+    width: 98.2vw;
+    box-shadow: 0px 2px  rgba(0, 0, 0, 0.25);
+    color: black;
+    font-size: 16px;
+}
+
+.GerenciarEntregas-aprovarCompras {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 1em;
+    margin-top: 10px;
+    margin-left: 0.6em;
+    color: black;
+}
+
+.GerenciarEntregas-img img {
+    margin-right: 4em;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+mensagens-text {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: mixed;
+}
+
+img {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+}      
+
+.GerenciarEntregas-pedido1 {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: row;
+    width: 88vw;
+    height: 80px;
+    padding: 1.6em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    background-color: #F9F9F9;
+    border-radius: 15px;
+    box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+    color: #000;
+} 
+.pedido1-fotoPerfil {
+padding: 10px;
+font-size:16px;
+
+}
+.pedido1-InfoMsg {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    position: absolute;
+    transform: translateY(40px);
+    font-size: 16px;
+}
+
+.botao {
+    display: flex;
+    flex-direction: row;
+}
+
+.botao-AtualizarStatus button {
+    border: none;
+    color: white;
+    background-color: #FB8500;
+    padding: .7em 1.5em;
+    border-radius: .7em;
+    font: 16px Roboto;
+    position: absolute;
+    right: 70px;
+    transform: translateY(50px);
+    cursor: pointer;
+    box-shadow: 0px 2px  rgba(0, 0, 0, 0.15);
+}
+
