@@ -1,0 +1,156 @@
+body { margin: 0px;  background-color: #FB8500;}
+
+.t8-conteiner{
+    display: flex;
+    flex-direction:row;
+
+    position: absolute;
+
+    height: 100%;
+    width:  100%;
+    
+}
+
+.t8-entrar{
+    display: flex;
+    flex-direction:column;
+
+    background-color: #023047;
+    color: #fff;
+    
+    width:   40%;
+    height: 100%; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+   
+}
+.t8-titulo1{
+    text-align: center;
+
+    padding-top: 4em;
+    padding-bottom: 40px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.t8-texto1{
+    text-align: center;
+    
+    padding-bottom: 5px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+}
+
+.t8-texto2{
+    text-align: center;
+    
+    padding-bottom: 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+}
+
+
+.t8-botao{
+    text-align: center;
+   
+}
+
+.t8-botao button{
+    background-color: #FB8500;
+    color: white;
+  
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  
+    padding: 1em 2.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  
+  
+}
+
+.t8-criar{
+    display: flex;
+    flex-direction:column;
+
+    background-color: #FB8500;
+    color: #fff;
+
+    width:   60%;
+    height: 100%;
+}
+
+.t8-titulo2{
+    text-align: center;
+
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.t8-imgs{
+    text-align: center;
+
+    padding-bottom: 40px;
+    justify-content:  100px;
+}
+
+.t8-img{ padding-right:  1.2em; }
+
+.t8-imgs img{ width: 77px; }
+
+.t8-input{
+
+    text-align: center;
+
+    padding-bottom: 20px;
+
+}
+
+.t8-input input {
+    
+    outline: none;
+    border: none;
+
+    border-radius: 15px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    
+    width: 20em;
+    height: 2em;
+    padding: 0.1em 0.7em;
+
+}
+.t8-botao2{
+    
+    text-align: center;
+    padding: 2em;
+
+}
+
+.t8-botao2 button {
+    background-color: #023047;
+    color: white;
+  
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  
+    padding: 1em 2.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  
+ 
+}

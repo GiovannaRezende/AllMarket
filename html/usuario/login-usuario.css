@@ -1,0 +1,147 @@
+
+body { margin: 0px; background-color: #023047;}
+
+.t9-conteiner{
+
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
+
+.t9-fazerLogin{
+    
+    display: flex;
+    flex-direction:column;
+    
+    width:   60%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    background-color: #FB8500;
+    color:#fff ;
+}
+
+.t9-titulo1{
+
+   text-align : center;
+   
+   font-family: 'Roboto', sans-serif;
+   font-weight: bolder;
+   font-size: 48px;
+   
+   padding-top: 2.5em;
+
+}
+
+.t9-usu{
+    
+    text-align : center;
+
+    padding-top: 3.5em;
+
+}
+
+.t9-usu input{
+    
+    outline: none;
+    border: none;
+
+    border-radius: 15px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    
+    width: 25em;
+    height: 2.5em;
+    padding: 0.1em 0.7em;
+}
+
+.t9-senha{
+    
+    text-align : center;
+
+    padding-top: 2.5em;
+
+}
+
+.t9-senha input{
+
+    outline: none;
+    border: none;
+
+    border-radius: 15px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    
+    width: 25em;
+    height: 2.5em;
+    padding: 0.1em 0.7em;
+}
+
+.t9-botao{
+
+    text-align : center;
+
+    padding-top: 4em;
+}
+
+.t9-botao button{
+
+    background-color: #023047;
+    color: white;
+  
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  
+    padding: 0.7em 2.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+}
+
+.t9-loginCom{
+    display: flex;
+    flex-direction:column;
+
+    background-color: #023047;
+    color: #fff;
+
+    width:   40%;
+    height: 100%;    
+}
+
+.t9-titulo2{
+    font-family: 'Roboto', sans-serif;
+    text-align : center;
+    font-weight: bolder;
+    font-size: 48px;
+    
+    padding-top: 3.5em;
+ 
+}
+
+.t9-imgs{
+
+    text-align : center;
+    
+    padding-top: 4em;
+
+    justify-content: 15px;
+
+}
+
+.t9-img{ padding-right:  1.2em; }
+
+.t9-imgs img { width: 77px; }
+
+
