@@ -14,7 +14,7 @@ export default function Carrinho() {
                 <div class="texto-lista"> Lista de Produtos </div> 
                 <div class="box-lista">
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
@@ -22,7 +22,7 @@ export default function Carrinho() {
                         </div>
                     </div>
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
@@ -30,7 +30,7 @@ export default function Carrinho() {
                         </div>
                     </div> 
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
@@ -38,7 +38,7 @@ export default function Carrinho() {
                         </div>
                     </div>
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
@@ -46,7 +46,7 @@ export default function Carrinho() {
                         </div>
                     </div>
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
@@ -54,7 +54,7 @@ export default function Carrinho() {
                         </div>
                     </div>
                     <div class="box-produto">
-                        <div class="imagem-produto"> <img src="../assets/images/imagem-produto.png" alt=""/> </div> 
+                        <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
                             <div class="nome-produto"> Desodorante - Rexona </div>
                             <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
