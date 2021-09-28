@@ -6,9 +6,9 @@ import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index.js
 import Mensagens from './pages/administrador/mensagens/index.js';
 import NovoProduto from './pages/administrador/novo-produto/index.js';
 
-import Carrinho from './pages/usuario/carrinho/'
-import Pedidos from './pages/usuario/pedidos/'
-import Chat from './components/outros/chat/'
+import Carrinho from './pages/usuario/carrinho/index'
+import Pedidos from './pages/usuario/pedidos/index'
+import Chat from './components/outros/chat/chat'
 
 
 export default function Routes() {
@@ -22,9 +22,9 @@ export default function Routes() {
                 <Route path="/mensagens" component={Mensagens} />
                 <Route path="/novo-produto" component={NovoProduto} />
 
-                <Route path="/carrinho"  component={Carrinho} />
-                <Route path="/pedidos"  component={Pedidos} />
-                <Route path="/chat"  component={Chat} />
+                <Route path="/carrinho" component={Carrinho} />
+                <Route path="/pedidos" component={Pedidos} />
+                <Route path="/chat" component={Chat} />
             </Switch>
         </BrowserRouter>
     )
