@@ -15,7 +15,6 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-
                 <Route path="/aprovar-compra" component={AprovarCompra} />
                 <Route path="/controle-produto" component={ControleProduto} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
