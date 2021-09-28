@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const PedidosStyled = styled.div`
-        font-family: Roboto;
+    font-family: Roboto;
     
 
     .conteudo {
@@ -17,7 +17,8 @@ const PedidosStyled = styled.div`
     }
 
     .pedido {
-        font: 2em Roboto-Bold;
+        font: 2em Roboto;
+        font-weight: bold;
     }
 
     .barra {
@@ -66,7 +67,8 @@ const PedidosStyled = styled.div`
     }
 
     .nome-produto {
-        font: 1.3em Roboto-Bold;
+        font: 1.3em Roboto;
+        font-weight: bold;
     }
 
     .botao-voltar {
