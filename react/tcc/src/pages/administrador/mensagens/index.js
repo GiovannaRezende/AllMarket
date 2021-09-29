@@ -1,7 +1,7 @@
 import { CabecalhoAdm } from '../../../components/cabecalhos/admin/styled';
 import MensagensStyled from './';
 
-export default function Index() {
+export default function Mensagens() {
     return(
         <MensagensStyled>
             <CabecalhoAdm/>
