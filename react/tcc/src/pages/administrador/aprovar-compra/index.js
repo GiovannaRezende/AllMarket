@@ -9,7 +9,7 @@ export default function AprovarCompra() {
                 <div class="cab-conteudo">Aprovar Compras</div>
             <div class="corpo-conteudo">
                 <div class="box-ckeck-conteudo">
-                    <div class="checkbox"><input type="checkbox" style = "width: 2.2em; height: 2.2em"/></div>
+                    <div class="checkbox"><input type="checkbox" style={{"width": "2.2em", "height": "2.2em"}}/></div>
                     <div class="box-aprovacao">
                         <div class="foto-nome-usuario">
                             <div class="foto-usuario"><img src="/assets/images/perfil-gabi.svg" alt=""/></div>
@@ -24,7 +24,7 @@ export default function AprovarCompra() {
                     </div>
                 </div>
                 <div class="box-ckeck-conteudo">
-                    <div class="checkbox"><input type="checkbox" style = "width: 2.2em; height: 2.2em"/></div>
+                    <div class="checkbox"><input type="checkbox" style={{"width": "2.2em", "height": "2.2em"}}/></div>
                     <div class="box-aprovacao">
                         <div class="foto-nome-usuario">
                             <div class="foto-usuario"><img src="/assets/images/perfil-pedro.svg" alt=""/></div>
