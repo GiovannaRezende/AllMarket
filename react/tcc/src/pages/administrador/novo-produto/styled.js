@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const NovoProduto = styled.div`
+const NovoProdutoStyled = styled.div`
 .corpo {
     display: flex;
     flex-direction: column;
@@ -79,4 +79,4 @@ button {
 }
 `
 
-export { NovoProduto };
+export { NovoProdutoStyled };

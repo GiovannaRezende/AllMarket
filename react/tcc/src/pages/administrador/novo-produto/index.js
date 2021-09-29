@@ -1,9 +1,9 @@
-import { CabecalhoAdm } from '../../../components/cabecalhos/admin/styled';
-import NovoProduto from './';
+import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
+import NovoProdutoStyled from './';
 
 export default function NovoProduto() {
     return(
-        <NovoProduto>
+        <NovoProdutoStyled>
             <CabecalhoAdm/>
             <div class="corpo">
                 <div class="corpo-cab">Novo produto</div>
@@ -47,12 +47,12 @@ export default function NovoProduto() {
                     </div>
                     <div class="form9">
                         <div class="item">Descrição:</div>
-                        <textarea style="resize: none;"> </textarea>
+                        <textarea style={{"resize": "none;"}}> </textarea>
                     </div>
                     <button>Adicionar produto</button>
                 </div>
             </div>
            </div>
-        </NovoProduto>  
+        </NovoProdutoStyled>
     ) 
 }
