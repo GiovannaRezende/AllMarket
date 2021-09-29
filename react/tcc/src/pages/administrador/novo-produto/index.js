@@ -1,5 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import NovoProdutoStyled from './';
+import BotaoLaranja from '../../../components/outros/botao/botao';
 
 export default function NovoProduto() {
     return(
@@ -49,7 +50,7 @@ export default function NovoProduto() {
                         <div class="item">Descrição:</div>
                         <textarea style={{"resize": "none;"}}> </textarea>
                     </div>
-                    <button>Adicionar produto</button>
+                    <BotaoLaranja></BotaoLaranja>
                 </div>
             </div>
            </div>

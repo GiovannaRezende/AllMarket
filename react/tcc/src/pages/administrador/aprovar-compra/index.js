@@ -1,5 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { AprovarCompraStyled }  from './styled';
+import BotaoLaranja from '../../../components/outros/botao/botao';
 
 export default function AprovarCompra() {
     return(
@@ -38,7 +39,7 @@ export default function AprovarCompra() {
                         </div>
                     </div>
                 </div>
-                <div class="botao"><button>Aprovar compras</button></div>
+                <div class="botao"><BotaoLaranja></BotaoLaranja></div>
             </div>
             </div>
         </AprovarCompraStyled>  

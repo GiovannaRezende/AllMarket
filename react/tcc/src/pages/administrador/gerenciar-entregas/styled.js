@@ -19,7 +19,7 @@ const GerenciarEntregasStyled = styled.div`
     border-radius: 1em;
     padding: 1em;
     width: 98%;
-    height: 5.3em;
+    height: 7em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: .5em 0em;
 }

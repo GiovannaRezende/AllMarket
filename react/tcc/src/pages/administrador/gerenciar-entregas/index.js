@@ -1,5 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { GerenciarEntregasStyled }  from './styled';
+import BotaoLaranja from '../../../components/outros/botao/botao'
 
 export default function GerenciarEntregas() {
     return(
@@ -17,7 +18,7 @@ export default function GerenciarEntregas() {
                                 <div class="texto-status"><span>Status:</span> Em prepraro</div>
                             </div>
                         </div>
-                        <div class="botao"><button>Atualizar status</button></div>
+                        <div class="botao"><BotaoLaranja></BotaoLaranja></div>
                     </div>
                 </div>
                 <div class="box-entregas">
@@ -30,7 +31,7 @@ export default function GerenciarEntregas() {
                                 <div class="texto-status"><span>Status:</span>A caminho</div>
                             </div>
                         </div>
-                        <div class="botao"><button>Atualizar status</button></div>
+                        <div class="botao"><BotaoLaranja></BotaoLaranja></div>
                     </div>
                 </div>
                 <div class="box-entregas">

@@ -1,9 +1,9 @@
-import BotaoLaranja from './';
+import { BotaoLaranjaStyled } from './styled'
 
 export default function BotaoLaranja() {
     return(
-        <BotaoLaranja>
-           
-        </BotaoLaranja>
+        <BotaoLaranjaStyled>
+           <div></div>
+        </BotaoLaranjaStyled>
     ) 
 }
