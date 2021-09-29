@@ -1,5 +1,5 @@
-import { CabecalhoAdm } from '../../../components/cabecalhos/admin/styled';
-import MensagensStyled from './';
+import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
+import { MensagensStyled } from './styled';
 
 export default function Mensagens() {
     return(

@@ -1,7 +1,7 @@
 import { PedidosStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu'
 
-export default function Carrinho() {
+export default function Pedido() {
     return (
         <PedidosStyled>
             <CabecalhoUsu/>

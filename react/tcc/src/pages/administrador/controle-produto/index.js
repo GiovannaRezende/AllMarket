@@ -1,9 +1,9 @@
-import { CabecalhoAdm } from '../../../components/cabecalhos/admin/styled';
-import ControleProdutos from './';
+import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
+import { ControleProdutosStyled }  from './styled';
 
-export default function Index() {
+export default function ControleProduto() {
     return(
-        <ControleProdutos>
+        <ControleProdutosStyled>
             <CabecalhoAdm/>
                 <div class="corpo">
                     <div class="corpo-pt1">Controle de Produtos</div>
@@ -75,6 +75,6 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-        </ControleProdutos>  
+        </ControleProdutosStyled>  
     ) 
 }
