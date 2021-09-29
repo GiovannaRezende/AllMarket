@@ -10,7 +10,7 @@ export default function ControleProduto() {
                     <div class="corpo-pt2">
                         <div class="box">
                             <div class="esquerda">
-                                <div class="imagem"><img src="../../react/tcc/public/assets/images/Imagem-Produto.svg" alt=""/></div>
+                                <div class="imagem"><img src="/assets/images/Imagem-Produto.svg" alt=""/></div>
                                 <div class="textos">
                                     <div class="produto">Desodorante - Rexona</div>
                                     <div class="peso">400ml</div>
@@ -23,7 +23,7 @@ export default function ControleProduto() {
                         </div>
                         <div class="box">
                             <div class="esquerda">
-                                <div class="imagem"><img src="../../React/tcc/public/Assets/Images/Imagem-Produto.svg" alt=""/></div>
+                                <div class="imagem"><img src="/assets/images/imagem-produto.svg" alt=""/></div>
                                 <div class="textos">
                                     <div class="produto">Desodorante - Rexona</div>
                                     <div class="peso">400ml</div>
@@ -36,7 +36,7 @@ export default function ControleProduto() {
                         </div>
                         <div class="box">
                             <div class="esquerda">
-                                <div class="imagem"><img src="../../React/tcc/public/Assets/Images/Imagem-Produto.svg" alt=""/></div>
+                                <div class="imagem"><img src="/assets/images/imagem-produto.svg" alt=""/></div>
                                 <div class="textos">
                                     <div class="produto">Desodorante - Rexona</div>
                                     <div class="peso">400ml</div>
@@ -49,7 +49,7 @@ export default function ControleProduto() {
                         </div>
                         <div class="box">
                             <div class="esquerda">
-                                <div class="imagem"><img src="../../React/tcc/public/Assets/Images/Imagem-Produto.svg" alt=""/></div>
+                                <div class="imagem"><img src="/assets/images/imagem-produto.svg" alt=""/></div>
                                 <div class="textos">
                                     <div class="produto">Desodorante - Rexona</div>
                                     <div class="peso">400ml</div>
@@ -62,7 +62,7 @@ export default function ControleProduto() {
                         </div>
                         <div class="box">
                             <div class="esquerda">
-                                <div class="imagem"><img src="../../React/tcc/public/Assets/Images/Imagem-Produto.svg" alt=""/></div>
+                                <div class="imagem"><img src="/assets/images/imagem-produto.svg" alt=""/></div>
                                 <div class="textos">
                                     <div class="produto">Desodorante - Rexona</div>
                                     <div class="peso">400ml</div>
