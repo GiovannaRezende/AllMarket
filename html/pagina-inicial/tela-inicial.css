@@ -62,6 +62,12 @@ input {
     margin-left: 21em;
 }
 
+.hortifruti-carrinho:hover img {
+    transition: 0.5s;
+    height: 4.3em;
+    width: 4.3em;
+}
+
 .hortifruti-contador {
     padding-top: 0.1em;
     padding-right: 0.4em;
@@ -85,6 +91,14 @@ input {
     width: 5em;
     height: 5em;
     margin-left: 2em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.hortifruti-foto img:hover {
+    transition: 0.2s;
+    height: 5.2em;
+    width: 5.2em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.45));
 }
 
 .banner img {
@@ -92,6 +106,7 @@ input {
     margin-top: 20px;
     border-radius: 20px;
     width: 95vw;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .pontos {
@@ -118,7 +133,7 @@ input {
 }
 
 .hortifruti-titulo {
-    font: 1000 2em Montserrat;
+    font: 600 2em Montserrat;
     color: black;
     margin: 2em;
     text-align: center;
@@ -141,6 +156,12 @@ input {
     cursor: pointer;
 }
 
+.categorias-icones:hover {
+    transition:  0.5s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
+}
+
 .img-categorias img {
     height: 90px;
     width: 90px;
@@ -151,6 +172,18 @@ input {
 }
 
 .titulo2 {
+    font: 900 2em Montserrat;
+    padding: 1em;
+    text-align: center;
+    margin: 1.5em;
+    font-size: 2em;
+}
+
+.venda {
+    font: 900 2em Montserrat;
+    font-weight: 1600;
+    color: white; 
+    padding: 1em;
     text-align: center;
     margin: 1.5em;
     font-size: 2em;
@@ -187,7 +220,13 @@ input {
     height: 252px;
 }
 
+.hortifruti-icones:hover {
+    transition:  0.7s;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.75);
+}
+
 .img1 img {
+    margin-left: 1em;
     height: 80px;
     width: 80px;
 }
@@ -229,6 +268,7 @@ input {
 }
 
 .hortifruti-venda {
+    margin-top: 1em;
     background-color:#FB8500;
 }
 
@@ -255,6 +295,12 @@ input {
     margin-top: 0.2em;
     margin-left: 0.2em;
 }
+
+.congela:hover, .laticinios:hover, .hort:hover, .carnes:hover, .limpeza:hover, .higiene:hover {
+    transition: 0.5s;
+    text-decoration: underline;
+    cursor: pointer;
+}   
 
 .hortifruti-2 {
     font: 100 1em Montserrat;
