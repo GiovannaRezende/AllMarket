@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ControleProdutos = styled.div`
+const ControleProdutosStyled = styled.div`
 .corpo {
     display: flex;
     flex-direction: column;
@@ -87,4 +87,4 @@ const ControleProdutos = styled.div`
 
 `
 
-export { ControleProdutos };
+export { ControleProdutosStyled };
