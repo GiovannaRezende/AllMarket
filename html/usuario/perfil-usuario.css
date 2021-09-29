@@ -7,6 +7,7 @@ body {
 .container-perfil-usuario {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .cabecalho {
