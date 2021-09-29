@@ -58,20 +58,6 @@ input {
 .hortifruti-carrinho img {
     height: 4em;
     width: 4em;
-    margin: 1em;
-}
-
-.hortifruti-carrinho2 img {
-    height: 4em;
-    width: 4em;
-    margin-left: 21em;
-}
-
-.hortifruti-carrinho2:hover img {
-    transition: 0.5s;
-    height: 4.3em;
-    width: 4.3em;
-
     margin-left: 25.5em;
 }
 
@@ -80,8 +66,8 @@ input {
     padding-right: 0.4em;
     padding-left: 0.4em;
     padding-bottom: 0.1em;
-    margin-top: -3em;
-    margin-left: -0.7em;
+    margin-top: -4em;
+    margin-left: -1em;
 
     background-color: #FB8500;
     color: white;
@@ -99,46 +85,13 @@ input {
     margin-left: 2em;
 }
 
-.hortifruti-foto:hover img {
-    transition: 0.5s;
-    height: 5.2em;
-    width: 5.2em;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.45));
-}
-
 .banner img {
-    margin-left: 1em;
-    margin-top: 20px;
     width: 82em;
     height: 21em;
     margin-left: 1.2em;
 
     border-radius: 20px;
-    width: 95vw;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.pontos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.hortifruti-pontos {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
-    border-radius: 100%;
-    margin: 10px;
-    background-color: #E5E5E5;
-    color: #E5E5E5;
-    cursor: pointer;
-}
-
-.hortifruti-pontos:nth-child(1) {
-    background-color: #FB8500;
-    color: #FB8500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hortifruti-titulo {
@@ -155,12 +108,9 @@ input {
 .hortifruti-colunas {
     display: flex;
     flex-direction: row;
-    margin: 0.5em;
-    margin-left: 0em;
     margin: 1em;
     margin-left: 0.7em;
     margin-top: -1em;
-    margin-bottom: 2em;
 }
 
 .hortifruti-direita, .hortifruti-esquerda {
@@ -186,11 +136,6 @@ input {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-}
-
-.hortifruti-icones:hover {
-    transition:  0.7s;
-    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.75);
 }
 
 .img1 img {
@@ -220,7 +165,6 @@ input {
 .hortifruti-final {
     margin-top: 3em;
     background-color: #023047;
-    height: 80vh;
 }
 
 .hortifruti-1 {
@@ -239,12 +183,6 @@ input {
     margin: 1.5em;
     margin-top: 0.2em;
     margin-left: 0.2em;
-}
-
-.congela:hover, .laticinios:hover, .hort:hover, .carnes:hover, .limpeza:hover, .higiene:hover {
-    transition: 0.5s;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 .hortifruti-2 {
@@ -271,7 +209,7 @@ input {
     font: 100 1em Montserrat;
     color: white;
     margin-top: -8.8em;
-    margin-left: 65em;
+    margin-left: 66em;
 }
 
 .redes {
@@ -326,7 +264,7 @@ input {
 }
 
 .linha {
-    width: 80em;
+    width: 78.3em;
     height: 0.1em;
     margin-top: 1em;
     margin-left: 3em;
@@ -338,7 +276,6 @@ input {
     height: 4em;
     margin-top: 0.6em;
     margin-left: 3em;
-    border-radius: 50%;
 }
 
 .texto-final {
