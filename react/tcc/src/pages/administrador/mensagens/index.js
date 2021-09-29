@@ -9,7 +9,7 @@ export default function Index() {
                 <div class="titulo-mensagem">Mensagens</div>
                 <div class="box-mensagem">
                     <div class="foto-texto">
-                    <div class="foto-usuario"><img src="../../react/tcc/public/assets/images/perfil-laura.svg" alt=""/></div>
+                    <div class="foto-usuario"><img src="/assets/images/perfil-laura.svg" alt=""/></div>
                     <div class="textos">
                         <div class="nome-usuario">Laura Medeiros</div>
                         <div class="mensagem-usuario">Olá! Não estou conseguindo efetuar o pagamento...</div>
@@ -21,7 +21,7 @@ export default function Index() {
                 </div>
                 <div class="box-mensagem">
                     <div class="foto-texto">
-                    <div class="foto-usuario"><img src="../../react/tcc/public/assets/images/perfil-leo.svg" alt=""/></div>
+                    <div class="foto-usuario"><img src="/assets/images/perfil-leo.svg" alt=""/></div>
                     <div class="textos">
                         <div class="nome-usuario">Leonardo Cunha</div>
                         <div class="mensagem-usuario">Olá! Não estou conseguindo efetuar o pagamento...</div>
@@ -33,7 +33,7 @@ export default function Index() {
                 </div>
                 <div class="box-mensagem">
                     <div class="foto-texto">
-                    <div class="foto-usuario"><img src="../../react/tcc/public/assets/images/perfil-caio.svg" alt=""/></div>
+                    <div class="foto-usuario"><img src="/assets/images/perfil-caio.svg" alt=""/></div>
                     <div class="textos">
                         <div class="nome-usuario">Caio Ferreira</div>
                         <div class="mensagem-usuario">Olá! Não estou conseguindo efetuar o pagamento...</div>
@@ -45,7 +45,7 @@ export default function Index() {
                 </div>
                 <div class="box-mensagem">
                     <div class="foto-texto">
-                    <div class="foto-usuario"><img src="../../react/tcc/public/assets/images/perfil-ana.svg" alt=""/></div>
+                    <div class="foto-usuario"><img src="/assets/images/perfil-ana.svg" alt=""/></div>
                     <div class="textos">
                         <div class="nome-usuario">Ana Marinho</div>
                         <div class="mensagem-usuario">Olá! Não estou conseguindo efetuar o pagamento...</div>
@@ -57,7 +57,7 @@ export default function Index() {
                 </div>
                 <div class="box-mensagem">
                     <div class="foto-texto">
-                    <div class="foto-usuario"><img src="../../react/tcc/public/assets/images/perfil-gabi.svg" alt=""/></div>
+                    <div class="foto-usuario"><img src="/assets/images/perfil-gabi.svg" alt=""/></div>
                     <div class="textos">
                         <div class="nome-usuario">Gabriela Marques</div>
                         <div class="mensagem-usuario">Olá! Não estou conseguindo efetuar o pagamento...</div>
