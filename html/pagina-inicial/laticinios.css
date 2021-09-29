@@ -58,7 +58,7 @@ input {
 .hortifruti-carrinho img {
     height: 4em;
     width: 4em;
-    margin-left: 31.5em;
+    margin-left: 25.5em;
 }
 
 .hortifruti-contador {
@@ -76,17 +76,20 @@ input {
 
 .hortifruti-texto {
     font: 100 1em Montserrat;
-    margin-left: 5em;
+    margin-left: 2.8em;
 }
 
 .hortifruti-foto img {
-    width: 5em;
-    height: 5em;
+    width: 4.5em;
+    height: 4.5em;
     margin-left: 2em;
 }
 
 .banner img {
-    margin-left: 1.9em;
+    width: 82em;
+    height: 21em;
+    margin-left: 1.2em;
+
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -106,7 +109,7 @@ input {
     display: flex;
     flex-direction: row;
     margin: 1em;
-    margin-left: 4.6em;
+    margin-left: 0.7em;
     margin-top: -1em;
 }
 
@@ -144,7 +147,7 @@ input {
     font: 800 0.9em Montserrat;
 }
 
-.desc2 {
+.desc-2 {
     font: 800 0.9em Montserrat;
 }
 
@@ -210,7 +213,7 @@ input {
     font: 100 1em Montserrat;
     color: white;
     margin-top: -8.8em;
-    margin-left: 75em;
+    margin-left: 66em;
 }
 
 .redes {
@@ -265,7 +268,7 @@ input {
 }
 
 .linha {
-    width: 87em;
+    width: 78.3em;
     height: 0.1em;
     margin-top: 1em;
     margin-left: 3em;
