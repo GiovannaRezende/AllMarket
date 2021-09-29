@@ -296,6 +296,12 @@ input {
     margin-left: 0.2em;
 }
 
+.congela:hover, .laticinios:hover, .hort:hover, .carnes:hover, .limpeza:hover, .higiene:hover {
+    transition: 0.5s;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .hortifruti-2 {
     font: 100 1em Montserrat;
     color: white;
