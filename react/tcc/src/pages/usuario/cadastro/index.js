@@ -1,6 +1,6 @@
 import { CadastroUsuarioStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botao/botao';
-import BotaoAzul from '../../../components/outros/botao/botao';
+import BotaoLaranja from '../../../components/outros/botoes/botao';
+import BotaoAzul from '../../../components/outros/botoes/styled';
 
 export default function CadastroUsuario() {
     return(
@@ -8,7 +8,7 @@ export default function CadastroUsuario() {
             <div class="entrar">
                 <div class="titulo-bem-vindo">BEM-VINDO DE VOLTA!</div>
                 <div class="texto-login">Faça login para prosseguir com suas compras...</div>
-                <div class="botao-entrar"><button>Entrar</button></div>
+                <div class="botao-entrar"><BotaoLaranja>Entrar</BotaoLaranja></div>
             </div>
             <div class="cadastrar">
                 <div class="cab-cadastrar">
@@ -25,7 +25,7 @@ export default function CadastroUsuario() {
                     <input type="text" placeholder="E-mail"/>
                     <input type="text" placeholder="Senha"/>
                 </div>
-                <div class="botao-cadastrar"><button>Cadastrar-se</button></div>
+                <div class="botao-cadastrar"><BotaoAzul>Cadastrar-se</BotaoAzul></div>
             </div>
         </CadastroUsuarioStyled>  
     ) 

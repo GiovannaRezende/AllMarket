@@ -34,7 +34,7 @@ const AprovarCompraStyled = styled.div`
   background-color: #f9f9f9;
   border-radius: 1em;
   width: 30%;
-  height: 11em;
+  height: 13em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 

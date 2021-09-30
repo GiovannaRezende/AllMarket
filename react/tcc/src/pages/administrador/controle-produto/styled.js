@@ -28,7 +28,7 @@ const ControleProdutosStyled = styled.div`
     background-color: #f9f9f9;
     padding: 1em;
     justify-content: space-between;
-    height: 3em;
+    height: 4.8em;
     margin: .5em 0em;
 }
 
