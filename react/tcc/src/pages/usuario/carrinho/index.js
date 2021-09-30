@@ -10,7 +10,7 @@ export default function Carrinho() {
                     <div class="topo-box-esq"> Confira a sua lista de produtos </div>
                     <div class="lista-produtos">
                         <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/imagem-coca-cola.png" alt=""/> </div>
+                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
                             <div class="informacoes-produto">
                                 <div class="nome-produto"> Refrigerante - Coca Cola </div>
                                 <div class="medida-produto"> 200ml </div>
@@ -26,7 +26,7 @@ export default function Carrinho() {
                             </div>
                         </div>
                         <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/imagem-coca-cola.png" alt=""/> </div>
+                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
                             <div class="informacoes-produto">
                                 <div class="nome-produto"> Refrigerante - Coca Cola </div>
                                 <div class="medida-produto"> 200ml </div>
@@ -42,7 +42,7 @@ export default function Carrinho() {
                             </div>
                         </div>
                         <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/imagem-coca-cola.png" alt=""/> </div>
+                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
                             <div class="informacoes-produto">
                                 <div class="nome-produto"> Refrigerante - Coca Cola </div>
                                 <div class="medida-produto"> 200ml </div>
@@ -58,7 +58,7 @@ export default function Carrinho() {
                             </div>
                         </div>
                         <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/imagem-coca-cola.png" alt=""/> </div>
+                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
                             <div class="informacoes-produto">
                                 <div class="nome-produto"> Refrigerante - Coca Cola </div>
                                 <div class="medida-produto"> 200ml </div>
@@ -74,7 +74,7 @@ export default function Carrinho() {
                             </div>
                         </div>
                         <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/imagem-coca-cola.png" alt=""/> </div>
+                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
                             <div class="informacoes-produto">
                                 <div class="nome-produto"> Refrigerante - Coca Cola </div>
                                 <div class="medida-produto"> 200ml </div>

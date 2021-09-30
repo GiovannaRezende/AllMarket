@@ -1,6 +1,6 @@
 import { CadastroUsuarioStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botoes/botao';
-import BotaoAzul from '../../../components/outros/botoes/styled';
+import { BotaoLaranja } from '../../../components/outros/botoes/styled';
+import { BotaoAzul } from '../../../components/outros/botoes/styled';
 
 export default function CadastroUsuario() {
     return(

@@ -11,6 +11,8 @@ import Pedidos from './pages/usuario/pedidos/index';
 import Chat from './components/outros/chat/chat';
 import Cartao from './pages/usuario/cadastro-cartao/index';
 import Endereco from './pages/usuario/cadastro-endereco/index';
+import Cadastro from './pages/usuario/cadastro/index';
+import Login from './pages/usuario/login/index';
 
 
 export default function Routes() {
@@ -28,6 +30,8 @@ export default function Routes() {
                 <Route path="/chat" component={Chat} />
                 <Route path="/cadastro-cartao" component={Cartao} />
                 <Route path="/cadastro-endereco" component={Endereco} />
+                <Route path="/cadastro" component={Cadastro} />
+                <Route path="/login" component={Login} />
             </Switch>
         </BrowserRouter>
     )
