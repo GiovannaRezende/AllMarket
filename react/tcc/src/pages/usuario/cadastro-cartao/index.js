@@ -1,6 +1,6 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { CadastroCartaoStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botao/botao';
+import BotaoLaranja from '../../../components/outros/botoes/styled';
 
 export default function CadastroCartao() {
     return(
@@ -37,7 +37,7 @@ export default function CadastroCartao() {
                         </div>
                     </div>
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja></BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja>Cadastrar Cartão</BotaoLaranja></div>
             </div>
         </CadastroCartaoStyled>  
     ) 

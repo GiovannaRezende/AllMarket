@@ -1,6 +1,6 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { CadastroEnderecoStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botao/botao';
+import BotaoLaranja from '../../../components/outros/botoes/styled';
 
 export default function CadastroEndereco() {
     return(
@@ -42,7 +42,7 @@ export default function CadastroEndereco() {
                         </div>
                     </div>    
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja></BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja>Cadastrar Endereço</BotaoLaranja></div>
             </div>
         </CadastroEnderecoStyled>  
     ) 

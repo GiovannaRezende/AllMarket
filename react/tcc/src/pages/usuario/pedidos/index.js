@@ -1,5 +1,6 @@
 import { PedidosStyled } from './styled'
-import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu'
+import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu';
+import { BotaoAzul } from '../../../components/outros/botoes/styled';
 
 export default function Pedido() {
     return (
@@ -62,7 +63,7 @@ export default function Pedido() {
                         </div>
                     </div>
                 </div>
-                <div class="botao-voltar"> <button> Voltar </button> </div>
+                <div class="botao-voltar"> <button>Voltar</button> </div>
             </div> 
         </PedidosStyled>
     )
