@@ -14,6 +14,14 @@ import Endereco from './pages/usuario/cadastro-endereco/index';
 import Cadastro from './pages/usuario/cadastro/index';
 import Login from './pages/usuario/login/index';
 
+import Home from './pages/inicial/index';
+//import Hortifruti from './pages/';
+//import Higiene from './pages/';
+//import Carnes from './pages/';
+//import Laticinios from './pages/';
+//import Limpeza from './pages/';
+//import Congelados from './pages/';
+
 
 export default function Routes() {
     return (
@@ -32,6 +40,10 @@ export default function Routes() {
                 <Route path="/cadastro-endereco" component={Endereco} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
+
+                <Route path="/" exact={true} component={Home} />
+
+
             </Switch>
         </BrowserRouter>
     )
