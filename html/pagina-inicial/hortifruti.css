@@ -61,6 +61,12 @@ input {
     margin-left: 25.5em;
 }
 
+.hortifruti-carrinho img:hover {
+    transition: 0.2s;
+    height: 4.3em;
+    width: 4.3em;
+}
+
 .hortifruti-contador {
     padding-top: 0.1em;
     padding-right: 0.4em;
@@ -83,6 +89,14 @@ input {
     width: 4.5em;
     height: 4.5em;
     margin-left: 2em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.hortifruti-foto img:hover {
+    transition: 0.2s;
+    width: 4.8em;
+    height: 4.8em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .banner img {
@@ -136,6 +150,11 @@ input {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+}
+
+.hortifruti-icones:hover {
+    transition: 0.8s;
+    box-shadow: 0px 6px 6px 6px rgba(0, 0, 0, 0.25);
 }
 
 .img1 img {
