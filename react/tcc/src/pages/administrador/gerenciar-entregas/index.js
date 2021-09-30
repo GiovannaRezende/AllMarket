@@ -1,6 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { GerenciarEntregasStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botao/botao'
+import { BotaoLaranja } from '../../../components/outros/botao/styled';
 
 export default function GerenciarEntregas() {
     return(

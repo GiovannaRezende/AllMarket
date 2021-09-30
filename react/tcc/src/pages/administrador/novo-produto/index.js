@@ -1,6 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import NovoProdutoStyled from './';
-import BotaoLaranja from '../../../components/outros/botao/botao';
+import { BotaoLaranja } from '../../../components/outros/botao/styled';
 
 export default function NovoProduto() {
     return(
