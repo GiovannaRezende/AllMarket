@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const BotaoLaranjaStyled = styled.div`
+const BotaoLaranja = styled.div`
     border: none;
     background-color: #FB8500;
     color: white;
@@ -10,4 +10,4 @@ const BotaoLaranjaStyled = styled.div`
     font: 500 .9em Roboto;
 `
 
-export { BotaoLaranjaStyled };
+export { BotaoLaranja };
