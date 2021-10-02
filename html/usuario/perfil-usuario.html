@@ -10,52 +10,75 @@
     <body>
         <div class="container-perfil-usuario">
             <div class="cabecalho">
-                <div class="logo-empresa"><img src="../../react/tcc/public/assets/images/Logo-AllMarket.jpg"/></div>
-                <div class="perfil-usuario">Meu perfil</div>
-                <div class="icone-sair"><img src="../../react/tcc/public/assets/images/Ícone-Logout.png"/></div>
+                <div class="cabecalho-esquerdo">
+                    <div class="logo-empresa"><img src="../../react/tcc/public/assets/images/Logo-AllMarket.jpg"/></div>
+                    <div class="titulo-cabecalho">Meu perfil</div>
+                </div>
+                <div class="icone-sair"><img src="../../react/tcc/public/assets/images/icone-sair.svg"/></div>
             </div>
             <div class="container">
-                <div class="container-detalhes-usuario">
-                    <div class="background-usuario"></div>
-                    <div class="imagem-usuario"><img src="../../react/tcc/public/assets/images/Perfil-Usuario.png"/></div>
-                    <div class="nome-usuario"> <b>Nome:</b> Maria Lima</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="id-usuario"> <b>Usuário:</b> maria.lima</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="cpf-usuario"> <b>CPF:</b> 000.000.000-10</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="genero-usuario"> <b>Gênero:</b> Feminino</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="data-nascimento-usuario"> <b>Data de nasc.:</b> 07/07/1998</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="telefone-usuario"> <b>Telefone:</b> (11) 99999-0000</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                    <div class="email-usuario"> <b>E-mail:</b> maria@gmail.com</div><img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
-                </div>
-                <div class="container-enderecos-usuario">
-                    <div class="enderecos-usuario">Meus endereços</div>
-                    <div class="enderecos-usuario-2">
-                        <div>Rua Maria da Cruz Cunha, 39</div>
-                        <div>Jardim das Flores</div>
-                        <div>São Paulo/SP</div>
-                        <img class="icone-seta" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
-                        <img class="icone-editar-enderecos" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
+                <div class="detalhes-usuario">
+                    <div class="background"></div>
+                    <div class="imagem-usu"><img src="../../react/tcc/public/assets/images/Perfil-Usuario.png"/></div>
+                
+                    <div class="box-informacoes">
+                        <div class="informacoes"> <div> <b>Nome:</b> Maria Lima </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>Usuário:</b> maria.lima </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>CPF:</b> 000.000.000-10 </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>Gênero:</b> Feminino </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>Data de nasc.:</b> 07/07/1998 </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>Telefone:</b> (11) 99999-0000 </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
+                        <div class="informacoes"> <div> <b>E-mail:</b> maria@gmail.com </div> <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/> </div>
                     </div>
                 </div>
-                <div class="container-contas-bancarias-usuario">
-                    <div class="contas-bancarias-usuario">Contas bancárias/Cartões</div>
-                    <div class="contas-bancarias-usuario-2">
-                        <div>Banco Itaucard</div>
-                        <div>**** **** **** 9993</div>
-                        <div>Val: 03/2023</div>
-                        <div>CVV: 963</div>
-                        <img class="icone-seta-contas-bancarias" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
-                        <img class="icone-editar-contas-bancarias" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
+                <div class="box-direita"> 
+                    <div class="box-enderecos">
+                            <div class="titulo-enderecos">Meus endereços</div>
+                            <div class="informacoes-endereco">
+                                <div class="box-esq">
+                                    <div class="informacoes-box"> Rua Maria da Cruz Cunha, 39</div>
+                                    <div class="informacoes-box"> Jardim das Flores</div>
+                                    <div class="informacoes-box"> São Paulo/SP</div>
+                                </div>
+                                <div class="proximo">
+                                    <img class="icone-seta" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
+                                </div>
+                            </div>
+                            <div class="editar">
+                                <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
+                            </div>
                     </div>
-                </div>
-                <div class="container-pedidos-usuario">
-                    <div class="pedidos-usuario">Meus pedidos</div>
-                    <div class="pedidos-usuario-2">
-                        <div>Código da Compra: 96472</div>
-                        <div>Valor total: R$180,67</div>
-                        <div>Status: A caminho</div>
-                        <img class="icone-seta-pedidos" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
-                        <div class="cancelar-pedido">Cancelar o pedido</div>
-                        <button>Ver detalhes</button>
+                    <div class="box-contas">
+                        <div class="informacoes-conta">
+                            <div class="box-esq">
+                                <div class="titulo-contas">Contas bancárias/Cartões</div>
+                                <div class="informacoes-box">Banco Itaucard</div>
+                                <div class="informacoes-box">**** **** **** 9993</div>
+                                <div class="informacoes-box"> Val: 03/2023</div>
+                                <div class="informacoes-box"> CVV: 963</div>
+                            </div>
+                            <div class="proximo">
+                                <img class="icone-seta" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
+                            </div>
+                        </div>
+                        <div class="editar">
+                            <img class="icone-editar" src="../../react/tcc/public/assets/images/Ícone-Editar.png"/>
+                        </div>
+                    </div>
+                    <div class="box-pedidos">
+                        <div class="titulo-pedido">Meus pedidos</div>
+                        <div class="informacoes-pedido">
+                            <div class="box-esq">
+                                <div class="informacoes-box"> Código da Compra: 96472</div>
+                                <div class="informacoes-box"> Valor total: R$180,67</div>
+                                <div class="informacoes-box"> Status: A caminho</div>
+                            </div>
+                            <img class="seta-pedido" src="../../react/tcc/public/assets/images/Ícone-Seta-2.png"/>
+                        </div>
+                        <div class="cancelar-detalhes">
+                            <div class="cancelar-pedido">Cancelar o pedido</div>
+                            <button>Ver detalhes</button>
+                        </div>
                     </div>
                 </div>
             </div>
