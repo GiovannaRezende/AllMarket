@@ -11,7 +11,7 @@ const CadastroUsuarioStyled = styled.div`
     border-radius: .7em;
 
 .titulo {
-    font: 600 1.7em Roboto;
+    font: 500 1.7em Roboto;
     color: white;
     margin: .7em 0em;
 }
@@ -51,7 +51,7 @@ input {
     height: 3em;
     padding: 0em .5em;
     margin: 1em 0em;
-    font: 700 1em Roboto;
+    font: 500 1em Roboto;
     color: #ADA5A5;
     background-color: #f9f9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
