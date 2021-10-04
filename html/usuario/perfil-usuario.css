@@ -1,335 +1,204 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
     margin: 0px;
 }
 
+* { box-sizing: border-box; }
+
 .container-perfil-usuario {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    font-family: Roboto;
 }
 
 .cabecalho {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: .6em 1em;
+}
+
+.cabecalho-esquerdo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .logo-empresa img {
     width: 4em;
     height: 4em;
-
-    border-radius: 4em;
 }
 
-.perfil-usuario {
-    margin-left: -38em;
-    margin-top: 0.6em;
-
-    font: 1000 2em Montserrat;
+.titulo-cabecalho {
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: .6em;
 }
 
 .icone-sair img {
     width: 3em;
     height: 3em;
-
-    margin-top: 1.2em;
-    margin-left: -3.5em;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    padding: 1em 2em;
 }
 
-.container-detalhes-usuario {
+.detalhes-usuario {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 
-    width: 21.8em;
-    height: 32em;
-    margin-top: 2em;
-    margin-left: 20.5em;
     margin-right: 3em;
 
     background-color: #FB8500;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    padding: 1em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em;
 }
 
-.background-usuario {
+
+.background {
     display: flex;
     flex-direction: column;
 
-    width: 22em;
+    width: 100%;
     height: 5em;
-    margin-top: -1em;
 
     background-color: #14213D;
-    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 1em;
     border-radius: 1em;
 }
 
-.imagem-usuario img {
-    width: 9em;
-    height: 9em;
-
-    margin-top: -5em;
-    margin-bottom: 1em;
+.imagem-usu {
+    margin-top: -2.5em;
 }
 
-.nome-usuario {
-    font: 100 1em Montserrat;
+.box-informacoes {
+    padding: 0em 1em;
+    width: 100%;
+}
+
+
+.informacoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
     padding: 0.5em;
-    padding-right: 12em;
-    margin-bottom: 1em;
+    margin: 1em 0em;
 
     background-color: #219EBC;
     color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 0.6em;
 }
 
-.id-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 11.6em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.cpf-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 10.9em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.genero-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 12.2em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.data-nascimento-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 8.6em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.telefone-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 8.8em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.email-usuario {
-    font: 100 1em Montserrat;
-
-    padding: 0.5em;
-    padding-right: 8.3em;
-    margin-top: 0.8em;
-    margin-bottom: 1em;
-
-    background-color: #219EBC;
-    color: white;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.icone-editar {
+.icone-editar,
+.icone-seta,
+.seta-pedido {
     width: 2em;
     height: 2em;
-
-    margin-top: -3em;
-    margin-left: 19.3em;
 }
 
-.container-enderecos-usuario {
-    display: flex;
-    flex-direction: column;
 
-    width: 30em;
-    height: 7em;
-    padding: 1em;
-    margin-top: -34em;
-    margin-left: 46em;
+.box-enderecos,
+.box-contas,
+.box-pedidos {
+    padding: 1em 1.5em;
+    width: 27em;
 
+    color: white;
     background-color: #FB8500;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.6em;
 }
 
-.enderecos-usuario {
-    font: 1000 1.3em Montserrat;
-    color: white;
+.box-enderecos,
+.box-contas {
+    margin-bottom: 1em;
 }
 
-.enderecos-usuario-2 {
-    font: 100 1.2em Montserrat;
-    color: white;
+.titulo-enderecos, 
+.titulo-contas,
+.titulo-pedido {
+    font-size: 1.3em;
+    font-weight: bold;
+
+    margin-bottom: .3em;
 }
 
-.container-contas-bancarias-usuario {
+.informacoes-box {
+    margin: .6em 0em;
+}
+
+.informacoes-endereco, 
+.informacoes-conta,
+.informacoes-pedido {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    width: 30em;
-    height: 8em;
-    padding: 1em;
+.editar {
+    display: flex;
+    justify-content: end;
+}
+
+.cancelar-detalhes {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
     margin-top: 1em;
-    margin-left: 46em;
-
-    background-color: #FB8500;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.contas-bancarias-usuario {
-    font: 1000 1.3em Montserrat;
-    color: white;
-}
-
-.contas-bancarias-usuario-2 {
-    font: 100 1.2em Montserrat;
-    color: white;
-}
-
-.container-pedidos-usuario {
-    display: flex;
-    flex-direction: column;
-
-    width: 30em;
-    height: 11em;
-    padding: 1em;
-    margin-top: 1em;
-    margin-left: 46em;
-
-    background-color: #FB8500;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0.6em;
-}
-
-.pedidos-usuario {
-    font: 1000 1.3em Montserrat;
-    color: white;
-}
-
-.pedidos-usuario-2 {
-    font: 100 1.2em Montserrat;
-    color: white;
-    padding-top: 0.8em;
-}
-
-.icone-seta {
-    width: 1.5em;
-    height: 1.5em;
-
-    margin-top: -3.3em;
-    margin-left: 23.8em;
-}
-
-.icone-seta-contas-bancarias {
-    width: 1.5em;
-    height: 1.5em;
-
-    margin-top: -3.5em;
-    margin-left: 23.8em;
-}
-
-.icone-seta-pedidos {
-    width: 1.5em;
-    height: 1.5em;
-
-    margin-top: -1.5em;
-    margin-left: 23.8em;
-}
-
-.icone-editar-enderecos {
-    width: 1.7em;
-    height: 1.7em;
-
-    margin-top: -0.2em;
-    margin-left: 23.8em;
-}
-
-.icone-editar-contas-bancarias {
-    width: 1.7em;
-    height: 1.7em;
-
-    margin-top: -0.5em;
-    margin-left: 23.8em;
 }
 
 .cancelar-pedido {
-    font: 1000 0.8em Montserrat;
     text-decoration: underline;
-    
-    margin-top: 3.2em;
-    margin-left: 11em;
 }
 
 button {
-    width: 160px;
-    height: 35px;
+    font: 800 1.1em Roboto;
 
-    background-color: #219EBC;
-    color: white;
+    padding: 1em;
+    margin-left: 1em;
 
-    border-radius: 0.5em;
     border: none;
+    outline: none;
+
+    background: #219EBC;
+    color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font: 500 1em Montserrat;
-    margin-left: 16.8em;
-    margin-top: -1.8em;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #8ECAE6;
+}
+
+::-webkit-scrollbar
+{
+    width: 7px;
+    background-color: #219EBC;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #219EBC;
 }

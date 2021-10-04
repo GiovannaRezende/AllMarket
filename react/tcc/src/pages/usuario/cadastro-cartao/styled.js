@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const CadastroCartaoStyled = styled.div`
+    height: 100vh;
+
 .container {
     display: flex;
     flex-direction: column;

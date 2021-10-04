@@ -1,6 +1,6 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { CadastroCartaoStyled }  from './styled';
-import BotaoLaranja from '../../../components/outros/botoes/styled';
+import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 
 export default function CadastroCartao() {
     return(

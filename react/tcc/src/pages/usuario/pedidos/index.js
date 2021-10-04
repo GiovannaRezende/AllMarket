@@ -1,6 +1,5 @@
 import { PedidosStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu';
-import { BotaoAzul } from '../../../components/outros/botoes/styled';
 
 export default function Pedido() {
     return (
