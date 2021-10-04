@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+
 import AprovarCompra from './pages/administrador/aprovar-compra/index.js';
 import ControleProduto from './pages/administrador/controle-produto/index.js';
 import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index.js';
@@ -32,6 +33,7 @@ export default function Routes() {
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
                 <Route path="/mensagens" component={Mensagens} />
                 <Route path="/novo-produto" component={NovoProduto} />
+                
 
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/pedidos" component={Pedidos} />
