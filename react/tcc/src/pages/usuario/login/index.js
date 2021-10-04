@@ -1,34 +1,27 @@
 import { LoginUsuarioStyled }  from './styled';
-import { BotaoAzul } from '../../../components/outros/botoes/styled';
+import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 
 export default function LoginUsuario() {
     return(
         <LoginUsuarioStyled>
-            <div class="login">
-                <div class="titulo-login">FAZER LOGIN</div>
-                <div class="inputs">
-                    <input type="text" placeholder="Usuário ou email"/>
-                    <input type="text" placeholder="Senha"/>
-                </div>
-                <div class="botao"><BotaoAzul>Entrar</BotaoAzul></div>
-            </div>
-            <div class="login-com">
-                <div class="titulo-login-com">FAZER LOGIN COM</div>
-                <div class="logos">
-                    <div class="google">
-                        <img src="/assets/images/logo-google+.svg" alt=""/>
-                        <div>Google+</div>
-                    </div>
-                    <div class="facebook">
-                        <img src="/assets/images/logo-facebook.svg" alt=""/>
-                        <div>Facebook</div>
-                    </div>
-                    <div class="twitter">
-                        <img src="/assets/images/logo-twitter.svg" alt=""/>
-                        <div>Twitter</div>
-                    </div>
-                </div>
-            </div>
+            <div class="cabecalho">
+          <div class="titulo">FAZER LOGIN</div>
+          <div class="logos">
+            <img src="/assets/images/logo-google+.svg" alt=""/>
+            <img src="/assets/images/logo-facebook.svg" alt=""/>
+            <img src="/assets/images/logo-twitter.svg" alt=""/>
+          </div>
+        </div>
+        <div class="corpo">
+          <input type="text" placeholder="Usuário"/>
+          <input type="text" placeholder="Senha"/>
+        </div>
+        <div class="rodape">
+            <div class="senha">Esqueci a senha</div>
+          </div>
+        <div class="corpo2">
+          <BotaoLaranja>Entrar</BotaoLaranja>
+        </div>
         </LoginUsuarioStyled>  
     ) 
 }
