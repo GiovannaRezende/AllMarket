@@ -14,6 +14,7 @@ import Cartao from './pages/usuario/cadastro-cartao/index';
 import Endereco from './pages/usuario/cadastro-endereco/index';
 import Cadastro from './pages/usuario/cadastro/index';
 import Login from './pages/usuario/login/index';
+import PerfilUsuario from './pages/usuario/perfil/index.js';
 
 //import Home from './pages/inicial/';
 //import Hortifruti from './pages/inicial';
@@ -42,6 +43,7 @@ export default function Routes() {
                 <Route path="/cadastro-endereco" component={Endereco} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
+                <Route path="/perfil-usuario" component={PerfilUsuario} />
 
             </Switch>
         </BrowserRouter>
