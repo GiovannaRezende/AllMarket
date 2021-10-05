@@ -1,8 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0px;
+}
 
 * {
     box-sizing: border-box;
-    margin: 0px;
+}
+
+.container {
+    font-family: Roboto;
 }
 
 img {
@@ -12,20 +19,25 @@ img {
 .cabecalho {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
     padding: 1em;
+}
+
+.cabecalho-esq,
+.cabecalho-dir {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .logo img {
     height: 4em;
     width: 4em;
-    margin: 1em;
 }
 
 input {
     width: 450px;
     padding: 1em;
-    margin: 1em;
     margin-left: 2.5em;
 
     border-radius: 40px;
@@ -35,10 +47,8 @@ input {
 }
 
 .buscar button {
-    padding: 1em;
-    padding-right: 2em;
-    padding-left: 2em;
-    margin-left: -8em;
+    padding: 1em 2em;
+    margin-left: -7.1em;
 
     border-radius: 40px;
     border: none;
@@ -58,7 +68,6 @@ input {
 .carrinho img {
     height: 4em;
     width: 4em;
-    margin-left: 25.5em;
 }
 
 .carrinho img:hover {
@@ -68,27 +77,21 @@ input {
 }
 
 .contador {
-    padding-top: 0.1em;
-    padding-right: 0.4em;
-    padding-left: 0.4em;
-    padding-bottom: 0.1em;
-    margin-top: -4em;
-    margin-left: -1em;
+    padding: .1em .4em;
 
     background-color: #FB8500;
     color: white;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .texto {
-    font: 100 1em Montserrat;
     margin-left: 2.8em;
 }
 
 .foto img {
     width: 4.5em;
     height: 4.5em;
-    margin-left: 2em;
+    margin-left: .7em;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -99,10 +102,13 @@ input {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.45));
 }
 
+.conteudo {
+    padding: 1em;
+}
+
 .banner img {
-    width: 82em;
+    width: 100%;
     height: 21em;
-    margin-left: 1.2em;
 
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -117,26 +123,15 @@ input {
 .pontos {
     width: 1.2em;
     height: 1.2em;
-
     margin: 5px;
-    padding-top: 0.1em;
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    padding-bottom: 0.1em;
 
     border-radius: 10px;
-    background-color: #E5E5E5;
-    color: #E5E5E5;
+    background-color: #FB8500;
     cursor: pointer;
 }
 
-.pontos:nth-child(1) {
-    background-color: #FB8500;
-    color: #FB8500;
-}
-
 .container-titulo {
-    font: 600 2em Montserrat;
+    font-size: 2em;
     margin: 2em;
     text-align: center;
 }
@@ -148,9 +143,8 @@ input {
 }
 
 .categorias-icones {
-    margin: 1em;
-    margin-right: 2em;
     padding: 1em;
+    margin-right: 2em;
 
     border: 1px solid #BBBBBB;
     border-radius: 20px;
@@ -170,25 +164,16 @@ input {
 }
 
 .texts {
-    font: 600 0.9em Montserrat;
+    font-size: 0.9em;
     text-align: center;
 }
 
 .titulo2 {
-    font: 600 2em Montserrat;
+    font-size: 2em ;
     margin: 1.5em;
-    padding: 1em;
     text-align: center;
 }
 
-.venda2 {
-    font: 900 2em Montserrat;
-    color: white; 
-    padding: 1em;
-    text-align: center;
-    margin: 1.5em;
-    font-size: 2em;
-}
 
 .container-2 {
     display: flex;
@@ -198,20 +183,11 @@ input {
 .colunas {
     display: flex;
     flex-direction: row;
-    margin: 1em;
-    margin-left: 0.7em;
-    margin-top: -1em;
+    align-items: center;
 }
 
-.direita, .esquerda {
-    margin-top: 8em;
-}
 
-.direita img {
-    width: 2em;
-    height: 2em;
-}
-
+.direita img,
 .esquerda img {
     width: 2em;
     height: 2em;
@@ -239,26 +215,27 @@ input {
 }
 
 .desc {
-    font: 800 0.9em Montserrat;
+    font: 800 0.9em Roboto;
 }
 
 .desc2 {
-    font: 800 0.9em Montserrat;
+    font: 800 0.9em Roboto;
 }
 
 .peso {
-    font: 1000 0.7em Montserrat;
+    font-size: 0.7em;
     margin-top: 0.5em;
     color: gray;
 }
 
 .preco {
-    font: 800 0.9em Montserrat;
+    font-size: 0.9em;
 }
 
 .botao {
+    display: flex;
+    justify-content: end;
     margin-top: 1em;
-    margin-left: 6em;
 }
 
 .liquidacao {
@@ -267,141 +244,100 @@ input {
     justify-content: center;
 
     padding: 0.5em;
-    padding-bottom: 50px;
 }
 
 .venda {
-    width: 82.1em;
+    width: 100%;
     margin-top: 1em;
-    margin-left: 1.1em;
     background-color:#FB8500;
     border-radius: 18px;
+    padding: 2em 1em;
 }
 
+.titulo-promocao {
+    color: white; 
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+
+    margin-bottom: 1em;
+}
 
 .final {
     margin-top: 3em;
     background-color: #023047;
+
+    padding: 2em;
 }
 
-.final1 {
-    font: 100 1em Montserrat;
+.informacoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.classes-produtos,
+.atendimento,
+.redes,
+.rodape {
     color: white;
-    margin-left: 3em;
 }
 
-.categoria {
-    font: 800 1em Montserrat;
-    padding: 1.5em;
-    margin-left: -2em;
+.titulo-categoria,
+.titulo-atendimento,
+.titulo-redes {
+    font-weight: 800;
+}
+
+.nomes-categorias {
+    display: flex;
+    flex-direction: column;
+    margin-left: .5em;
 }
 
 .congela, .laticinios, .hort, .carnes, .limpeza, .higiene {
-    margin: 1.5em;
-    margin-top: 0.2em;
-    margin-left: 0.2em;
-}   
+    margin-top: .5em;
+} 
 
-.final2 {
-    font: 100 1em Montserrat;
-    color: white;
-    margin-top: -20.6em;
+.atendimento {
     text-align: center;
 }
 
-.atendimento {
-    font: 800 1em Montserrat;
-    padding: 1.5em;
+.horario-normal,
+.horario-feriado {
+    margin-top: .6em;
 }
 
-.horarios-2 {
-    margin: 0.7em;
+
+.redes-sociais {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .7em 0em 5em 0em;
 }
 
-.horarios-3 {
-    margin-top: -0.6em;
-}
-
-.final3 {
-    font: 100 1em Montserrat;
-    color: white;
-    margin-top: -8.6em;
-    margin-left: 66em;
-}
-
-.redes {
-    font: 800 1em Montserrat;
-    padding: 1.5em;
-}
-
-.facebook img {
-    width: 3em;
-    height: 3em;
-    margin-left: 1.5em;
-}
-
-.twitter {
-    margin-top: -3.3em;
-    margin-left: 5em;
-}
-
-.twitter img {
-    width: 3em;
-    height: 3em;
-}
-
-.instagram {
-    margin-top: -3.3em;
-    margin-left: 8.5em;
-}
-
-.instagram img {
-    width: 3em;
-    height: 3em;
-}
-
-.whats {
-    margin-top: -3.3em;
-    margin-left: 12em;
-}
-
+.facebook img,
+.twitter img,
+.instagram img,
 .whats img {
     width: 3em;
     height: 3em;
 }
 
-.contato {
-    margin-top: 10.8em;
-    margin-left: 2em;
-}
-
-.final4 {
-    font: 100 1em Montserrat;
-    color: white;
-}
-
 .linha {
-    width: 78.3em;
+    width: 100%;
     height: 0.11em;
-    margin-top: 1em;
-    margin-left: 3em;
+    margin: 1em 0em 2em 0em;
     background-color: #FB8500;
 }
 
 .img2 img {
     width: 4em;
     height: 4em;
-    margin-top: 0.6em;
-    margin-left: 3em;
 }
 
 .texto-final {
-    font: 100 1em Montserrat;
     color: #D3D3D3;
-    margin-top: -4em;
     text-align: center;
 }
 
-.rodape {
-    margin-top: 2em;
-}
