@@ -1,6 +1,7 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { CadastroEnderecoStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
+import { InputCadastro } from '../../../components/outros/inputs/input';
 
 export default function CadastroEndereco() {
     return(
@@ -12,33 +13,33 @@ export default function CadastroEndereco() {
                     <div class="container-conteudo-1">
                         <div class="input-1">
                             <div class="input-texto">CEP</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-2">
                             <div class="input-texto">Estado</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-3">
                             <div class="input-texto">Cidade</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-4">
                             <div class="input-texto">Logradouro</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                     </div>
                     <div class="container-conteudo-2">
                         <div class="input-5">
                             <div class="input-texto">Número</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-6">
                             <div class="input-texto">Complemento</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-7">
                             <div class="input-texto">Ponto de Referência</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                     </div>    
                 </div>

@@ -1,6 +1,7 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { CadastroCartaoStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
+import { InputCadastro } from '../../../components/outros/inputs/input';
 
 export default function CadastroCartao() {
     return(
@@ -12,11 +13,11 @@ export default function CadastroCartao() {
                     <div class="container-conteudo-1">
                         <div class="input-1">
                             <div class="input-texto">Nome do Cartão</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-2">
                             <div class="input-texto">Número do Cartão</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                         <div class="input-3">
                             <div class="input-texto">Tipo de Cartão</div>
@@ -27,13 +28,13 @@ export default function CadastroCartao() {
                         </div>
                         <div class="input-4">
                             <div class="input-texto">Data de Validade</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                     </div>
                     <div class="container-conteudo-2">
                         <div class="input-5">
                             <div class="input-texto">CVV</div>
-                            <input class="text"/>
+                            <InputCadastro></InputCadastro>
                         </div>
                     </div>
                 </div>

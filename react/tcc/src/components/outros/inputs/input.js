@@ -26,4 +26,14 @@ const InputCinza = styled.div`
     outline: none;
 `
 
-export { InputBranco, InputCinza };
+const InputCadastro = styled.div`
+    background: #F9F9F9;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1.1em;
+    height: 3em;
+    width: 21em;
+    outline: none;
+`
+
+export { InputBranco, InputCinza, InputCadastro };

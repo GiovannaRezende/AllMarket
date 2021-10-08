@@ -8,7 +8,7 @@ export default function PerfilAdm() {
             <div class="conteudo">
             <div class="admin-infos">
                 <div class="cab-infos">
-                    <div class="foto-perfil"><img src="../../react/tcc/public/assets/images/Perfil-Admin.svg"/></div>
+                    <div class="foto-perfil"><img src="../../react/tcc/public/assets/images/Perfil-Admin.svg" alt=""/></div>
                 </div>
                 <div class="info"><span>Nome:</span> João da Silva</div>
                 <div class="info"><span>CPF:</span> 111.222.333-00</div>
