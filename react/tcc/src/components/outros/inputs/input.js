@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const InputBranco = styled.div`
+const InputBranco = styled.input`
     display: flex;
     flex-direction: column;
     border: none;
@@ -16,7 +16,7 @@ const InputBranco = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-const InputCinza = styled.div`
+const InputCinza = styled.input`
     background: #F9F9F9;
     border: 1px solid #E5E5E5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -26,7 +26,7 @@ const InputCinza = styled.div`
     outline: none;
 `
 
-const InputCadastro = styled.div`
+const InputCadastro = styled.input`
     background: #F9F9F9;
     border: 1px solid #E5E5E5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

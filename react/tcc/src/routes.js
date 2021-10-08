@@ -18,13 +18,6 @@ import Login from './pages/usuario/login/index';
 import PerfilUsuario from './pages/usuario/perfil/index.js';
 
 //import Home from './pages/inicial/';
-//import Hortifruti from './pages/inicial';
-//import Higiene from './pages/inicial';
-//import Carnes from './pages/inicial';
-//import Laticinios from './pages/inicial';
-//import Limpeza from './pages/inicial';
-//import Congelados from './pages/inicial';
-
 
 export default function Routes() {
     return (
@@ -37,7 +30,7 @@ export default function Routes() {
                 <Route path="/novo-produto" component={NovoProduto} />
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 
-
+                
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/pedidos" component={Pedidos} />
                 <Route path="/chat" component={Chat} />

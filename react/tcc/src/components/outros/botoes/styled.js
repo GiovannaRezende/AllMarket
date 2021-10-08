@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const BotaoLaranja = styled.div`
+const BotaoLaranja = styled.button`
     border: none;
     background-color: #FB8500;
     color: white;
@@ -10,7 +10,7 @@ const BotaoLaranja = styled.div`
     font: 500 .9em Roboto;
 `
 
-const BotaoAzul = styled.div`
+const BotaoAzul = styled.button`
     border: none;
     background-color: #023047;
     color: white;

@@ -3,12 +3,14 @@ import styled from 'styled-components'
 const CadastroUsuarioStyled = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: #14213D;
     align-items: center;
+
     padding: 1em;
     width: 26em;
     height: 31.5em;
     border-radius: .7em;
+
+    background-color: #14213D;
 
 .titulo {
     font: 500 1.7em Roboto;
