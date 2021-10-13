@@ -1,12 +1,12 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
-import AprovarCompra from './pages/administrador/aprovar-compra/index.js';
-import ControleProduto from './pages/administrador/controle-produto/index.js';
-import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index.js';
-import Mensagens from './pages/administrador/mensagens/index.js';
-import NovoProduto from './pages/administrador/novo-produto/index.js';
-import PerfilAdm from './pages/administrador/perfil/index.js';
+import AprovarCompra from './pages/administrador/aprovar-compra/index';
+import ControleProduto from './pages/administrador/controle-produto/index';
+import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index';
+import Mensagens from './pages/administrador/mensagens/index';
+import NovoProduto from './pages/administrador/novo-produto/index';
+import PerfilAdm from './pages/administrador/perfil/index';
 
 import Carrinho from './pages/usuario/carrinho/index';
 import Pedidos from './pages/usuario/pedidos/index';
@@ -15,7 +15,8 @@ import Cartao from './pages/usuario/cadastro-cartao/index';
 import Endereco from './pages/usuario/cadastro-endereco/index';
 import Cadastro from './pages/usuario/cadastro/index';
 import Login from './pages/usuario/login/index';
-import PerfilUsuario from './pages/usuario/perfil/index.js';
+import PerfilUsuario from './pages/usuario/perfil/index';
+import Erro from './pages/usuario/erro404/index';
 
 //import Home from './pages/inicial/';
 
@@ -39,7 +40,7 @@ export default function Routes() {
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
-
+                <Route path="/erro" component={Erro} />
             </Switch>
         </BrowserRouter>
     )
