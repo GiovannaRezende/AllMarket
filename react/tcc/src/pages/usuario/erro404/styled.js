@@ -20,7 +20,7 @@ const ErroStyled = styled.div`
 
 .subtitulo {
     color: white;
-    font: 200 1.5em Roboto;
+    font: 300 1.5em Roboto;
 }
 `
 

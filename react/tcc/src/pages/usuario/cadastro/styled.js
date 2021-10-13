@@ -12,6 +12,7 @@ const CadastroUsuarioStyled = styled.div`
 
     background-color: #14213D;
 
+
 .titulo {
     font: 500 1.7em Roboto;
     color: white;
