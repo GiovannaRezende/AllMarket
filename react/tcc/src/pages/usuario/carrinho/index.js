@@ -1,5 +1,6 @@
 import { CarrinhoStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu'
+import BoxItem from './carrinhoItem/index'
 
 export default function Carrinho() {
     return (
@@ -9,86 +10,9 @@ export default function Carrinho() {
                 <div class="box-esquerda"> 
                     <div class="topo-box-esq"> Confira a sua lista de produtos </div>
                     <div class="lista-produtos">
-                        <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
-                            <div class="informacoes-produto">
-                                <div class="nome-produto"> Refrigerante - Coca Cola </div>
-                                <div class="medida-produto"> 200ml </div>
-                                <div class="preco-produto"> R$ 6,85 </div> 
-                                <div class="quantidade-produto">  
-                                    <div class="remover-produto"> Remover </div>
-                                    <div class="aumentar-diminuir-qtd">
-                                        <button class="botao-diminuir"> <img src="/assets/images/botao-diminuir.png" alt=""/> </button>
-                                        <div class="qtd-produto"> 1 </div>
-                                        <button class="botao-aumentar"> <img src="/assets/images/botao-aumentar.png" alt=""/> </button>  
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
-                            <div class="informacoes-produto">
-                                <div class="nome-produto"> Refrigerante - Coca Cola </div>
-                                <div class="medida-produto"> 200ml </div>
-                                <div class="preco-produto"> R$ 6,85 </div> 
-                                <div class="quantidade-produto">  
-                                    <div class="remover-produto"> Remover </div>
-                                    <div class="aumentar-diminuir-qtd">
-                                        <button class="botao-diminuir"> <img src="/assets/images/botao-diminuir.png" alt=""/> </button>
-                                        <div class="qtd-produto"> 1 </div>
-                                        <button class="botao-aumentar"> <img src="/assets/images/botao-aumentar.png" alt=""/> </button>  
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
-                            <div class="informacoes-produto">
-                                <div class="nome-produto"> Refrigerante - Coca Cola </div>
-                                <div class="medida-produto"> 200ml </div>
-                                <div class="preco-produto"> R$ 6,85 </div> 
-                                <div class="quantidade-produto">  
-                                    <div class="remover-produto"> Remover </div>
-                                    <div class="aumentar-diminuir-qtd">
-                                        <button class="botao-diminuir"> <img src="/assets/images/botao-diminuir.png" alt=""/> </button>
-                                        <div class="qtd-produto"> 1 </div>
-                                        <button class="botao-aumentar"> <img src="/assets/images/botao-aumentar.png" alt=""/> </button>  
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
-                            <div class="informacoes-produto">
-                                <div class="nome-produto"> Refrigerante - Coca Cola </div>
-                                <div class="medida-produto"> 200ml </div>
-                                <div class="preco-produto"> R$ 6,85 </div> 
-                                <div class="quantidade-produto">  
-                                    <div class="remover-produto"> Remover </div>
-                                    <div class="aumentar-diminuir-qtd">
-                                        <button class="botao-diminuir"> <img src="/assets/images/botao-diminuir.png" alt=""/> </button>
-                                        <div class="qtd-produto"> 1 </div>
-                                        <button class="botao-aumentar"> <img src="/assets/images/botao-aumentar.png" alt=""/> </button>  
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="box-produto">
-                            <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div>
-                            <div class="informacoes-produto">
-                                <div class="nome-produto"> Refrigerante - Coca Cola </div>
-                                <div class="medida-produto"> 200ml </div>
-                                <div class="preco-produto"> R$ 6,85 </div> 
-                                <div class="quantidade-produto">  
-                                    <div class="remover-produto"> Remover </div>
-                                    <div class="aumentar-diminuir-qtd">
-                                        <button class="botao-diminuir"> <img src="/assets/images/botao-diminuir.png" alt="" /> </button>
-                                        <div class="qtd-produto"> 1 </div>
-                                        <button class="botao-aumentar"> <img src="/assets/images/botao-aumentar.png" alt=""/> </button>  
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
+                        <BoxItem />
+                        <BoxItem />
+                        <BoxItem />            
                     </div>
                 </div>
                 <div class="box-direita">

@@ -40,7 +40,7 @@ export default function Routes() {
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
-                <Route path="/erro" component={Erro} />
+                <Route path="*" component={Erro} />
             </Switch>
         </BrowserRouter>
     )
