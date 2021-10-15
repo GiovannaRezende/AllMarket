@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import Home from './pages/inicial/index';
 
 import AprovarCompra from './pages/administrador/aprovar-compra/index';
 import ControleProduto from './pages/administrador/controle-produto/index';
@@ -18,7 +19,6 @@ import Login from './pages/usuario/login/index';
 import PerfilUsuario from './pages/usuario/perfil/index';
 import Erro from './pages/usuario/erro404/index';
 
-//import Home from './pages/inicial/';
 
 export default function Routes() {
     return (
@@ -40,7 +40,9 @@ export default function Routes() {
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
-                <Route path="*" component={Erro} />
+                <Route path="/erro" component={Erro} />
+
+                <Route path="/home" exact={true} component={Home}/>
             </Switch>
         </BrowserRouter>
     )
