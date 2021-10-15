@@ -7,7 +7,7 @@ import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index';
 import Mensagens from './pages/administrador/mensagens/index';
 import NovoProduto from './pages/administrador/novo-produto/index';
 import PerfilAdm from './pages/administrador/perfil/index';
-
+import Index from './pages/inicial/'
 import Carrinho from './pages/usuario/carrinho/index';
 import Pedidos from './pages/usuario/pedidos/index';
 import Chat from './components/outros/chat/chat';
@@ -31,7 +31,7 @@ export default function Routes() {
                 <Route path="/novo-produto" component={NovoProduto} />
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 
-                
+                <Route path="/" exact={true} component={Index} />
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/pedidos" component={Pedidos} />
                 <Route path="/chat" component={Chat} />
