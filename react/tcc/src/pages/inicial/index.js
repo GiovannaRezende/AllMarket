@@ -1,5 +1,4 @@
-import { InicialStyled }  from './styled';
-import { CabInicial } from '../../components/inicial/cabecalho/styled';
+import CabecalhoInicial from '../../components/inicial/cabecalho';
 import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
 import { Container } from './styled'
@@ -7,19 +6,7 @@ import { Container } from './styled'
 export default function Index() {
     return (
         <Container>
-            <div class="cabecalho">
-                <div class="cabecalho-esq">
-                    <div class="logo"> <img src="./assets/images/Logo-AllMarket.jpg" alt="" /> </div>
-                    <div class="pesquisa"> <input placeholder="O que você está procurando?" /> </div>
-                    <div class="buscar"> <button>Buscar</button> </div>
-                </div>
-                <div class="cabecalho-dir"> 
-                    <div class="carrinho"> <a href="../usuario/confirmacao-compra.html"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></a></div>
-                    <div class="contador">2</div>
-                    <div class="texto">Olá, <b>Maria!</b> </div>
-                    <div class="foto"> <a href="../usuario/perfil-usuario.html"> <img src="./assets/images/Perfil-Usuario.png" alt=""/></a></div>
-                </div>
-            </div>
+            <CabecalhoInicial />
             <div class="conteudo">
                 <div class="container-banner">
                     <div class="banner"> <img src="./assets/images/Banner-All-Market.png" alt="" /> </div>
