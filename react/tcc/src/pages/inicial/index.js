@@ -2,8 +2,67 @@ import CabecalhoInicial from '../../components/inicial/cabecalho';
 import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
 import { Container } from './styled'
+import { useState, useEffect } from 'react';
 
 export default function Index() {
+    const [produtos, setProdutos] = useState([]);
+
+    function listar() {
+        const r = [
+            {
+                id: 99,
+                imagem: "./assets/images/Imagem-Leite-em-Pó-2.png",
+                nome: "Leite em pó",
+                marca: "Ninho",
+                peso: "400g",
+                preco: "R$17,35",
+
+            },
+            {
+                id: 100,
+                imagem: "./assets/images/Carrinho-de-Compras.png",
+                nome: "Leite em pó",
+                marca: "Ninho",
+                peso: "400g",
+                preco: "R$17,35",
+
+            },
+            {
+                id: 100,
+                imagem: "./assets/images/Carrinho-de-Compras.png",
+                nome: "Leite em pó",
+                marca: "Ninho",
+                peso: "400g",
+                preco: "R$17,35",
+
+            },
+            {
+                id: 100,
+                imagem: "./assets/images/Carrinho-de-Compras.png",
+                nome: "Leite em pó",
+                marca: "Ninho",
+                peso: "400g",
+                preco: "R$17,35",
+
+            },
+            {
+                id: 100,
+                imagem: "./assets/images/Carrinho-de-Compras.png",
+                nome: "Leite em pó",
+                marca: "Ninho",
+                peso: "400g",
+                preco: "R$17,35",
+
+            }
+        ]
+
+        setProdutos(r);
+    }
+
+    useEffect(() => {
+        listar();
+    }, [])
+
     return (
         <Container>
             <CabecalhoInicial />
@@ -47,39 +106,24 @@ export default function Index() {
                 <div class="container-2">
                     <div class="colunas">
                         <div class="esquerda"> <img src="./assets/images/Ícone-Seta-3.png" alt="" /> </div>
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
+                        {produtos.map(item => 
+                            <BoxProduto 
+                            key={item.id}
+                            info={item} />
+                        )}
                         
                         <div class="direita"> <img src="./assets/images/Ícone-Seta-2.png" alt="" /> </div>
                     </div>
                     <div class="colunas">
                         <div class="esquerda"> <img src="./assets/images/Ícone-Seta-3.png" alt="" /> </div>
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
                         <div class="direita"> <img src="./assets/images/Ícone-Seta-2.png" alt="" /> </div>
                     </div>
                 </div>
                 <Promocionais>
                     <div class="titulo-promocao">Produtos em Promoção</div>
                     <div class="liquidacao">
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
                     </div>
                     <div class="liquidacao">
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
-                        <BoxProduto />
                     </div>
                 </Promocionais>
             </div>

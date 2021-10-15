@@ -20,11 +20,11 @@ const Container = styled.div`
     width: 8em;
     }
 
-    .desc {
+    .nome {
     font: 800 0.9em Roboto;
     }
 
-    .desc2 {
+    .marca {
     font: 800 0.9em Roboto;
     }
 
