@@ -1,7 +1,6 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { ControleProdutosStyled }  from './styled';
 
-
 export default function ControleProduto() {
     return(
         <ControleProdutosStyled>
