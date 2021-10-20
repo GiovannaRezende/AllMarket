@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get('/produtos', async (req, resp) => {
     try {
@@ -15,14 +16,16 @@ app.get('/produtos', async (req, resp) => {
 
 app.post('/produtos', async (req, resp) => {
     try {
-        let m = await db.infoc_tct_produto.findOne({ where: { nm_produto: produto }});
+
+        let { categoria, produtos, codigo, setor, embalagem, marca, peso, descricao, preco } = req.params;
+        let m = await db.infoc_tct_produto.findOne({ where: { nm_produto: produtos }});
 
         if (m != null)
             return resp.send({ erro: 'Produto já existe!' });
 
         let r = await db.infoc_tct_produto.create({
             nm_categoria: categoria,
-            nm_produto: produto,
+            nm_produto: produtos,
             nr_codigo: codigo,
             ds_setor: setor,
             ds_embalagem: embalagem,
@@ -36,7 +39,5 @@ app.post('/produtos', async (req, resp) => {
         resp.send({erro: e.toString()})
     }
 })
-
-
 
 app.listen(process.env.PORT, x => console.log(`Server up at port ${process.env.PORT}`));
