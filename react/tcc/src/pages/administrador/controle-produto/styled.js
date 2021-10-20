@@ -72,6 +72,7 @@ const ControleProdutosStyled = styled.div`
     border-radius: .7em;
     font: 800 .8em Roboto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
 .botao2 button {
@@ -83,6 +84,7 @@ const ControleProdutosStyled = styled.div`
     font: 800 .8em Roboto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-left: .7em;
+    cursor: pointer;
 }
 
 `

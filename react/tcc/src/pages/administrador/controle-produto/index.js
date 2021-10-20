@@ -1,7 +1,53 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { ControleProdutosStyled }  from './styled';
 
+import { useState } from 'react';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+import Api from '../../../service/api'
+const api = new Api();
+
 export default function ControleProduto() {
+
+    const [produtos, setProdutos] = useState([]);
+
+    async function listar() {
+        let r = await api.listar();
+        setProdutos(r);
+        listar();
+    }
+
+    async function remover(id) {
+        confirmAlert({
+            title: 'Remover produto',
+            message: `Tem certeza que deseja remover o produto ${id}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async() => {
+                        let r = await api.remover(id);
+                        if(r.erro)
+                            toast.error(`${r.erro}`);
+                        else {
+                            toast.success('Produto removido!');
+                            listar();
+                            
+                        }
+                    }
+                },
+                {
+                    label:'Não'
+                }
+            ]
+        
+        })
+    }
+
     return(
         <ControleProdutosStyled>
             <CabecalhoAdm/>
@@ -18,7 +64,7 @@ export default function ControleProduto() {
                             </div>
                             <div class="botoes">
                                 <div class="botao1"><button>Editar</button></div>
-                                <div class="botao2"><button>Deletar</button></div>
+                                <div class="botao2"><button onClick={remover}>Deletar</button></div>
                             </div>
                         </div>
                         <div class="box">
