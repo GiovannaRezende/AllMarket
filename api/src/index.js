@@ -1,30 +1,25 @@
 import db from './db.js';
-import express from 'express'
-import cors from 'cors'
+import express from 'express';
+import cors from 'cors';
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.get('/produtos', async (req, resp) => {
     try {
-        let produtos = await db.infoc_tct_produto.findAll();
+        let produtos = await db.infoc_tct_produto.findAll({ order: [['id_produto', 'desc' ]] });
         resp.send(produtos);
+
     } catch (e) {
-        resp.send({ erro: e.toString()})
+        resp.send({ erro: e.toString()});
     }
-})
+});
 
 app.post('/produtos', async (req, resp) => {
     try {
-
-        let { categoria, produtos, codigo, setor, embalagem, marca, peso, descricao, preco } = req.params;
-        let m = await db.infoc_tct_produto.findOne({ where: { nm_produto: produtos }});
-
-        if (m != null)
-            return resp.send({ erro: 'Produto já existe!' });
-
+        let { produtos, codigo, setor, embalagem, marca, peso, descricao, preco } = req.body;
+        
         let r = await db.infoc_tct_produto.create({
-            nm_categoria: categoria,
             nm_produto: produtos,
             nr_codigo: codigo,
             ds_setor: setor,
@@ -33,11 +28,12 @@ app.post('/produtos', async (req, resp) => {
             ds_peso: peso,
             ds_descricao: descricao,
             vl_preco: preco
-        })
+        });
         resp.send(r);
-    } catch (e) {
-        resp.send({erro: e.toString()})
-    }
-})
 
-app.listen(process.env.PORT, x => console.log(`Server up at port ${process.env.PORT}`));
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));
