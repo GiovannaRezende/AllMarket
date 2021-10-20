@@ -36,4 +36,41 @@ app.post('/produtos', async (req, resp) => {
     }
 });
 
+app.put('/produtos/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let p = req.body;
+        
+        let r = await db.infoc_tct_produto.update(
+            {
+                nm_produto: p.produtos,
+                nr_codigo: p.codigo,
+                ds_setor: p.setor,
+                ds_embalagem: p.embalagem,
+                nm_marca: p.marca,
+                ds_peso: p.peso,
+                ds_descricao: p.descricao,
+                vl_preco: p.preco
+            },
+            {
+                where: { id_produto: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.delete('/produtos/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_produto.destroy({ where: {id_produto: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));
