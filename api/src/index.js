@@ -409,4 +409,19 @@ app.get('/compraitem', async (req, resp) => {
     }
 });
 
+app.post('/compraitem', async (req, resp) => {
+    try {
+        let { produto, compra } = req.body;
+        
+        let r = await db.infoc_tct_compra_item.create({
+            id_produto: produto,
+            id_compra: compra
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));

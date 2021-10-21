@@ -16,6 +16,7 @@ export default function ControleProduto() {
 
     const [produtos, setProdutos] = useState([]);
 
+
     async function listar() {
         let r = await api.listar();
         setProdutos(r);
@@ -77,7 +78,7 @@ export default function ControleProduto() {
                             </div>
                             <div class="botoes">
                                 <div class="botao1"><button>Editar</button></div>
-                                <div class="botao2"><button>Deletar</button></div>
+                                <div class="botao2"><button onClick={remover}>Deletar</button></div>
                             </div>
                         </div>
                         <div class="box">
@@ -90,7 +91,7 @@ export default function ControleProduto() {
                             </div>
                             <div class="botoes">
                                 <div class="botao1"><button>Editar</button></div>
-                                <div class="botao2"><button>Deletar</button></div>
+                                <div class="botao2"><button onClick={remover}>Deletar</button></div>
                             </div>
                         </div>
                         <div class="box">
@@ -103,7 +104,7 @@ export default function ControleProduto() {
                             </div>
                             <div class="botoes">
                                 <div class="botao1"><button>Editar</button></div>
-                                <div class="botao2"><button>Deletar</button></div>
+                                <div class="botao2"><button onClick={remover}>Deletar</button></div>
                             </div>
                         </div>
                         <div class="box">
@@ -116,7 +117,7 @@ export default function ControleProduto() {
                             </div>
                             <div class="botoes">
                                 <div class="botao1"><button>Editar</button></div>
-                                <div class="botao2"><button>Deletar</button></div>
+                                <div class="botao2"><button onClick={remover}>Deletar</button></div>
                             </div>
                         </div>
                     </div>
