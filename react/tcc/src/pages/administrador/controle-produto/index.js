@@ -28,7 +28,10 @@ export default function ControleProduto() {
             message: `Tem certeza que deseja remover o produto ${id}?`,
             buttons: [
                 {
-                    label: 'Sim',
+                    label:'Cancelar'
+                },
+                {
+                    label: 'Confirmar',
                     onClick: async() => {
                         let r = await api.remover(id);
                         if(r.erro)
@@ -39,9 +42,6 @@ export default function ControleProduto() {
                             
                         }
                     }
-                },
-                {
-                    label:'Não'
                 }
             ]
         

@@ -73,4 +73,340 @@ app.delete('/produtos/:id', async (req, resp) => {
     }
 });
 
+app.get('/clientes', async (req, resp) => {
+    try {
+        let clientes = await db.infoc_tct_cliente.findAll({ order: [['id_cliente', 'desc' ]] });
+        resp.send(clientes);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/clientes', async (req, resp) => {
+    try {
+        let { nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
+        
+        let r = await db.infoc_tct_cliente.create({
+            nm_nome: nome,
+            ds_email: email,
+            ds_senha: senha,
+            ds_genero: genero,
+            dt_nascimento: nascimento,
+            ds_telefone: telefone,
+            ds_cpf: cpf
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.put('/clientes/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let c = req.body;
+        
+        let r = await db.infoc_tct_cliente.update(
+            {
+                nm_nome: c.nome,
+                ds_email: c.email,
+                ds_senha: c.senha,
+                ds_genero: c.genero,
+                dt_nascimento: c.nascimento,
+                ds_telefone: c.telefone,
+                ds_cpf: c.cpf
+            },
+            {
+                where: { id_cliente: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.delete('/clientes/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_cliente.destroy({ where: {id_cliente: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/cartao', async (req, resp) => {
+    try {
+        let cartao = await db.infoc_tct_cartao.findAll({ order: [['id_cartao', 'desc' ]] });
+        resp.send(cartao);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/cartao', async (req, resp) => {
+    try {
+        let { dono, cartao, tipo, validade, cvv } = req.body;
+        
+        let r = await db.infoc_tct_cartao.create({
+            nm_dono: dono,
+            nr_cartao: cartao,
+            tp_tipo: tipo,
+            dt_validade: validade,
+            ds_cvv: cvv
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.put('/cartao/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let c = req.body;
+        
+        let r = await db.infoc_tct_cartao.update(
+            {
+                nm_dono: c.dono,
+                nr_cartao: c.cartao,
+                tp_tipo: c.tipo,          
+                dt_validade: c.validade,
+                ds_cvv: c.cvv
+            },
+            {
+                where: { id_cartao: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.delete('/cartao/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_cartao.destroy({ where: {id_cartao: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/endereco', async (req, resp) => {
+    try {
+        let endereco = await db.infoc_tct_endereco.findAll({ order: [['id_endereco', 'desc' ]] });
+        resp.send(endereco);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/endereco', async (req, resp) => {
+    try {
+        let {  } = req.body;
+        
+        let r = await db.infoc_tct_endereco.create({
+            ds_cep: cep,
+            ds_estado: estado,
+            ds_cidade: cidade,
+            nm_rua: rua,
+            ds_numero: numero,
+            ds_complemento: complemento,
+            nm_ponto_referencia: referencia
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.put('/endereco/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let e = req.body;
+        
+        let r = await db.infoc_tct_endereco.update(
+            {
+                ds_cep: e.cep,
+                ds_estado: e.estado,
+                ds_cidade: e.cidade,
+                nm_rua: e.rua,
+                ds_numero: e.numero,
+                ds_complemento: e.complemento,
+                nm_ponto_referencia: e.referencia
+            },
+            {
+                where: { id_endereco: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.delete('/endereco/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_endereco.destroy({ where: {id_endereco: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/administrador', async (req, resp) => {
+    try {
+        let administrador = await db.infoc_tct_administrador.findAll({ order: [['id_administrador', 'desc' ]] });
+        resp.send(administrador);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/administrador', async (req, resp) => {
+    try {
+        let { nome, login, senha } = req.body;
+        
+        let r = await db.infoc_tct_administrador.create({
+            nm_nome: nome,
+            ds_login: login,
+            ds_senha: senha
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.put('/administrador/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let a = req.body;
+        
+        let r = await db.infoc_tct_administrador.update(
+            {
+                nm_nome: a.nome,
+                ds_login: a.login,
+                ds_senha: a.senha
+            },
+            {
+                where: { id_administrador: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.delete('/administrador/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_administrador.destroy({ where: {id_administrador: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/chat', async (req, resp) => {
+    try {
+        let chat = await db.infoc_tct_chat.findAll({ order: [['id_chat', 'desc' ]] });
+        resp.send(chat);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/chat', async (req, resp) => {
+    try {
+        let { mensagem, datahora } = req.body;
+        
+        let r = await db.infoc_tct_chat.create({
+            ds_mensagem: mensagem,
+            dt_mensagem: datahora
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/categorias', async (req, resp) => {
+    try {
+        let categoria = await db.infoc_tct_categorias.findAll({ order: [['id_categoria', 'desc' ]] });
+        resp.send(categoria);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/categorias', async (req, resp) => {
+    try {
+        let { categoria } = req.body;
+        
+        let r = await db.infoc_tct_categorias.create({
+            nm_categoria: categoria,
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/compra', async (req, resp) => {
+    try {
+        let compra = await db.infoc_tct_compra.findAll({ order: [['id_compra', 'desc' ]] });
+        resp.send(compra);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.post('/compra', async (req, resp) => {
+    try {
+        let { notafiscal, pagamento } = req.body;
+        
+        let r = await db.infoc_tct_compra.create({
+            ds_nota_fiscal: notafiscal,
+            ds_forma_pagamento: pagamento
+        });
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.get('/compraitem', async (req, resp) => {
+    try {
+        let compraItem = await db.infoc_tct_compra_item.findAll();
+        resp.send(compraItem);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));
