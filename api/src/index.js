@@ -85,9 +85,11 @@ app.get('/clientes', async (req, resp) => {
 
 app.post('/clientes', async (req, resp) => {
     try {
-        let { nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
+        let { endereco, cartao, nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
         
         let r = await db.infoc_tct_cliente.create({
+            id_endereco: endereco,
+            id_cartao: cartao,
             nm_nome: nome,
             ds_email: email,
             ds_senha: senha,
@@ -337,9 +339,11 @@ app.get('/chat', async (req, resp) => {
 
 app.post('/chat', async (req, resp) => {
     try {
-        let { mensagem, datahora } = req.body;
+        let { cliente, administrador, mensagem, datahora } = req.body;
         
         let r = await db.infoc_tct_chat.create({
+            id_cliente: cliente,
+            id_administrador: administrador,
             ds_mensagem: mensagem,
             dt_mensagem: datahora
         });
@@ -386,9 +390,11 @@ app.get('/compra', async (req, resp) => {
 
 app.post('/compra', async (req, resp) => {
     try {
-        let { notafiscal, pagamento } = req.body;
+        let { cliente, endereco, notafiscal, pagamento } = req.body;
         
         let r = await db.infoc_tct_compra.create({
+            id_cliente: cliente,
+            id_endereco: endereco,
             ds_nota_fiscal: notafiscal,
             ds_forma_pagamento: pagamento
         });
