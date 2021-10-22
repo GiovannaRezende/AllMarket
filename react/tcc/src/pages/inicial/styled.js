@@ -179,6 +179,11 @@ const Container = styled.div`
         align-items: center;
     }
 
+    .carousel-container {
+        width: 100%;
+        height: 21em;
+    }
+
 
     .direita img,
     .esquerda img {

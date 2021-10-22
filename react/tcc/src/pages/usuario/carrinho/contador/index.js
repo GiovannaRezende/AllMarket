@@ -5,13 +5,13 @@ export default function Contador(props) {
     const [qtd, setQtd] = useState(props.quantidade);
 
     function incrementar() {
-        if (qtd > 15)
+        if (qtd >= 15)
             return; 
         setQtd(qtd + 1);
     }
 
     function decrementar() {
-        if (qtd <= 0)
+        if (qtd <= 1)
             return; 
         setQtd(qtd - 1);
     }

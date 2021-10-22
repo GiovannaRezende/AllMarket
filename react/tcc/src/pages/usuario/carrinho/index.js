@@ -2,7 +2,37 @@ import { CarrinhoStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu'
 import BoxItem from './carrinhoItem/index'
 
+import { useEffect, useState } from "react"
+import Cookie from 'js-cookie'
+
 export default function Carrinho() {
+    const [produtos, setProdutos] = useState([]);
+
+    function listarCarrinho() {
+        let carrinho = Cookie.get('carrinho');
+        carrinho = carrinho !== undefined
+                    ? JSON.parse(carrinho)
+                    : [];
+
+        setProdutos(carrinho);
+    }
+
+    function alterar(id, qtd) {
+        let alterado = produtos.filter(item => item.id === id) [0];
+        alterado.qtd = qtd;
+        Cookie.set('carrinho', JSON.stringify(produtos));
+    }
+
+    function remover(id) {
+        let carrinho = produtos.filter(item => item.id !== id);
+        Cookie.set('carrinho', JSON.stringify(carrinho));
+        setProdutos([...carrinho]);
+    }
+
+    useEffect(() => {
+        listarCarrinho();
+    }, [])
+
     return (
         <CarrinhoStyled>
             <CabecalhoUsu/>
@@ -10,9 +40,12 @@ export default function Carrinho() {
                 <div class="box-esquerda"> 
                     <div class="topo-box-esq"> Confira a sua lista de produtos </div>
                     <div class="lista-produtos">
-                        <BoxItem />
-                        <BoxItem />
-                        <BoxItem />            
+                        {produtos.map(item => 
+                            <BoxItem key={item.id}
+                                info={item}
+                                onUpdate={alterar}
+                                onRemove={remover} />
+                        )}           
                     </div>
                 </div>
                 <div class="box-direita">

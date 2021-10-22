@@ -6,7 +6,7 @@ export default function PerfilUsuario() {
         <PerfilUsuarioStyled>
             <div class="cabecalho">
                 <div class="cabecalho-esquerdo">
-                    <div class="logo-empresa"><img src="/assets/images/Logo-AllMarket.jpg" alt=""/></div>
+                    <div class="logo-empresa"> <a href="/"> <img src="/assets/images/Logo-AllMarket.jpg" alt="" /> </a> </div>
                     <div class="titulo-cabecalho">Meu perfil</div>
                 </div>
                 <div class="icone-sair"><img src="/assets/images/icone-sair.svg" alt=""/></div>
