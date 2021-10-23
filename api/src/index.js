@@ -133,15 +133,6 @@ app.put('/clientes/:id', async (req, resp) => {
     }
 });
 
-app.delete('/clientes/:id', async (req, resp) => {
-    try {
-        let r = await db.infoc_tct_cliente.destroy({ where: {id_cliente: req.params.id }})
-        resp.sendStatus(200);
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
-
 app.get('/cartao', async (req, resp) => {
     try {
         let cartao = await db.infoc_tct_cartao.findAll({ order: [['id_cartao', 'desc' ]] });
