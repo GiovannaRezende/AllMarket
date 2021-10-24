@@ -207,7 +207,7 @@ app.get('/endereco', async (req, resp) => {
 
 app.post('/endereco', async (req, resp) => {
     try {
-        let {  } = req.body;
+        let { cep, estado, cidade, rua, numero, complemento, referencia } = req.body;
         
         let r = await db.infoc_tct_endereco.create({
             ds_cep: cep,

@@ -14,7 +14,7 @@ export default class Api {
         return r.data;
     }
 
-    async alterar(id,categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco) {
+    async alterar(id, categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco) {
         let r = await api.put('/produtos/'+ id, { categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco } );
         return r.data;
     }
