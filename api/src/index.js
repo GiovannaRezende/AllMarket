@@ -133,6 +133,15 @@ app.put('/clientes/:id', async (req, resp) => {
     }
 });
 
+app.delete('/clientes/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_cliente.destroy({ where: {id_cliente: req.params.id }})
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
 app.get('/cartao', async (req, resp) => {
     try {
         let cartao = await db.infoc_tct_cartao.findAll({ order: [['id_cartao', 'desc' ]] });
@@ -212,7 +221,7 @@ app.post('/endereco', async (req, resp) => {
         let r = await db.infoc_tct_endereco.create({
             ds_cep: cep,
             ds_estado: estado,
-            ds_cidade: cidade,
+            nm_cidade: cidade,
             nm_rua: rua,
             ds_numero: numero,
             ds_complemento: complemento,
@@ -235,7 +244,7 @@ app.put('/endereco/:id', async (req, resp) => {
             {
                 ds_cep: e.cep,
                 ds_estado: e.estado,
-                ds_cidade: e.cidade,
+                nm_cidade: e.cidade,
                 nm_rua: e.rua,
                 ds_numero: e.numero,
                 ds_complemento: e.complemento,
@@ -370,6 +379,27 @@ app.post('/categorias', async (req, resp) => {
     }
 });
 
+app.put('/categorias/:id', async (req, resp) => {
+    try {
+
+        let id = req.params.id;
+        let c = req.body;
+        
+        let r = await db.infoc_tct_categorias.update(
+            {
+                nm_categoria: c.categoria,
+            },
+            {
+                where: { id_categoria: id }
+            });
+            
+            resp.sendStatus(200);
+            
+    } catch(e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.get('/compra', async (req, resp) => {
     try {
         let compra = await db.infoc_tct_compra.findAll({ order: [['id_compra', 'desc' ]] });
@@ -392,6 +422,15 @@ app.post('/compra', async (req, resp) => {
         });
         resp.send(r);
 
+    } catch (e) {
+        resp.send({ erro: e.toString() });
+    }
+});
+
+app.delete('/compra/:id', async (req, resp) => {
+    try {
+        let r = await db.infoc_tct_compra.destroy({ where: {id_compra: req.params.id }})
+        resp.sendStatus(200);
     } catch (e) {
         resp.send({ erro: e.toString() });
     }
