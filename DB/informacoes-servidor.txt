@@ -1,4 +1,5 @@
-Servidor de BD (TCC)
+Servidor de BD: TCC
+
 host: my01.winhost.com
 database: mysql_17753_nsftcc
 user: nsftcc
