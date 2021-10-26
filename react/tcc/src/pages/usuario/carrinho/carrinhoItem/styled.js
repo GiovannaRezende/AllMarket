@@ -10,6 +10,10 @@ const Container = styled.div`
         padding: 1em;
         margin-bottom: 0.6em;
 
+    .imagem-produto { 
+        margin-right: 1em;
+    }
+
     .imagem-produto img { 
         width: 80px;
         height: 92px;

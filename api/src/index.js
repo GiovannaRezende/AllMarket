@@ -17,11 +17,11 @@ app.get('/produtos', async (req, resp) => {
 
 app.post('/produtos', async (req, resp) => {
     try {
-        let { categoria, produtos, codigo, setor, embalagem, marca, peso, descricao, preco } = req.body;
+        let { categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco } = req.body;
         
         let r = await db.infoc_tct_produto.create({
             id_categoria: categoria,
-            nm_produto: produtos,
+            nm_produto: produto,
             nr_codigo: codigo,
             ds_setor: setor,
             ds_embalagem: embalagem,

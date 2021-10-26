@@ -16,11 +16,11 @@ export default function BoxItem(props) {
 
     return (
         <Container> 
-            <div class="imagem-produto"> {produto.info.imagem} </div>
+            {/* <div class="imagem-produto"> <img src={produto.info.imagem} /> </div> */}
             <div class="informacoes-produto">
-                <div class="nome-produto"> {produto.info.nome} </div>
-                <div class="medida-produto"> {produto.info.peso} </div>
-                <div class="preco-produto"> {produto.info.preco} </div> 
+                <div class="nome-produto"> {produto.nm_produto} </div>
+                <div class="medida-produto"> {produto.ds_peso} </div>
+                <div class="preco-produto"> {produto.vl_preco} </div> 
                 <div class="quantidade-produto">  
                     <div class="remover-produto" onClick={removerProduto}> Remover </div>
                     <Contador onChange={alterarQtd} quantidade={produto.qtd} />

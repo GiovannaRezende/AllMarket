@@ -8,6 +8,10 @@ import Cookie from 'js-cookie'
 export default function Carrinho() {
     const [produtos, setProdutos] = useState([]);
 
+    useEffect(() => {
+        listarCarrinho();
+    }, [])
+
     function listarCarrinho() {
         let carrinho = Cookie.get('carrinho');
         carrinho = carrinho !== undefined
@@ -18,7 +22,7 @@ export default function Carrinho() {
     }
 
     function alterar(id, qtd) {
-        let alterado = produtos.filter(item => item.id === id) [0];
+        let alterado = produtos.filter(item => item.id === id);
         alterado.qtd = qtd;
         Cookie.set('carrinho', JSON.stringify(produtos));
     }
@@ -28,10 +32,6 @@ export default function Carrinho() {
         Cookie.set('carrinho', JSON.stringify(carrinho));
         setProdutos([...carrinho]);
     }
-
-    useEffect(() => {
-        listarCarrinho();
-    }, [])
 
     return (
         <CarrinhoStyled>
