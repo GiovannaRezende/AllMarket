@@ -23,4 +23,15 @@ export default class Api {
         let r = await api.delete('/produtos/' + id);
         return r.data;
     }
+
+    async listarEndereco() {
+        let r = await api.get('/endereco');
+        return r.data;
+    }
+
+    async alterarStatus(status) {
+        let r = await api.put('/endereco/' + { status } );
+        return r.data;
+    }
+
 }
