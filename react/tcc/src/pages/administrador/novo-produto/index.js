@@ -1,5 +1,5 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
-import NovoProdutoStyled from './';
+import { NovoProdutoStyled } from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCinza } from '../../../components/outros/inputs/input';
 

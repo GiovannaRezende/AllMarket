@@ -20,7 +20,7 @@ export default function Index() {
         setProdutos(r);
     }
 
-    const lista1 = produtos.filter(p => p.area === 'Fralda Pampers Premium Care' || p.categoria === 'Laticínios' || p.categoria === 'Higiene');
+    const lista1 = produtos.filter(p => p.categoria === 'Congelados' || p.categoria === 'Laticínios' || p.categoria === 'Higiene');
     const lista2 = produtos.filter(p => p.categoria === 'Limpeza' || p.categoria === 'Carnes' || p.categoria === 'Hortifruti');
 
     useEffect(() => {
@@ -67,7 +67,6 @@ export default function Index() {
                     </div>
                 </div>
                 <div className="titulo2">Mais Vendidos</div>
-                <div> aaaaa  {produtos.produto} </div>
                 <div className="container-2">
                     <div className="colunas">
                         <Carousel 
