@@ -1,6 +1,11 @@
 import Cookie from 'js-cookie'
 import { useState } from 'react';
+
 import { Container } from './styled'
+
+import { toast } from 'react-toastify';
+
+
 
 export default function BoxProduto(props) {
     const [produto, setProduto] = useState(props.info);
@@ -11,9 +16,13 @@ export default function BoxProduto(props) {
                     ? JSON.parse(carrinho)
                     : [];
 
-        if (carrinho.some(item => item.id_produto === produto.id_produto) === false)
+        if (carrinho.some(item => item.id_produto === produto.id_produto) === false) {
             carrinho.push({...produto, qtd: 1});
-
+            toast.dark('🗿 Produto Adicionado ao Carrinho');
+        } else {
+            toast.dark('🗿 Produto Já Está no Carrinho')
+        }
+        
         Cookie.set('carrinho', JSON.stringify(carrinho));
     }
 

@@ -11,7 +11,7 @@ export default function BoxItem(props) {
     }
 
     function removerProduto() {
-        props.onRemove(produto.id)
+        props.onRemove(produto.id_produto)
     }
 
     return (

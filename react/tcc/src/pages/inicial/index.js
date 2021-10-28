@@ -1,34 +1,47 @@
 import { CarouselConfig } from './config';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import CabecalhoInicial from '../../components/inicial/cabecalho';
 import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
 import { Container } from './styled'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import Api from '../../service/api'
 const api = new Api();
 
+
 export default function Index() {
     const [produtos, setProdutos] = useState([]);
-
-    async function listarProdutos() {
-        let r = await api.listar();
-        setProdutos(r);
-    }
-
-    const lista1 = produtos.filter(p => p.categoria === 'Congelados' || p.categoria === 'Laticínios' || p.categoria === 'Higiene');
-    const lista2 = produtos.filter(p => p.categoria === 'Limpeza' || p.categoria === 'Carnes' || p.categoria === 'Hortifruti');
 
     useEffect(() => {
         listarProdutos();
     }, [])
 
+    const loading = useRef(null);
+
+    async function listarProdutos() {
+        loading.current.continuousStart();
+    
+        let r = await api.listar();
+        setProdutos(r);
+    
+        loading.current.complete();
+    }
+
+    let lista1 = produtos.filter(p => p.id_categoria === 6 || p.id_categoria === 4 || p.id_categoria === 2);
+    let lista2 = produtos.filter(p => p.id_categoria === 5 || p.id_categoria === 3 || p.id_categoria === 1);
+
     return (
         <Container>
+            <ToastContainer />
+            <LoadingBar color="#FB8500" ref={loading} />
             <CabecalhoInicial />
             <div className="conteudo">
                 <div className="container-banner">
@@ -73,10 +86,10 @@ export default function Index() {
                          responsive={CarouselConfig}
                          containerClass="carousel-container"
                          >
-                            {produtos.map(item => 
+                            {lista1.map(item => 
                                 <BoxProduto 
-                                 key={item.id}
-                                 info={item} />
+                                 key={item.id_produto}
+                                 info={item}/>
                             )}
                         </Carousel>
 
@@ -87,7 +100,7 @@ export default function Index() {
                           containerClass="carousel-container" >
                             {lista2.map(item => 
                                 <BoxProduto 
-                                 key={item.id}
+                                 key={item.id_produto}
                                  info={item} />
                             )}
                         </Carousel>
