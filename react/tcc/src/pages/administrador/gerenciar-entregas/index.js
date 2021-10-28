@@ -53,7 +53,7 @@ export default function GerenciarEntregas() {
                                 <div class="texto-status"><span>Status:</span> {idAlterando === 0 ? "Em preparo" : "A caminho"}</div>
                             </div>
                         </div>
-                        <div class="botao"><BotaoLaranja onClick={alterarStatus}> {idAlterando === 0 ? "Em preparo" : "A caminho"}</BotaoLaranja></div>
+                        <div class="botao"><BotaoLaranja onClick={alterarStatus}>Atualizar status</BotaoLaranja></div>
                     </div>
                 </div>
                 )}
