@@ -33,5 +33,15 @@ export default class Api {
         let r = await api.put('/endereco/' + { status } );
         return r.data;
     }
+    
+    async adicionar_end(cep, estado, cidade, rua, numero, complemento, referencia) {
+        let r = await api.post('/endereco', {cep, estado, cidade, rua, numero, complemento, referencia});
+        return r.data;
+    }
+
+    async adicionar_cartao(dono, cartao, tipo, validade, cvv) {
+        let r = await api.post('/cartao', {dono, cartao, tipo, validade, cvv});
+        return r.data;
+    }
 
 }
