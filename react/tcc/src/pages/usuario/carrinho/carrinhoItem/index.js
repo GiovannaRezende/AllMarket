@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify';
+
 import Contador from '../contador/'
 import { Container } from './styled'
 
@@ -12,6 +14,8 @@ export default function BoxItem(props) {
 
     function removerProduto() {
         props.onRemove(produto.id_produto)
+        toast.dark('🗿 Produto Removido do Carrinho')
+
     }
 
     return (

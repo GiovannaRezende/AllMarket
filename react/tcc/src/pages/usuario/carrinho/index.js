@@ -5,9 +5,15 @@ import BoxItem from './carrinhoItem/index'
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState, useRef } from "react"
 import Cookie from 'js-cookie'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Api from '../../../service/api';
+const api = new Api();
 
 export default function Carrinho() {
     const [produtos, setProdutos] = useState([]);
+    const [pagamento, setPagamento] = useState([]);
 
     useEffect(() => {
         listarCarrinho();
@@ -50,8 +56,13 @@ export default function Carrinho() {
         return a;
     }
 
+    //function finalizarCompra() {
+        //const resp = await.api.finalizarCompra(produtos, pagamento)
+    //}
+
     return (
         <CarrinhoStyled>
+            <ToastContainer />
             <LoadingBar color="#FB8500" ref={loading} />
             <CabecalhoUsu/>
             <div class="conteudo">
@@ -85,7 +96,7 @@ export default function Carrinho() {
                             <button> Pix </button>
                         </div>
                     </div>
-                    <div class="box-total"> O total da sua compra foi de: <b> {valorTotal()} </b> </div>
+                    <div class="box-total"> O total da sua compra foi de: <b> R${valorTotal()} </b> </div>
                     <div class="botao-finalizar"> <button> Finalizar compra </button> </div>
                 </div>
             </div>

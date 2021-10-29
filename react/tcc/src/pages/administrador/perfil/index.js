@@ -1,5 +1,5 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
-import PerfilAdmStyled from './';
+import { PerfilAdmStyled } from './styled';
 
 export default function PerfilAdm() {
     return(
@@ -17,11 +17,11 @@ export default function PerfilAdm() {
                 <div class="info"><span>Cargo:</span> Administrador</div>
             </div>
             <div class="admin-funcoes">
-                <div class="funcoes"><button>Adicionar produto</button></div>
-                <div class="funcoes"><button>Administrar produtos</button></div>
-                <div class="funcoes"><button>Aprovar compras</button></div>
-                <div class="funcoes"><button>Responder mensagens</button> </div>
-                <div class="funcoes"><button>Modo usuário</button></div>
+                <div class="funcoes"><button> <a href="/novo-produto"> Adicionar produto </a> </button></div>
+                <div class="funcoes"><button> <a href="/controle-produto"> Administrar produtos </a> </button></div>
+                <div class="funcoes"><button> <a href="/aprovar-compra"> Aprovar compras </a> </button> </div>
+                <div class="funcoes"><button> <a href="/mensagens"> Responder mensagens </a> </button> </div>
+                <div class="funcoes"><button> <a href="/"> Modo usuário </a> </button> </div>
             </div>
         </div>
         </PerfilAdmStyled>
