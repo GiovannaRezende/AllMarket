@@ -6,7 +6,6 @@ import AprovarCompra from './pages/administrador/aprovar-compra/index';
 import ControleProduto from './pages/administrador/controle-produto/index';
 import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index';
 import Mensagens from './pages/administrador/mensagens/index';
-import NovoProduto from './pages/administrador/novo-produto/index';
 import PerfilAdm from './pages/administrador/perfil/index';
 import Index from './pages/inicial/'
 import Carrinho from './pages/usuario/carrinho/index';
@@ -28,7 +27,6 @@ export default function Routes() {
                 <Route path="/controle-produto" component={ControleProduto} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
                 <Route path="/mensagens" component={Mensagens} />
-                <Route path="/novo-produto" component={NovoProduto} />
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 
                 <Route path="/" exact={true} component={Index} />

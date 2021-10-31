@@ -44,12 +44,12 @@ export default function GerenciarEntregas() {
                 <div class="cab-conteudo">Gerenciar Entregas</div>
                 {endereco.map((item, i) =>
                     <div class="box-entregas">
-                    <div class="pedido">Pedido 9374</div>
+                    <div class="pedido">Pedido direcionado a {item.ds_cep}</div>
                     <div class="foto-texto-botao">
                         <div class="foto-textos">
                             <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                             <div class="textos">
-                                <div class="texto-destino"><span>Destino:</span> {item.nm_rua}, {item.ds_numero}</div>
+                                <div class="texto-destino"><span>Destino:</span> {item.nm_rua}, {item.ds_numero} - {item.nm_cidade}</div>
                                 <div class="texto-status"><span>Status:</span> {idAlterando === 0 ? "Em preparo" : "A caminho"}</div>
                             </div>
                         </div>

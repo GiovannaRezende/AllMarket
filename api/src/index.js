@@ -17,18 +17,17 @@ app.get('/produtos', async (req, resp) => {
 
 app.post('/produtos', async (req, resp) => {
     try {
-        let { categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco } = req.body;
+        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao } = req.body;
         
         let r = await db.infoc_tct_produto.create({
             id_categoria: categoria,
             nm_produto: produto,
             nr_codigo: codigo,
-            ds_setor: setor,
             ds_embalagem: embalagem,
             nm_marca: marca,
             ds_peso: peso,
             ds_descricao: descricao,
-            vl_preco: preco
+            vl_preco: preco,
         });
         resp.send(r);
 
@@ -45,6 +44,7 @@ app.put('/produtos/:id', async (req, resp) => {
         
         let r = await db.infoc_tct_produto.update(
             {
+                id_categoria: p.categoria,
                 nm_produto: p.produtos,
                 nr_codigo: p.codigo,
                 ds_setor: p.setor,

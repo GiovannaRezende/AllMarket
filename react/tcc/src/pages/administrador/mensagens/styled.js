@@ -17,13 +17,14 @@ const MensagensStyled = styled.div`
     flex-direction: row;
     align-items: center;
     background-color: #f9f9f9;
-    height: 4.8em;
+    height: 4.7em;
     width: 99%;
     border-radius: 1em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: .6em 0em;
     justify-content: space-between;
     padding: .6em;
+    cursor: pointer;
 }
 
 .foto-texto {
@@ -32,10 +33,11 @@ const MensagensStyled = styled.div`
 }
 
 .foto-usuario img {
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.3em;
+    height: 3.3em;
     margin: 0em .5em 0em 0em;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
 }
 
 .nome-usuario {
@@ -45,7 +47,7 @@ const MensagensStyled = styled.div`
 }
 
 .mensagem-usuario {
-    font: 500 1em Roboto;
+    font: 500 .9em Roboto;
     color: #525050;
 }
 

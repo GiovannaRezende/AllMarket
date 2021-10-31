@@ -31,6 +31,7 @@ const PerfilAdmStyled = styled.div`
 }
 
 .info {
+    display: flex;
     color: white;
     background-color: #219EBC;
     font: 500 1em Roboto;
@@ -40,10 +41,25 @@ const PerfilAdmStyled = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 15em;
     text-align: center;
+    cursor: pointer;
+    align-items: center;
 }
 
 .info span {
     font: 600 1em Roboto;
+}
+
+.editar {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    
+}
+
+img {
+    width: auto;
+    height: 1.5em;
 }
 
 .admin-funcoes {
@@ -70,6 +86,10 @@ const PerfilAdmStyled = styled.div`
     margin: 1em 0em;
     font: 500 1em Roboto;
     width: 15em;
+    cursor: pointer;
+}
+a, button, img {
+    cursor: pointer;
 }
 `
 

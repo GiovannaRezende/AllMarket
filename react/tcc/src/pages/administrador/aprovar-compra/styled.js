@@ -50,6 +50,7 @@ const AprovarCompraStyled = styled.div`
   height: 3.5em;
   margin-right: .5em;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
 }
 
 .nome-usuario {

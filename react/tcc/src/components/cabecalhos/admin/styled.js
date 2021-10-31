@@ -28,6 +28,7 @@ const CabecalhoAdmStyled = styled.div `
     height: 3em;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-left: .3em;
+    cursor: pointer;
 }
 `
 
