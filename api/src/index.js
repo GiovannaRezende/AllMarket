@@ -47,7 +47,6 @@ app.put('/produtos/:id', async (req, resp) => {
                 id_categoria: p.categoria,
                 nm_produto: p.produtos,
                 nr_codigo: p.codigo,
-                ds_setor: p.setor,
                 ds_embalagem: p.embalagem,
                 nm_marca: p.marca,
                 ds_peso: p.peso,

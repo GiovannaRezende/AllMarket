@@ -72,6 +72,7 @@ export default function NovoProduto() {
      async function listar() {
         let r = await api.listar();
         setProdutos(r);
+        listar();
     }
 
      async function remover(id) {

@@ -44,7 +44,7 @@ export default function GerenciarEntregas() {
                 <div class="cab-conteudo">Gerenciar Entregas</div>
                 {endereco.map((item, i) =>
                     <div class="box-entregas">
-                    <div class="pedido">Pedido direcionado a {item.ds_cep}</div>
+                    <div class="pedido">{item.ds_cep}</div>
                     <div class="foto-texto-botao">
                         <div class="foto-textos">
                             <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>

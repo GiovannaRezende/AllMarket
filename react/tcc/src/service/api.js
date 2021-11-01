@@ -9,13 +9,13 @@ export default class Api {
         return r.data;
     }
 
-    async inserir(categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco) {
-        let r = await api.post('/produtos', { categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco } );
+    async inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco) {
+        let r = await api.post('/produtos', { categoria, produto, codigo, embalagem, marca, peso, descricao, preco } );
         return r.data;
     }
 
-    async alterar(id, categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco) {
-        let r = await api.put('/produtos/'+ id, { categoria, produto, codigo, setor, embalagem, marca, peso, descricao, preco } );
+    async alterar(id, categoria, produto, codigo, embalagem, marca, peso, descricao, preco) {
+        let r = await api.put('/produtos/'+ id, { categoria, produto, codigo, embalagem, marca, peso, descricao, preco } );
         return r.data;
     }
 
@@ -41,6 +41,11 @@ export default class Api {
 
     async adicionar_cartao(dono, cartao, tipo, validade, cvv) {
         let r = await api.post('/cartao', {dono, cartao, tipo, validade, cvv});
+        return r.data;
+    }
+
+    async listarMensagem() {
+        let r = await api.get('/chat');
         return r.data;
     }
 
