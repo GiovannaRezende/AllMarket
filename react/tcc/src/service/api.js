@@ -34,12 +34,12 @@ export default class Api {
         return r.data;
     }
     
-    async adicionar_end(cep, estado, cidade, rua, numero, complemento, referencia) {
+    async adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia) {
         let r = await api.post('/endereco', {cep, estado, cidade, rua, numero, complemento, referencia});
         return r.data;
     }
 
-    async adicionar_cartao(dono, cartao, tipo, validade, cvv) {
+    async adicionarCartao(dono, cartao, tipo, validade, cvv) {
         let r = await api.post('/cartao', {dono, cartao, tipo, validade, cvv});
         return r.data;
     }
@@ -49,4 +49,9 @@ export default class Api {
         return r.data;
     }
 
+    async finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos) {
+        let r = await api.post('/compra', {cliente, endereco, notaFiscal, pagamento, produtos});
+        return r.data;
+    }
+    
 }

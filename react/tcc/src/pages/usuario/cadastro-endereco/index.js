@@ -15,11 +15,11 @@ export default function CadastroEndereco() {
     const [complemento, setComplemento] = useState('');
     const [referencia, setReferencia] = useState('');
 
-    async function adicionar_end() {
+    async function adicionarEnd() {
         if(cep === "" || estado === "" || cidade === "" || rua === "" || numero === "" || complemento === "" || referencia === "") {
             return alert('Os campos nulos sao obrigatorios !!');
         } else {
-            let r = await api.adicionar_end(cep, estado, cidade, rua, numero, complemento, referencia);
+            let r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia);
             alert('Endereço foi cadastrado com sucesso !!');
             limpar();
         }
@@ -75,7 +75,7 @@ export default function CadastroEndereco() {
                         </div>
                     </div>    
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja onClick={adicionar_end}>Cadastrar Endereço</BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarEnd}>Cadastrar Endereço</BotaoLaranja></div>
             </div>
         </CadastroEnderecoStyled>  
     ) 

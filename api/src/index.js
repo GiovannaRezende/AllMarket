@@ -1,6 +1,9 @@
 import db from './db.js';
 import express from 'express';
 import cors from 'cors';
+
+import compraController from './controller/compraController.js'
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -399,65 +402,6 @@ app.put('/categorias/:id', async (req, resp) => {
     }
 });
 
-app.get('/compra', async (req, resp) => {
-    try {
-        let compra = await db.infoc_tct_compra.findAll({ order: [['id_compra', 'desc' ]] });
-        resp.send(compra);
-
-    } catch (e) {
-        resp.send({ erro: e.toString()});
-    }
-});
-
-app.post('/compra', async (req, resp) => {
-    try {
-        let { cliente, endereco, notafiscal, pagamento } = req.body;
-        
-        let r = await db.infoc_tct_compra.create({
-            id_cliente: cliente,
-            id_endereco: endereco,
-            ds_nota_fiscal: notafiscal,
-            ds_forma_pagamento: pagamento
-        });
-        resp.send(r);
-
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
-
-app.delete('/compra/:id', async (req, resp) => {
-    try {
-        let r = await db.infoc_tct_compra.destroy({ where: {id_compra: req.params.id }})
-        resp.sendStatus(200);
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
-
-app.get('/compraitem', async (req, resp) => {
-    try {
-        let compraItem = await db.infoc_tct_compra_item.findAll();
-        resp.send(compraItem);
-
-    } catch (e) {
-        resp.send({ erro: e.toString()});
-    }
-});
-
-app.post('/compraitem', async (req, resp) => {
-    try {
-        let { produto, compra } = req.body;
-        
-        let r = await db.infoc_tct_compra_item.create({
-            id_produto: produto,
-            id_compra: compra
-        });
-        resp.send(r);
-
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
+app.use('/compra', compraController);
 
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));

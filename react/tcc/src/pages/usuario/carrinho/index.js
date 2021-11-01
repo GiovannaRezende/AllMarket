@@ -5,19 +5,36 @@ import BoxItem from './carrinhoItem/index'
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState, useRef } from "react"
 import Cookie from 'js-cookie'
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Api from '../../../service/api';
 const api = new Api();
 
 export default function Carrinho() {
+    const [cliente, setCliente] = useState([]);
     const [produtos, setProdutos] = useState([]);
-    const [pagamento, setPagamento] = useState([]);
+    const [pagamento, setPagamento] = useState('');
+    const [notaFiscal, setNotaFiscal] = useState('');
+    const [endereco, setEndereco] = useState([]);
 
     useEffect(() => {
         listarCarrinho();
     }, [])
+
+    async function finalizarCompra() {
+
+        let r = await api.finalizarCompra(cliente.id_cliente, endereco.id_endereco, notaFiscal, pagamento, produtos)
+
+        console.log(r)
+
+        if(r.erro) {
+            toast.error(`${r.erro}`);
+            console.log(r);
+        } else {
+            toast.dark("Yeaaaaaaaaah babe")
+        }
+    }
 
     const loading = useRef(null);
 
@@ -56,9 +73,16 @@ export default function Carrinho() {
         return a;
     }
 
-    //function finalizarCompra() {
-        //const resp = await.api.finalizarCompra(produtos, pagamento)
-    //}
+    function emitirNotaFiscal() {
+        let agora = Date.now()
+        let nota = Number.agora
+        let aaaa = "NF" + nota.toString("yyyyMMddHHmmss")
+        setNotaFiscal(aaaa)
+    }
+
+    /* function formaPagamento(forma) {
+        setPagamento(forma);
+    } */
 
     return (
         <CarrinhoStyled>
@@ -90,14 +114,14 @@ export default function Carrinho() {
                     <div class="box-pagamento">
                         <div class="titulo-pagamento"> Selecione o método de pagamento: </div>
                         <div class="box-botoes">
-                            <button> Cartão de Crédito </button>
-                            <button> Cartão de Débito </button>
-                            <button> Boleto </button>
-                            <button> Pix </button>
+                            <button /*onClick={formaPagamento('Cartão de Crédito')}*/ > Cartão de Crédito </button>
+                            <button /*onClick={formaPagamento('Cartão de Débito')}*/ > Cartão de Débito </button>
+                            <button /*onClick={formaPagamento('Boleto')}*/ > Boleto </button>
+                            <button /*onClick={formaPagamento('Pix')}*/ > Pix </button>
                         </div>
                     </div>
-                    <div class="box-total"> O total da sua compra foi de: <b> R${valorTotal()} </b> </div>
-                    <div class="botao-finalizar"> <button> Finalizar compra </button> </div>
+                    <div class="box-total"> O total da sua compra foi de: <b> {valorTotal()} </b> </div>
+                    <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar compra </button> </div>
                 </div>
             </div>
         </CarrinhoStyled>
