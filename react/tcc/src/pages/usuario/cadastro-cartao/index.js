@@ -13,8 +13,8 @@ export default function CadastroCartao() {
     const [validade, setValidade] = useState('');
     const [cvv, setCvv] = useState('');
 
-    async function adiciona_cartao()  {
-        let r = await api.adicionar_cartao(dono, cartao, tipo, validade, cvv);
+    async function adicionarCartao()  {
+        let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv);
         alert('Cartao cadastrado !!');
         limpar();
     }
@@ -59,7 +59,7 @@ export default function CadastroCartao() {
                         </div>
                     </div>
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja onClick={adiciona_cartao} >Cadastrar Cartão</BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarCartao} >Cadastrar Cartão</BotaoLaranja></div>
             </div>
         </CadastroCartaoStyled>  
     ) 

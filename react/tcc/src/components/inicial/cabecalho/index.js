@@ -1,6 +1,20 @@
 import { CabInicial }  from './styled';
+import Cookie from 'js-cookie'
+import { useEffect } from 'react'
 
 export default function CabecalhoInicial() {
+
+    function contador() {
+
+        let carrinho = Cookie.get('carrinho');
+        carrinho = carrinho !== undefined
+                    ? JSON.parse(carrinho)
+                    : [];
+
+        let total = carrinho.length;
+        return total;
+    }
+
     return(
             <CabInicial>
                 <div class="cabecalho-esq">
@@ -10,7 +24,7 @@ export default function CabecalhoInicial() {
                 </div>
                 <div class="cabecalho-dir"> 
                     <div class="carrinho"> <a href="/carrinho"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></a></div>
-                    <div class="contador">2</div>
+                    <div class="contador"> {contador()} </div>
                     <div class="texto">Olá, <b>Maria!</b> </div>
                     <div class="foto"> <a href="/perfil-usuario"> <img src="./assets/images/Perfil-Usuario.png" alt=""/></a></div>
                 </div>
