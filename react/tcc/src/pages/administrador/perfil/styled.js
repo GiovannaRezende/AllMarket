@@ -91,6 +91,10 @@ img {
 a, button, img {
     cursor: pointer;
 }
+
+a {
+   color: white;
+}
 `
 
 export { PerfilAdmStyled };
