@@ -15,23 +15,23 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import Api from '../../../service/api';
 const api = new Api();
 
-export default function NovoProduto() {
+export default function ControleProdutos() {
 
     const [produtos, setProdutos] = useState([]);
     const [categoria, setCategoria] = useState('');
     const [produto, setProduto] = useState('');
     const [codigo, setCodigo] = useState('');
-    const [preco, setPreco] = useState('');
     const [embalagem, setEmbalagem] = useState('');
     const [marca, setMarca] = useState('');
     const [peso, setPeso] = useState('');
     const [descricao, setDescricao] = useState('');
+    const [preco, setPreco] = useState('');
     const [idAlterando, setIdAlterando] = useState(0);
 
     async function inserir() {
  
          if(idAlterando === 0) {
-             let r = await api.inserir(categoria, produto, codigo, preco, embalagem, marca, peso, descricao);
+             let r = await api.inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco);
  
              if(r.erro) {
                  toast.error(`${r.erro}`);
@@ -45,7 +45,7 @@ export default function NovoProduto() {
          }
 
          else {
-            let r = await api.alterar(idAlterando, categoria, produto, codigo, preco, embalagem, marca, peso, descricao);
+            let r = await api.alterar(idAlterando, categoria, produto, codigo, embalagem, marca, peso, descricao, preco);
             if(r.erro) 
                 toast.error(`${r.erro}`); 
             else {
@@ -61,18 +61,17 @@ export default function NovoProduto() {
         setCategoria('');
         setProduto('');
         setCodigo('');
-        setPreco('');
         setEmbalagem('');
         setMarca('');
         setPeso('');
         setDescricao('');
+        setPreco('');
         setIdAlterando(0);
     }
 
      async function listar() {
         let r = await api.listar();
         setProdutos(r);
-        listar();
     }
 
      async function remover(id) {
@@ -106,13 +105,12 @@ export default function NovoProduto() {
         setCategoria(item.id_categoria);
         setProduto(item.nm_produto);
         setCodigo(item.nr_codigo);
-        setPreco(item.vl_preco);
         setEmbalagem(item.ds_embalagem);
         setMarca(item.nm_marca);
         setPeso(item.ds_peso);
         setDescricao(item.ds_descricao);
+        setPreco(item.vl_preco);
         setIdAlterando(item.id_produto);
-    
     }
 
     useEffect(() => {
@@ -174,7 +172,6 @@ export default function NovoProduto() {
            </div>
            <ControleProdutosStyled>
             <div class="corpo">
-                <div className="corpo-pt1">  </div>
                 <div className="corpo-pt2">
                     {produtos.map((item, i) =>
                     <div className="box">
