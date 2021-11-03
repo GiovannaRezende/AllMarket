@@ -17,6 +17,7 @@ import Cadastro from './pages/usuario/cadastro/index';
 import Login from './pages/usuario/login/index';
 import PerfilUsuario from './pages/usuario/perfil/index';
 import Erro from './pages/usuario/erro404/index';
+import PaginaPesquisa from './pages/inicial/pesquisa/'
 
 
 export default function Routes() {
@@ -30,6 +31,7 @@ export default function Routes() {
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 
                 <Route path="/" exact={true} component={Index} />
+                <Route path="/pesquisa" exact={true} component={PaginaPesquisa} />
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/pedidos" component={Pedidos} />
                 <Route path="/chat" component={Chat} />

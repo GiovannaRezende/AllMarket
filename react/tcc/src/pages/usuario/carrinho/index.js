@@ -24,7 +24,7 @@ export default function Carrinho() {
 
     async function finalizarCompra() {
 
-        let r = await api.finalizarCompra(cliente.id_cliente, endereco.id_endereco, notaFiscal, pagamento, produtos)
+        let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos)
 
         console.log(r)
 
@@ -32,7 +32,7 @@ export default function Carrinho() {
             toast.error(`${r.erro}`);
             console.log(r);
         } else {
-            toast.dark("Yeaaaaaaaaah babe")
+            toast.dark("Compra Finalizada Com Sucesso")
         }
     }
 
@@ -73,13 +73,6 @@ export default function Carrinho() {
         return a;
     }
 
-    function emitirNotaFiscal() {
-        let agora = Date.now()
-        let nota = Number.agora
-        let aaaa = "NF" + nota.toString("yyyyMMddHHmmss")
-        setNotaFiscal(aaaa)
-    }
-
     /* function formaPagamento(forma) {
         setPagamento(forma);
     } */
@@ -105,7 +98,7 @@ export default function Carrinho() {
                     <div class="box-endereco">
                         <div class="titulo-endereco"> Confira o endereco para entrega </div>
                         <div class="nome-rua"> Rua Maria da Cruz Cunha, 39 </div>
-                        <div class="nome-bairro"> Jardim das Flores </div>
+                        <div class="nome-bairro"> A </div>
                         <div class="cidade-botao"> 
                             <div class="nome-cidade"> São Paulo/SP </div>
                             <button> Alterar </button>
@@ -120,7 +113,7 @@ export default function Carrinho() {
                             <button /*onClick={formaPagamento('Pix')}*/ > Pix </button>
                         </div>
                     </div>
-                    <div class="box-total"> O total da sua compra foi de: <b> {valorTotal()} </b> </div>
+                    <div class="box-total"> O total da sua compra foi de: <b> R$ {valorTotal()} </b> </div>
                     <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar compra </button> </div>
                 </div>
             </div>

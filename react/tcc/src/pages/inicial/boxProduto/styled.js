@@ -10,6 +10,8 @@ const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
+    max-width: 16em;
+
     .icones:hover {
     transition: 0.8s;
     box-shadow: 0px 6px 6px 6px rgba(0, 0, 0, 0.25);

@@ -21,16 +21,19 @@ app.post('/', async (req, resp) => {
         const { cliente, endereco, notaFiscal, pagamento, produtos } = req.body;
 
         const r = await db.infoc_tct_compra.create({
-            id_cliente: cliente,
-            id_endereco: endereco,
+            id_cliente: cliente.id_cliente,
+            id_endereco: endereco.id_endereco,
             ds_nota_fiscal: notaFiscal,
-            ds_forma_pagamento: pagamento
+            ds_forma_pagamento: pagamento,
+            bt_entrega: null
         });
 
         for (var produto of produtos) {
-            const { item } = produto.id_produto;
+
+            let item = await db.infoc_tct_produto.findOne({ where: {id_produto: produto.id_produto }})
+
             const compraItem = await db.infoc_tct_compra_item.create({
-                id_produto: item,
+                id_produto: item.id_produto,
                 id_compra: r.id_compra
             })
 

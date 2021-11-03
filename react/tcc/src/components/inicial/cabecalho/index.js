@@ -1,8 +1,14 @@
 import { CabInicial }  from './styled';
 import Cookie from 'js-cookie'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Api from '../../../service/api';
+const api = new Api();
 
 export default function CabecalhoInicial() {
+
+    const [pesquisa, setPesquisa] = useState('');
+
 
     function contador() {
 
@@ -19,8 +25,15 @@ export default function CabecalhoInicial() {
             <CabInicial>
                 <div class="cabecalho-esq">
                     <div class="logo"> <img src="./assets/images/Logo-AllMarket.jpg" alt="" /> </div>
-                    <div class="pesquisa"> <input placeholder="O que você está procurando?"/> </div>
-                    <div class="buscar"> <button>Buscar</button> </div>
+                    <div class="pesquisa"> <input value={pesquisa} onChange={e => setPesquisa(e.target.value)} placeholder="O que você está procurando?"/> </div>
+                    <div className="buscar"> 
+                        <Link to={{
+                            pathname: '/pesquisa',
+                            state: pesquisa
+                        }}>
+                            <button>Buscar</button> 
+                        </Link>
+                    </div>
                 </div>
                 <div class="cabecalho-dir"> 
                     <div class="carrinho"> <a href="/carrinho"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></a></div>
