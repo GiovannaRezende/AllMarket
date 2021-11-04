@@ -1,6 +1,6 @@
 import db from '../db.js'
 
-import { Router } from 'express'
+import Router from 'express'
 const app = Router();
 
 app.get('/', async (req, resp) => {
