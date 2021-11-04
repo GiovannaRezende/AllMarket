@@ -4,10 +4,8 @@ import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 
 import { useState, useEffect } from 'react';
 
-import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Api from '../../../service/api';
@@ -22,7 +20,7 @@ export default function GerenciarEntregas() {
     async function listarEndereco() {
         let r = await api.listarEndereco();
         setEndereco(r);
-        listarEndereco();
+        //listarEndereco();
     }
 
     async function alterarStatus() {
