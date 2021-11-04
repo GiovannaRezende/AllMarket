@@ -46,7 +46,7 @@ export default function PaginaPesquisa(props) {
         console.log(pesquisa)
         setProdutoPesquisado(resultado)
     }
-
+    console.log(mostrarPesquisa);
 
     return (
         <Container>
