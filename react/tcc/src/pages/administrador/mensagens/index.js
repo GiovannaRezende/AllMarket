@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { MensagensStyled } from './styled';
-import { Link } from 'react-router-dom';
 
 import Api from '../../../service/api';
 const api = new Api();

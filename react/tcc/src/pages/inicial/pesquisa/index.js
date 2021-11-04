@@ -1,5 +1,3 @@
-import { CarouselConfig } from '../config';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 import LoadingBar from 'react-top-loading-bar'
@@ -20,6 +18,7 @@ export default function PaginaPesquisa(props) {
     const [produtos, setProdutos] = useState([]);
     const [produtoPesquisado, setProdutoPesquisado] = useState([]);
     const [pesquisa, setPesquisa] = useState(props.location.state);
+    console.log(setPesquisa);
 
     useEffect(() => {
         listarProdutos();
