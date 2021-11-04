@@ -20,7 +20,7 @@ export default function GerenciarEntregas() {
     async function listarEndereco() {
         let r = await api.listarEndereco();
         setEndereco(r);
-        listarEndereco();
+        //listarEndereco();
     }
 
     async function alterarStatus() {

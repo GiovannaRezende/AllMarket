@@ -25,7 +25,7 @@ export default function PaginaPesquisa(props) {
     }, [])
 
     useEffect(() => {
-        mostrarPesquisa();
+        //mostrarPesquisa();
     }, [])
 
     const loading = useRef(null);
