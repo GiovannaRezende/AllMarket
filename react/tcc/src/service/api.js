@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = new axios.create({
-    baseURL: 'http://localhost:3030'
+    baseURL: 'allmarket.netlify.app'
 })
 
 export default class Api {
