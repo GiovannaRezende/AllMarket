@@ -53,5 +53,10 @@ export default class Api {
         let r = await api.post('/compra', {cliente, endereco, notaFiscal, pagamento, produtos});
         return r.data;
     }
+
+    async chat(cliente, administrador, mensagem) {
+        let r = await api.post('/chat', { cliente, administrador, mensagem });
+        return r.data;
+    }
     
 }
