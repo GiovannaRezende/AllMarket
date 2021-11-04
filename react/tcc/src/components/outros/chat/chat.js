@@ -13,7 +13,7 @@ export default function Chat() {
                     <div class="hora">16:04</div>
                 </div>
                 <div class="enviar">
-                    <div class="caixa-texto" > <input type="text"/> </div>
+                    <div class="caixa-texto" > <input type="text" placeholder="Digite aqui a sua mensagem"/> </div>
                     <div class="botao-enviar"> <button> <img src="../../react/tcc/public/assets/images/Ícone-Seta.svg" alt=""/> </button> </div>
                 </div>
             </div>

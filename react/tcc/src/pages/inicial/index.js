@@ -12,6 +12,7 @@ import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
 import { Container } from './styled'
 import { useState, useEffect, useRef } from 'react';
+import Chat from '../../components/outros/chat/chat';
 
 import Api from '../../service/api'
 const api = new Api();
@@ -82,6 +83,7 @@ export default function Index() {
                 <div className="titulo2">Mais Vendidos</div>
                 <div className="container-2">
                     <div className="colunas">
+                        <Chat />
                         <Carousel 
                          responsive={CarouselConfig}
                          containerClass="carousel-container"
