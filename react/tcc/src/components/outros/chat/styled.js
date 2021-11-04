@@ -4,17 +4,21 @@ const ChatStyled = styled.div`
         display: flex;
         flex-direction: column;
         background-color: #FB8500;
-        width: 18em;
-        height: 21em;
-        border-radius: .5em;
+        width: 26em;
+        height: 28em;
+        border-radius: 1em;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
 
     .cab-chat {
         display: flex;
         flex-direction: row;
         background-color: #14213D;
-        height: 3em;
-        border-radius: 0em 0em .7em .7em;
-        padding: .7em;
+        height: 40em;
+        width: 30em;
+        border-radius: 10px 10px 1em 1em;
+        padding: 1em;
         align-items: center;
     }
 
@@ -34,24 +38,30 @@ const ChatStyled = styled.div`
         flex-direction: column;
         padding: .6em 1.3em 0em 0em;
         margin: 0em 0em 4em 0em;
+        height: 40em;
+        width: 40em;
     }
 
     .mensagem-hora {
         display: flex;
         flex-direction: column;
         background-color: #14213D;
-        padding: .5em;
+        width: 16em;
+        padding: 1em;
         margin: .6em 0em 9em 0em;
         border-radius: 0em 2em 2em 0em;
     }
 
     .mensagem {
         color: white;
-        font: 500 1em Roboto;
+        font: 100 1em Roboto;
         line-height: 1.7em;
     }
 
     .hora {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 1.2em;
         color: white;
         font: 200 .7em Roboto;
     }
@@ -59,14 +69,16 @@ const ChatStyled = styled.div`
     .enviar {
         display: flex;
         flex-direction: row;
+        margin-top: 4em;
     }
 
     .caixa-texto input {
+        font-size: 13px;
         border: none;
         outline: none;
-        border-radius: .6em;
-        height: 2.5em;
-        width: 16.5em;
+        border-radius: 15px;
+        height: 3.5em;
+        width: 25em;
         margin: 0em 1.1em 0em .8em;
     }
 
@@ -74,7 +86,7 @@ const ChatStyled = styled.div`
         border-radius: 2em;
         border: none;
         background-color: white;
-        padding: .3em;
+        padding: .6em;
     }
 
     .botao-enviar img {
