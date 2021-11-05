@@ -12,7 +12,7 @@ import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
 import { Container } from './styled'
 import { useState, useEffect, useRef } from 'react';
-import Chat from '../../components/outros/chat/chat';
+// import Chat from '../../components/outros/chat/chat';
 
 import Api from '../../service/api'
 const api = new Api();
