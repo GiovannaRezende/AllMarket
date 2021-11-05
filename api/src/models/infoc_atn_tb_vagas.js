@@ -30,6 +30,10 @@ export default class infoc_atn_tb_vagas extends Model {
       type: DataTypes.STRING(100),
       allowNull: true
     },
+    ds_formacao: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
     ds_salario_de: {
       type: DataTypes.INTEGER,
       allowNull: true

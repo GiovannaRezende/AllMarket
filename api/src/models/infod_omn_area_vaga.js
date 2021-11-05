@@ -1,26 +1,22 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_ator extends Model {
+export default class infod_omn_area_vaga extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_ator: {
+    id_area_vaga: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    id_filme: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    nm_ator: {
+    nm_area_vaga: {
       type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_ator',
+    tableName: 'infod_omn_area_vaga',
     timestamps: false,
     indexes: [
       {
@@ -28,18 +24,11 @@ export default class infob_mw_ator extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_ator" },
-        ]
-      },
-      {
-        name: "id_filme",
-        using: "BTREE",
-        fields: [
-          { name: "id_filme" },
+          { name: "id_area_vaga" },
         ]
       },
     ]
   });
-  return infob_mw_ator;
+  return infod_omn_area_vaga;
   }
 }
