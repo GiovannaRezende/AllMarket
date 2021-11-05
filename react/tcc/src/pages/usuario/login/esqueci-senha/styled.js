@@ -1,57 +1,39 @@
 import styled from 'styled-components'
 
-const LoginUsuarioStyled = styled.div`
- 
+const EsqueciSenhaStyled = styled.div`
+
 width: 100%;
 height: 100%;
 
 
 
-.cabecalho{
+
+.container-email {
     display: flex;
     flex-direction: column;
     background-color: #14213D;
     align-items: center;
-    padding: 1em;
-    margin: 4em 28.5em;
-    width: 28em;
-    height: 32em;
+   
+    margin: 11.3em 30em;
+    padding: 1.4em;
+    width: 24em;
+    height: 17.4em;
     border-radius: .7em;
 }
 
 .titulo {
     font: 500 1.7em Roboto;
     color: white;
-    margin: 1em 0em;
+    margin: .8em 0em;
 }
 
-.logos img {
-    width: 2.8em;
-    height: 2.8em;
-    margin: 1em .2em;
-}
-
-.corpo2 button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: .8em;
-}
-
-.rodape {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-}
-
-.esqueci-senha a {
+.aviso {
     font: 500 .9em Roboto;
-    text-decoration: underline;
     color: white;
-    cursor: pointer;
+    text-align: center;
 }
 
-input {
+.confirmar-email input {
     display: flex;
     flex-direction: column;
     border: none;
@@ -60,14 +42,15 @@ input {
     width: 20em;
     height: 3em;
     padding: 0em .5em;
-    margin: 2.5em 0em;
+    margin: 1em 0em;
     font: 500 1em Roboto;
     color: #ADA5A5;
     background-color: #f9f9f9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.6em;
 }
 
-button {
+.botao button {
     background-color: #FB8500;
     color: white;
     border: none;
@@ -77,6 +60,32 @@ button {
     font: 500 1em Roboto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.container-codigo {
+    display: flex;
+    flex-direction: column;
+    background-color: #14213D;
+    align-items: center;
+    
+    margin: 10.5em 30em;
+    padding: 1em;
+    width: 24em;
+    height: 18em;
+    border-radius: .7em;
+}
+
+.numeros input{
+    
+    color:#f9f9f9;
+    background-color: transparent;
+    outline: 2px solid white;
+    
+    padding-left: 0.8em;
+    width: 2.3em;
+    height: 2.5em;
+    border: none;
+    margin: 1.3em .5em;
+}
 `
 
-export { LoginUsuarioStyled };
+export { EsqueciSenhaStyled };

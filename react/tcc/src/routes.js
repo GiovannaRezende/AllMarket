@@ -13,8 +13,11 @@ import Pedidos from './pages/usuario/pedidos/index';
 import Chat from './components/outros/chat/chat';
 import Cartao from './pages/usuario/cadastro-cartao/index';
 import Endereco from './pages/usuario/cadastro-endereco/index';
-import Cadastro from './pages/usuario/cadastro/index';
+import Cadastro from './pages/usuario/login/cadastro/index';
 import Login from './pages/usuario/login/index';
+import NovaSenha from './pages/usuario/login/nova-senha';
+import ResetSenha from './pages/usuario/login/nova-senha';
+import EsqueciSenha from './pages/usuario/login/esqueci-senha'
 import PerfilUsuario from './pages/usuario/perfil/index';
 import Erro from './pages/usuario/erro404/index';
 import PaginaPesquisa from './pages/inicial/pesquisa/'
@@ -40,6 +43,9 @@ export default function Routes() {
                 <Route path="/cadastro-endereco" component={Endereco} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
+                <Route path="/nova-senha" component={NovaSenha}/>
+                <Route path="/reset-senha" component={ResetSenha}/>
+                <Route path="/esqueci-senha" component={EsqueciSenha}/>
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
                 <Route path="*" component={Erro} />
 
