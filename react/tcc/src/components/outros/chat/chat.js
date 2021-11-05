@@ -20,7 +20,7 @@ export default function Chat() {
     return (
         <ChatStyled>
             <div class="cab-chat">
-                <div class="foto-perfil"> <img src="../../react/tcc/public/assets/images/Perfil-Admin.svg" alt=""/> </div>
+                <div class="foto-perfil"> <img src="/assets/images/Perfil-Admin.svg" alt=""/> </div>
                 <div class="nome">Mercado</div>
             </div>
             <div class="conteudo-chat">
@@ -33,7 +33,7 @@ export default function Chat() {
 
                 <div class="enviar">
                     <div class="caixa-texto" > <input type="text" placeholder="Digite aqui a sua mensagem" value={mensagem} onChange={e => setMensagem(e.target.value)} /> </div>
-                    <div class="botao-enviar"> <button onClick={mensagem_chat}> <img src="../../react/tcc/public/assets/images/Ícone-Seta.svg" alt=""/> </button> </div>
+                    <div class="botao-enviar"> <button onClick={mensagem_chat}> <img src="/assets/images/Ícone-Seta.svg" alt=""/> </button> </div>
                 </div>
             </div>
         </ChatStyled>

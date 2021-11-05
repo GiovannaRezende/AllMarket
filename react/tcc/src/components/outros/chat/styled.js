@@ -15,7 +15,7 @@ const ChatStyled = styled.div`
         display: flex;
         flex-direction: row;
         background-color: #14213D;
-        height: 40em;
+        height: 9em;
         width: 30em;
         border-radius: 10px 10px 1em 1em;
         padding: 1em;
@@ -69,7 +69,7 @@ const ChatStyled = styled.div`
     .enviar {
         display: flex;
         flex-direction: row;
-        margin-top: 4em;
+        margin-top: 18em;
     }
 
     .caixa-texto input {
