@@ -35,7 +35,7 @@ export default class infoc_tct_produto extends Model {
       allowNull: true
     },
     ds_peso: {
-      type: DataTypes.DECIMAL(4,2),
+      type: DataTypes.STRING(5),
       allowNull: true
     },
     ds_descricao: {
@@ -44,6 +44,14 @@ export default class infoc_tct_produto extends Model {
     },
     vl_preco: {
       type: DataTypes.DECIMAL(10,2),
+      allowNull: true
+    },
+    bt_promocao: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
+    },
+    img_imagem: {
+      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {

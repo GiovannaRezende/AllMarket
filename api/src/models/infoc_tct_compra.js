@@ -33,6 +33,10 @@ export default class infoc_tct_compra extends Model {
     ds_forma_pagamento: {
       type: DataTypes.STRING(40),
       allowNull: true
+    },
+    bt_entrega: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
     }
   }, {
     sequelize,

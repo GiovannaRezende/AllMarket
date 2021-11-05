@@ -10,30 +10,29 @@ export default class infoa_dtn_tb_cliente extends Model {
       allowNull: false,
       primaryKey: true
     },
-    nm_cliente: {
-      type: DataTypes.STRING(200),
-      allowNull: false
-    },
     ds_email: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
     },
     ds_senha: {
       type: DataTypes.STRING(20),
-      allowNull: false
+      allowNull: true
+    },
+    nm_cliente: {
+      type: DataTypes.STRING(200),
+      allowNull: true
     },
     ds_cpf: {
       type: DataTypes.STRING(20),
-      allowNull: false,
-      unique: "ds_cpf"
+      allowNull: true
     },
     ds_telefone: {
       type: DataTypes.STRING(25),
-      allowNull: false
+      allowNull: true
     },
     dt_nascimento: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,
@@ -46,14 +45,6 @@ export default class infoa_dtn_tb_cliente extends Model {
         using: "BTREE",
         fields: [
           { name: "id_cliente" },
-        ]
-      },
-      {
-        name: "ds_cpf",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "ds_cpf" },
         ]
       },
     ]

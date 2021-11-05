@@ -1,22 +1,26 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infoa_sti_venda_produto extends Model {
+export default class infob_hdm_mapa extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_venda_produto: {
+    id_HDM_mapa: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    id_vendas: {
-      type: DataTypes.INTEGER,
+    nm_HDM_endereco: {
+      type: DataTypes.STRING(500),
+      allowNull: true
+    },
+    nr_HDM_cep: {
+      type: DataTypes.DECIMAL(10,0),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infoa_sti_venda_produto',
+    tableName: 'infob_hdm_mapa',
     timestamps: false,
     indexes: [
       {
@@ -24,18 +28,11 @@ export default class infoa_sti_venda_produto extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_venda_produto" },
-        ]
-      },
-      {
-        name: "id_vendas",
-        using: "BTREE",
-        fields: [
-          { name: "id_vendas" },
+          { name: "id_HDM_mapa" },
         ]
       },
     ]
   });
-  return infoa_sti_venda_produto;
+  return infob_hdm_mapa;
   }
 }

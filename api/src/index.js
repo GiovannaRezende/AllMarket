@@ -1,12 +1,27 @@
 import db from './db.js';
 import express from 'express';
 import cors from 'cors';
+import multer from 'multer'
+import path from 'path'
 
 import compraController from './controller/compraController.js'
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname))
+    }
+})
+
+
+const upload = multer({ storage: storage })
 
 app.get('/produtos', async (req, resp) => {
     try {
@@ -18,9 +33,15 @@ app.get('/produtos', async (req, resp) => {
     }
 });
 
-app.post('/produtos', async (req, resp) => {
+app.get('/produto', async (req, resp) => {
+    let dirname = path.resolve();
+    resp.sendFile(req.query.imagem, { root: path.join(dirname) });
+});
+
+app.post('/produtos', upload.single('imagem'), async (req, resp) => {
     try {
         let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao } = req.body;
+        let { path } = req.file;
         
         let r = await db.infoc_tct_produto.create({
             id_categoria: categoria,
@@ -31,6 +52,7 @@ app.post('/produtos', async (req, resp) => {
             ds_peso: peso,
             ds_descricao: descricao,
             vl_preco: preco,
+            img_produto: path
         });
         resp.send(r);
 

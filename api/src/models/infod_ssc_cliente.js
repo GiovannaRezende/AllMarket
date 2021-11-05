@@ -12,7 +12,11 @@ export default class infod_ssc_cliente extends Model {
     },
     id_endereco: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_ssc_endereco',
+        key: 'id_endereco'
+      }
     },
     nm_cliente: {
       type: DataTypes.STRING(255),
@@ -36,6 +40,10 @@ export default class infod_ssc_cliente extends Model {
     },
     ds_senha: {
       type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    ds_codigo: {
+      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {

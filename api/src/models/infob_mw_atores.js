@@ -1,34 +1,30 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infoa_sti_vendas extends Model {
+export default class infob_mw_atores extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_vendas: {
+    id_ator: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    id_cliente: {
+    id_filme: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    id_produto: {
-      type: DataTypes.INTEGER,
+    nm_ator: {
+      type: DataTypes.STRING(255),
       allowNull: true
     },
-    ds_codigo: {
-      type: DataTypes.STRING(200),
-      allowNull: true
-    },
-    dt_venda: {
-      type: DataTypes.DATE,
+    ds_princ_atores: {
+      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infoa_sti_vendas',
+    tableName: 'infob_mw_atores',
     timestamps: false,
     indexes: [
       {
@@ -36,25 +32,18 @@ export default class infoa_sti_vendas extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_vendas" },
+          { name: "id_ator" },
         ]
       },
       {
-        name: "id_cliente",
+        name: "id_filme",
         using: "BTREE",
         fields: [
-          { name: "id_cliente" },
-        ]
-      },
-      {
-        name: "id_produto",
-        using: "BTREE",
-        fields: [
-          { name: "id_produto" },
+          { name: "id_filme" },
         ]
       },
     ]
   });
-  return infoa_sti_vendas;
+  return infob_mw_atores;
   }
 }

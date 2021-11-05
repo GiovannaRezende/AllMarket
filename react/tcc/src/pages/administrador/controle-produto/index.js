@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
+import axios from 'axios'
+
 import Api from '../../../service/api';
 const api = new Api();
 
@@ -25,23 +27,38 @@ export default function ControleProdutos() {
     const [marca, setMarca] = useState('');
     const [peso, setPeso] = useState('');
     const [descricao, setDescricao] = useState('');
-    const [preco, setPreco] = useState('');
+    const [preco, setPreco] = useState(0.0);
+    const [imagem, setImagem] = useState(null)
     const [idAlterando, setIdAlterando] = useState(0);
 
     async function inserir() {
  
          if(idAlterando === 0) {
-             let r = await api.inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco);
- 
-             if(r.erro) {
-                 toast.error(`${r.erro}`);
-                 console.log(r);
-             }
- 
-             else {
+            let formData = new FormData();
+            formData.append('produto',  produtos);
+            formData.append('categoria', categoria);
+            formData.append('produto', produto);
+            formData.append('codigo', codigo);
+            formData.append('embalagem', embalagem);
+            formData.append('marca', marca);
+            formData.append('peso', peso);
+            formData.append('descricao', descricao);
+            formData.append('preco', preco);
+            formData.append('imagem', imagem);
+
+            let resp = await axios.post('http://localhost:3030/produtos', formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+            }})
+
+            if(resp.erro) {
+                 toast.error(`${resp.erro}`);
+                 console.log(resp);
+             } else {
                  toast.success('Produto inserido!');
                  limparCampos();
-                 listar();             }
+                 listar();            
+            }
          }
 
          else {
@@ -113,6 +130,20 @@ export default function ControleProdutos() {
         setIdAlterando(item.id_produto);
     }
 
+    
+
+
+    function previewImage() {
+        if (imagem) {
+            return URL.createObjectURL(imagem)
+        }
+    }
+
+    function selectFile() {
+        let input = document.getElementById("imagem-input-file");
+        input.click();
+    }
+
     useEffect(() => {
         listar();
     }, [])
@@ -160,7 +191,12 @@ export default function ControleProdutos() {
                 <div className="corpo-pt3">
                     <div className="form8">
                         <div className="item">Imagem:</div>
-                        <input type="text"/>
+                        <div> <img onClick={selectFile} src={previewImage()} alt="" /> </div> 
+                        <input 
+                            id="imagem-input-file"
+                            type="file"
+                            onChange={e => setImagem(e.target.files[0])}
+                        />
                     </div>
                     <div className="form9">
                         <div className="item">Descrição:</div>
@@ -195,4 +231,4 @@ export default function ControleProdutos() {
         </NovoProdutoStyled>
     
     ) 
-}
+} 
