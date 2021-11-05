@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = new axios.create({
-    baseURL: 'http://localhost:3030'
+    baseURL: 'https://allmarket.netlify.app'
 })
 
 export default class Api {
@@ -51,6 +51,11 @@ export default class Api {
 
     async finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos) {
         let r = await api.post('/compra', {cliente, endereco, notaFiscal, pagamento, produtos});
+        return r.data;
+    }
+
+    async chat(cliente, administrador, mensagem) {
+        let r = await api.post('/chat', { cliente, administrador, mensagem });
         return r.data;
     }
     

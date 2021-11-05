@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 
 export default function BoxProduto(props) {
     const [produto, setProduto] = useState(props.info);
+    console.log(setProduto);
 
     console.log(props)
 

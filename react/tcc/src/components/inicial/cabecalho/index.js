@@ -1,9 +1,7 @@
 import { CabInicial }  from './styled';
 import Cookie from 'js-cookie'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Api from '../../../service/api';
-const api = new Api();
 
 export default function CabecalhoInicial() {
 

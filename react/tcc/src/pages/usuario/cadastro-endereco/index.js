@@ -22,6 +22,7 @@ export default function CadastroEndereco() {
             let r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia);
             alert('Endereço foi cadastrado com sucesso !!');
             limpar();
+            return(r);
         }
     }
 

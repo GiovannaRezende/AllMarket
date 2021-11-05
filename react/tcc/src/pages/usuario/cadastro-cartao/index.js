@@ -17,6 +17,7 @@ export default function CadastroCartao() {
         let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv);
         alert('Cartao cadastrado !!');
         limpar();
+        return(r);
     }
 
     function limpar() {

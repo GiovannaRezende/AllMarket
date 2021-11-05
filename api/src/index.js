@@ -4,7 +4,6 @@ import cors from 'cors';
 import multer from 'multer'
 import path from 'path'
 
-import compraController from './controller/compraController.js'
 
 const app = express();
 app.use(cors());
@@ -364,13 +363,13 @@ app.get('/chat', async (req, resp) => {
 
 app.post('/chat', async (req, resp) => {
     try {
-        let { cliente, administrador, mensagem, datahora } = req.body;
+        let { cliente, administrador, mensagem } = req.body;
         
         let r = await db.infoc_tct_chat.create({
             id_cliente: cliente,
             id_administrador: administrador,
             ds_mensagem: mensagem,
-            dt_mensagem: datahora
+            dt_mensagem: new Date()
         });
         resp.send(r);
 
@@ -424,6 +423,6 @@ app.put('/categorias/:id', async (req, resp) => {
     }
 });
 
-app.use('/compra', compraController);
+
 
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));
