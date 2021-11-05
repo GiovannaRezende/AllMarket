@@ -18,6 +18,7 @@ import Login from './pages/usuario/login/index';
 import PerfilUsuario from './pages/usuario/perfil/index';
 import Erro from './pages/usuario/erro404/index';
 import PaginaPesquisa from './pages/inicial/pesquisa/'
+import Navegacao from './pages/navegacao/index';
 
 
 export default function Routes() {
@@ -43,6 +44,7 @@ export default function Routes() {
                 <Route path="*" component={Erro} />
 
                 <Route path="/home" exact={true} component={Home}/>
+                <Route path="/navegacao" exact={true} component={Navegacao}/>
             </Switch>
         </BrowserRouter>
     )
