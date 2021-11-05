@@ -13,9 +13,9 @@ export default function BoxProduto(props) {
 
     console.log(props)
 
-    function getImage() {
-        return 'http://localhost:3030/produto?imagem=${props.info.imagem}'
-    }
+    /* function getImage() {
+        return 'https://allmarket-tcc.herokuapp.com/produto?imagem=${props.info.img_imagem}'
+    } */
 
     function comprar() {
         let carrinho = Cookie.get('carrinho');
@@ -35,7 +35,6 @@ export default function BoxProduto(props) {
 
     return (
         <Container>
-            <div className="imagem"> <img src={getImage()} alt=""/> </div>
             <div class="nome"> {props.info.nm_produto} </div>
             <div class="marca"> {props.info.nm_marca} </div>
             <div class="peso"> {props.info.ds_peso} </div>
