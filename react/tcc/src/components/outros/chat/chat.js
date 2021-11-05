@@ -5,7 +5,7 @@ const api = new Api();
 
 export default function Chat() {
     const [cliente, setCliente] = useState('');
-    const [mensagem, setMensagem] = useState('');
+    const [mensagem, setMensagem] = useState([]);
     const [admin, setAdmin] = useState('');
 
 
@@ -24,12 +24,12 @@ export default function Chat() {
                 <div class="nome">Mercado</div>
             </div>
             <div class="conteudo-chat">
-                {/* {mensagem.map( x => 
+                {mensagem.map( x => 
                     <div class="mensagem-hora">
                         <div class="mensagem">Seu pedido saiu para entrega!</div>
                         <div class="hora">16:04</div>
                     </div>
-                )} */}
+                )}
 
                 <div class="enviar">
                     <div class="caixa-texto" > <input type="text" placeholder="Digite aqui a sua mensagem" value={mensagem} onChange={e => setMensagem(e.target.value)} /> </div>
