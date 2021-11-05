@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { Container } from './styled'
 
 export default function Navegacao() {
     return (
-        <div className="container-conjunto">
+        <Container> 
             <div className="titulo">Tela Inicial</div>
             <div className="link"><Link to='/home'><div>Inicial</div></Link></div>
 
@@ -23,7 +24,7 @@ export default function Navegacao() {
             <div className="link"><Link to='/gerenciar-entregas'><div>Gerenciar Entregas</div></Link></div>
             <div className="link"><Link to='/mensagens'><div>Mensagens</div></Link></div>
             <div className="link"><Link to='/perfil-adm'><div>Perfil Administrador</div></Link></div>
-        </div>
+        </Container>
     )
 }
 
