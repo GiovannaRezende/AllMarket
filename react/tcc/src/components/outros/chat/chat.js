@@ -12,9 +12,10 @@ export default function Chat() {
     async function mensagem_chat() {
         let r = await api.chat(cliente, admin, mensagem);
         alert('mensagem enviada !!');
+        console.log(r);
     }
 
-    console.log(setCliente, setAdmin, r);
+    console.log(setCliente, setAdmin);
 
     return (
         <ChatStyled>
