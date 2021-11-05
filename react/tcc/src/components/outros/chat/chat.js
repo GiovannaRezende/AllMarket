@@ -24,10 +24,14 @@ export default function Chat() {
                 <div class="nome">Mercado</div>
             </div>
             <div class="conteudo-chat">
-                {mensagem.map( x => 
-                    <div class="mensagem-hora">
+            <div class="mensagem-hora">
                         <div class="mensagem">Seu pedido saiu para entrega!</div>
                         <div class="hora">16:04</div>
+            </div>
+                {mensagem.map( x => 
+                    <div class="mensagem-hora">
+                        <div class="mensagem">{x.ds_mensagem}</div>
+                        <div class="hora">{x.dt_mensagem}</div>
                     </div>
                 )}
 
