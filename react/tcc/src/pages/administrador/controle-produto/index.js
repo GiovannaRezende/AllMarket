@@ -68,6 +68,7 @@ export default function ControleProdutos() {
             else {
                 toast.success('Produto alterado!');
                 limparCampos();
+                listar();
             }
             
         }
