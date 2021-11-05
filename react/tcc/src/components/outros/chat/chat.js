@@ -8,10 +8,13 @@ export default function Chat() {
     const [mensagem, setMensagem] = useState('');
     const [admin, setAdmin] = useState('');
 
+
     async function mensagem_chat() {
         let r = await api.chat(cliente, admin, mensagem);
         alert('mensagem enviada !!');
     }
+
+    console.log(setCliente, setAdmin, r);
 
     return (
         <ChatStyled>
