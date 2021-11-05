@@ -1,7 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Home from './pages/inicial/index';
-
 import AprovarCompra from './pages/administrador/aprovar-compra/index';
 import ControleProduto from './pages/administrador/controle-produto/index';
 import GerenciarEntregas from './pages/administrador/gerenciar-entregas/index';
@@ -31,7 +29,7 @@ export default function Routes() {
                 <Route path="/mensagens" component={Mensagens} />
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 
-                <Route path="/" exact={true} component={Index} />
+                <Route path="/" exact={true} component={Navegacao} />
                 <Route path="/pesquisa" exact={true} component={PaginaPesquisa} />
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/pedidos" component={Pedidos} />
@@ -43,8 +41,8 @@ export default function Routes() {
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
                 <Route path="*" component={Erro} />
 
-                <Route path="/home" exact={true} component={Home}/>
-                <Route path="/navegacao" exact={true} component={Navegacao}/>
+                <Route path="/home" exact={true} component={Index}/>
+                
             </Switch>
         </BrowserRouter>
     )

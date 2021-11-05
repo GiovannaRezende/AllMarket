@@ -4,7 +4,7 @@ export default function Navegacao() {
     return (
         <div className="container-conjunto">
             <div className="titulo">Tela Inicial</div>
-            <div className="link"><Link to='/'><div>Inicial</div></Link></div>
+            <div className="link"><Link to='/home'><div>Inicial</div></Link></div>
 
             <div className="titulo">Telas de Usuário</div>
             <div className="link"><Link to='/cadastro-cartao'><div>Cadastro Cartão</div></Link></div>
