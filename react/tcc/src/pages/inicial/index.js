@@ -83,7 +83,7 @@ export default function Index() {
                 <div className="titulo2">Mais Vendidos</div>
                 <div className="container-2">
                     <div className="colunas">
-                        <Chat />
+                        {/* <Chat /> */}
                         <Carousel 
                          responsive={CarouselConfig}
                          containerClass="carousel-container"
