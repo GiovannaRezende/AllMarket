@@ -23,6 +23,7 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/home" exact={true} component={Index}/>
                 <Route path="/aprovar-compra" component={AprovarCompra} />
                 <Route path="/controle-produto" component={ControleProduto} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
@@ -40,9 +41,6 @@ export default function Routes() {
                 <Route path="/login" component={Login} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
                 <Route path="*" component={Erro} />
-
-                <Route path="/home" exact={true} component={Index}/>
-                
             </Switch>
         </BrowserRouter>
     )
