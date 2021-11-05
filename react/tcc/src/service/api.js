@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = new axios.create({
-    baseURL: 'allmarket.netlify.app'
+    baseURL: 'https://allmarket.netlify.app'
 })
 
 export default class Api {
