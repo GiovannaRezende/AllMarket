@@ -64,18 +64,18 @@ app.put('/produtos/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let p = req.body;
+        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao } = req.body;
         
         let r = await db.infoc_tct_produto.update(
             {
-                id_categoria: p.categoria,
-                nm_produto: p.produtos,
-                nr_codigo: p.codigo,
-                ds_embalagem: p.embalagem,
-                nm_marca: p.marca,
-                ds_peso: p.peso,
-                ds_descricao: p.descricao,
-                vl_preco: p.preco
+                id_categoria: categoria,
+                nm_produto: produto,
+                nr_codigo: codigo,
+                ds_embalagem: embalagem,
+                nm_marca: marca,
+                ds_peso: peso,
+                ds_descricao: descricao,
+                vl_preco: preco
             },
             {
                 where: { id_produto: id }
@@ -133,17 +133,17 @@ app.put('/clientes/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let c = req.body;
+        let { nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
         
         let r = await db.infoc_tct_cliente.update(
             {
-                nm_nome: c.nome,
-                ds_email: c.email,
-                ds_senha: c.senha,
-                ds_genero: c.genero,
-                dt_nascimento: c.nascimento,
-                ds_telefone: c.telefone,
-                ds_cpf: c.cpf
+                nm_nome: nome,
+                ds_email: email,
+                ds_senha: senha,
+                ds_genero: genero,
+                dt_nascimento: nascimento,
+                ds_telefone: telefone,
+                ds_cpf: cpf
             },
             {
                 where: { id_cliente: id }
@@ -197,15 +197,15 @@ app.put('/cartao/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let c = req.body;
+        let { dono, cartao, tipo, validade, cvv } = req.body;
         
         let r = await db.infoc_tct_cartao.update(
             {
-                nm_dono: c.dono,
-                nr_cartao: c.cartao,
-                tp_tipo: c.tipo,          
-                dt_validade: c.validade,
-                ds_cvv: c.cvv
+                nm_dono: dono,
+                nr_cartao: cartao,
+                tp_tipo: tipo,          
+                dt_validade: validade,
+                ds_cvv: cvv
             },
             {
                 where: { id_cartao: id }
@@ -261,17 +261,17 @@ app.put('/endereco/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let e = req.body;
+        let{ cep, estado, cidade, rua, numero, complemento, referencia} = req.body;
         
         let r = await db.infoc_tct_endereco.update(
             {
-                ds_cep: e.cep,
-                ds_estado: e.estado,
-                nm_cidade: e.cidade,
-                nm_rua: e.rua,
-                ds_numero: e.numero,
-                ds_complemento: e.complemento,
-                nm_ponto_referencia: e.referencia
+                ds_cep: cep,
+                ds_estado: estado,
+                nm_cidade: cidade,
+                nm_rua: rua,
+                ds_numero: numero,
+                ds_complemento: complemento,
+                nm_ponto_referencia: referencia
             },
             {
                 where: { id_endereco: id }
@@ -293,63 +293,6 @@ app.delete('/endereco/:id', async (req, resp) => {
     }
 });
 
-app.get('/administrador', async (req, resp) => {
-    try {
-        let administrador = await db.infoc_tct_administrador.findAll({ order: [['id_administrador', 'desc' ]] });
-        resp.send(administrador);
-
-    } catch (e) {
-        resp.send({ erro: e.toString()});
-    }
-});
-
-app.post('/administrador', async (req, resp) => {
-    try {
-        let { nome, login, senha } = req.body;
-        
-        let r = await db.infoc_tct_administrador.create({
-            nm_nome: nome,
-            ds_login: login,
-            ds_senha: senha
-        });
-        resp.send(r);
-
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
-
-app.put('/administrador/:id', async (req, resp) => {
-    try {
-
-        let id = req.params.id;
-        let a = req.body;
-        
-        let r = await db.infoc_tct_administrador.update(
-            {
-                nm_nome: a.nome,
-                ds_login: a.login,
-                ds_senha: a.senha
-            },
-            {
-                where: { id_administrador: id }
-            });
-            
-            resp.sendStatus(200);
-            
-    } catch(e) {
-        resp.send({ erro: e.toString()});
-    }
-});
-
-app.delete('/administrador/:id', async (req, resp) => {
-    try {
-        let r = await db.infoc_tct_administrador.destroy({ where: {id_administrador: req.params.id }})
-        resp.sendStatus(200);
-    } catch (e) {
-        resp.send({ erro: e.toString() });
-    }
-});
 
 app.get('/chat', async (req, resp) => {
     try {
@@ -406,11 +349,11 @@ app.put('/categorias/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let c = req.body;
+        let { categoria } = req.body;
         
         let r = await db.infoc_tct_categorias.update(
             {
-                nm_categoria: c.categoria,
+                nm_categoria: categoria,
             },
             {
                 where: { id_categoria: id }
