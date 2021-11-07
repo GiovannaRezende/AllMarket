@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const PerfilUsuarioStyled = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const PerfilUsuarioStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: .6em 1em;
+    padding: 0.6em 1em;
 }
 
 .cabecalho-esquerdo {
@@ -27,7 +27,7 @@ const PerfilUsuarioStyled = styled.div`
 .titulo-cabecalho {
     font-size: 2em;
     font-weight: bold;
-    margin-left: .6em;
+    margin-left: 0.6em;
 }
 
 .icone-sair img {
@@ -78,7 +78,6 @@ const PerfilUsuarioStyled = styled.div`
     width: 100%;
 }
 
-
 .informacoes {
     display: flex;
     flex-direction: row;
@@ -94,17 +93,12 @@ const PerfilUsuarioStyled = styled.div`
     border-radius: 0.6em;
 }
 
-.icone-editar,
-.icone-seta,
-.seta-pedido {
+.icone-editar, .icone-seta, .seta-pedido {
     width: 2em;
     height: 2em;
 }
 
-
-.box-enderecos,
-.box-contas,
-.box-pedidos {
+.box-enderecos, .box-contas, .box-pedidos {
     padding: 1em 1.5em;
     width: 27em;
 
@@ -114,14 +108,11 @@ const PerfilUsuarioStyled = styled.div`
     border-radius: 0.6em;
 }
 
-.box-enderecos,
-.box-contas {
+.box-enderecos, .box-contas {
     margin-bottom: 1em;
 }
 
-.titulo-enderecos, 
-.titulo-contas,
-.titulo-pedido {
+.titulo-enderecos, .titulo-contas, .titulo-pedido {
     font-size: 1.3em;
     font-weight: bold;
 
@@ -132,9 +123,7 @@ const PerfilUsuarioStyled = styled.div`
     margin: .6em 0em;
 }
 
-.informacoes-endereco, 
-.informacoes-conta,
-.informacoes-pedido {
+.informacoes-endereco, .informacoes-conta, .informacoes-pedido {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -194,6 +183,6 @@ button {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #219EBC;
 }
-`
+`;
 
 export { PerfilUsuarioStyled };

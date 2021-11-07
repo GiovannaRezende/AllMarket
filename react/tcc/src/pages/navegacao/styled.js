@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div `
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -14,6 +14,6 @@ const Container = styled.div `
 .link {
     margin: .3em 0em;
 }
-`
+`;
 
 export { Container };

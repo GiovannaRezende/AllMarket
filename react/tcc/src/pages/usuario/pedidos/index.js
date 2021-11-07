@@ -1,4 +1,4 @@
-import { PedidosStyled } from './styled'
+import { PedidosStyled } from './styled';
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu';
 
 export default function Pedido() {
@@ -7,11 +7,11 @@ export default function Pedido() {
             <CabecalhoUsu/>
             <div class="conteudo">
                 <div class="numero-pedido"> 
-                    <div class="pedido"> Pedido 0845 </div> 
+                    <div class="pedido">Pedido 084 </div> 
                     <div class="barra"></div>
-                    <div class="status-pedido"> Pedido Entregue </div> 
+                    <div class="status-pedido">Pedido Entregue</div> 
                 </div>
-                <div class="texto-lista"> Lista de Produtos </div> 
+                <div class="texto-lista">Lista de Produtos</div> 
                 <div class="box-lista">
                     <div class="box-produto">
                         <div class="imagem-produto"> <img src="/assets/images/imagem-produto.png" alt=""/> </div> 
