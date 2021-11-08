@@ -32,6 +32,7 @@ export default function Carrinho() {
     const [pagamento, setPagamento] = useState('');
     const [notaFiscal, setNotaFiscal] = useState('');
     const [endereco, setEndereco] = useState([]);
+    console.log(setCliente, setPagamento, setNotaFiscal, setEndereco);
 
     useEffect(() => {
         listarCarrinho();

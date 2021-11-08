@@ -21,6 +21,7 @@ export default function PerfilUsuario() {
     const [login, setLogin] = useState(usuarioLogado.ds_login);
     const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
     const [email, setEmail] = useState(usuarioLogado.ds_email);
+    console.log(setNome, setLogin, setCpf, setEmail);
 
     return (
         <PerfilUsuarioStyled>
