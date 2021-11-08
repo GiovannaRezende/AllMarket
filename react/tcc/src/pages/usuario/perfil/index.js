@@ -1,6 +1,27 @@
 import { PerfilUsuarioStyled } from './styled';
 
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+import { useState } from 'react'
+
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function PerfilUsuario() {
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [nome, setNome] = useState(usuarioLogado.nm_usuario);
+    const [login, setLogin] = useState(usuarioLogado.ds_login);
+    const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
+    const [email, setEmail] = useState(usuarioLogado.ds_email);
+
     return (
         <PerfilUsuarioStyled>
             <div class="cabecalho">
@@ -15,13 +36,13 @@ export default function PerfilUsuario() {
                     <div class="background"></div>
                     <div class="imagem-usu"> <img src="/assets/images/Perfil-Usuario.png" alt=""/> </div>
                     <div class="box-informacoes">
-                        <div class="informacoes"> <div> <b>Nome:</b> Maria Lima </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b>Usuário:</b> maria.lima </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b>CPF:</b> 000.000.000-10 </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b>Nome:</b> {nome} </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b>Usuário:</b> {login} </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b>CPF:</b> {cpf} </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                         <div class="informacoes"> <div> <b>Gênero:</b> Feminino </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                         <div class="informacoes"> <div> <b>Data de nasc.:</b> 07/07/1998 </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                         <div class="informacoes"> <div> <b>Telefone:</b> (11) 99999-0000 </div> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b>E-mail:</b> maria@gmail.com </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b>E-mail:</b> {email} </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                     </div>
                 </div>
                 <div class="box-direita"> 

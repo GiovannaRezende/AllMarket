@@ -69,7 +69,7 @@ export default function CadastroUsuario() {
                       onChange= {e => setSenha(e.target.value)}/>
             </div>
             <div class="corpo2">
-                <BotaoLaranja onCLick={criarConta}>Cadastrar-se</BotaoLaranja>
+                <BotaoLaranja onClick={criarConta}>Cadastrar-se</BotaoLaranja>
             </div>
             <div class="rodape">
                 <div class="conta">Já tem conta? Entrar</div>
