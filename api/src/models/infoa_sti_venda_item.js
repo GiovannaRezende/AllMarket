@@ -17,6 +17,10 @@ export default class infoa_sti_venda_item extends Model {
         model: 'infoa_sti_venda',
         key: 'id_venda'
       }
+    },
+    ds_numero_pedido: {
+      type: DataTypes.STRING(255),
+      allowNull: true
     }
   }, {
     sequelize,

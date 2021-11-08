@@ -1,26 +1,30 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infod_tif_chat_mensagem extends Model {
+export default class infoa_sti_cupom extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_chat_mensagem: {
+    id_cupom: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    ds_mensagem: {
+    ds_nome_desconto: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
-    dt_mensagem: {
-      type: DataTypes.DATE,
-      allowNull: false
+    vl_cupom: {
+      type: DataTypes.DECIMAL(15,2),
+      allowNull: true
+    },
+    bt_ativo: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infod_tif_chat_mensagem',
+    tableName: 'infoa_sti_cupom',
     timestamps: false,
     indexes: [
       {
@@ -28,11 +32,11 @@ export default class infod_tif_chat_mensagem extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_chat_mensagem" },
+          { name: "id_cupom" },
         ]
       },
     ]
   });
-  return infod_tif_chat_mensagem;
+  return infoa_sti_cupom;
   }
 }

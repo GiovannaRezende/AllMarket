@@ -3,7 +3,9 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer'
 import path from 'path'
+import crypto from 'crypto-js'
 
+import compraController from './controller/compraController.js'
 
 const app = express();
 app.use(cors());
@@ -109,18 +111,19 @@ app.get('/clientes', async (req, resp) => {
 
 app.post('/clientes', async (req, resp) => {
     try {
-        let { endereco, cartao, nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
+        let { endereco, cartao, nome, email, senha, genero, nascimento, telefone, cpf, login } = req.body;
         
         let r = await db.infoc_tct_cliente.create({
             id_endereco: endereco,
             id_cartao: cartao,
             nm_nome: nome,
             ds_email: email,
-            ds_senha: senha,
+            ds_senha: crypto.SHA256(senha).toString(crypto.enc.Base64),
             ds_genero: genero,
             dt_nascimento: nascimento,
             ds_telefone: telefone,
-            ds_cpf: cpf
+            ds_cpf: cpf,
+            ds_login: login  
         });
         resp.send(r);
 
@@ -366,6 +369,28 @@ app.put('/categorias/:id', async (req, resp) => {
     }
 });
 
+app.post('/login', async (req, resp) => {
+    const login = req.body.usuario;
+    const senha = req.body.senha;
+    const cryptoSenha = crypto.SHA256(senha).toString(crypto.enc.Base64);
+
+    let r = await db.infoc_tct_cliente.findOne(
+        { 
+            where: { 
+                ds_login: login,
+                ds_senha: cryptoSenha
+            },
+            raw: true
+    });
+    
+    if (r == null)
+        return resp.send({ erro: "Credenciais Inválidas" });
+
+    delete r.ds_senha;
+    resp.send(r);
+});
+
+app.use('/compra', compraController);
 
 
 app.listen(process.env.PORT, x => console.log(`> Server Up At Port ${process.env.PORT}`));

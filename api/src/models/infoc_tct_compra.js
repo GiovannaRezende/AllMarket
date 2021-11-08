@@ -34,7 +34,11 @@ export default class infoc_tct_compra extends Model {
       type: DataTypes.STRING(40),
       allowNull: true
     },
-    bt_entrega: {
+    vl_total: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: true
+    },
+    bt_aprovada: {
       type: DataTypes.BOOLEAN,
       allowNull: true
     }

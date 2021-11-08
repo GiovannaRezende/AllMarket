@@ -20,6 +20,8 @@ app.post('/', async (req, resp) => {
     try {
         const { cliente, endereco, notaFiscal, pagamento, produtos } = req.body;
 
+        let usu = await db.infoc_tct_cliente.findOne({ where: {id_cliente: cliente.id_cliente }})
+
         const r = await db.infoc_tct_compra.create({
             id_cliente: cliente.id_cliente,
             id_endereco: endereco.id_endereco,

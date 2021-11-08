@@ -33,6 +33,10 @@ export default class infoa_dtn_tb_cliente extends Model {
     dt_nascimento: {
       type: DataTypes.DATEONLY,
       allowNull: true
+    },
+    ds_codigo_rec: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     }
   }, {
     sequelize,

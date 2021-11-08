@@ -8,16 +8,30 @@ import Cookie from 'js-cookie'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function Carrinho() {
-    const [cliente, setCliente] = useState([]);
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [cliente, setCliente] = useState(usuarioLogado);
     const [produtos, setProdutos] = useState([]);
     const [pagamento, setPagamento] = useState('');
     const [notaFiscal, setNotaFiscal] = useState('');
     const [endereco, setEndereco] = useState([]);
-    console.log(setCliente, setPagamento, setNotaFiscal, setEndereco);
 
     useEffect(() => {
         listarCarrinho();

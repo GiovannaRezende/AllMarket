@@ -15,7 +15,7 @@ export default class infod_tif_comunidade extends Model {
       allowNull: false
     },
     ds_capa: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(1555),
       allowNull: false
     },
     nm_comunidade: {

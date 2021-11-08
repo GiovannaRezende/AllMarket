@@ -58,5 +58,15 @@ export default class Api {
         let r = await api.post('/chat', { cliente, administrador, mensagem });
         return r.data;
     };
+
+    async inserirUsuario(login, senha, cpf, email, ) {
+        let r = await api.post('/clientes', { login, senha, cpf, email  });
+        return r.data;
+    }
+
+    async login(usuario, senha) {
+        let r = await api.post('/login', { usuario, senha })
+        return r.data;
+    }
     
 };

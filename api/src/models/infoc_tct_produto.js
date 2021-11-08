@@ -26,6 +26,10 @@ export default class infoc_tct_produto extends Model {
       type: DataTypes.STRING(15),
       allowNull: true
     },
+    vl_preco: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: true
+    },
     ds_embalagem: {
       type: DataTypes.STRING(30),
       allowNull: true
@@ -35,23 +39,15 @@ export default class infoc_tct_produto extends Model {
       allowNull: true
     },
     ds_peso: {
-      type: DataTypes.STRING(5),
+      type: DataTypes.STRING(7),
       allowNull: true
     },
     ds_descricao: {
       type: DataTypes.STRING(150),
       allowNull: true
     },
-    vl_preco: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: true
-    },
     bt_promocao: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
-    img_imagem: {
-      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
