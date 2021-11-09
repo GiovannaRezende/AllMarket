@@ -386,8 +386,7 @@ app.put('/categorias/:id', async (req, resp) => {
 });
 
 app.post('/login', async (req, resp) => {
-    const login = req.body.usuario;
-    const senha = req.body.senha;
+    const { login, senha } = req.body;
     const cryptoSenha = crypto.SHA256(senha).toString(crypto.enc.Base64);
 
     let r = await db.infoc_tct_cliente.findOne(

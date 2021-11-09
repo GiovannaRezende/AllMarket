@@ -20,9 +20,9 @@ export default function LoginUsuario() {
     const navigation = useHistory();
     const loading = useRef(null);
 
-    const loginUsu = async () => {
+    async function loginUsu() {
       loading.current.continuousStart();
-        let r = await api.login(login, senha);
+        let r = await api.loginUsuario(login, senha);
 
         if(r.erro) {
            toast.error(`${r.erro}`)
@@ -30,7 +30,6 @@ export default function LoginUsuario() {
         } else {
             Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/home')
-            loading.current.complete();
         }
     }
  
