@@ -112,13 +112,23 @@ const Container = styled.div`
         justify-content: center;
     }
 
-    .pontos {
+    .pontos-1 {
         width: 1.2em;
         height: 1.2em;
         margin: 5px;
 
         border-radius: 10px;
         background-color: #FB8500;
+        cursor: pointer;
+    }
+
+    .pontos {
+        width: 1.2em;
+        height: 1.2em;
+        margin: 5px;
+
+        border-radius: 10px;
+        background-color: #E5E5E5;
         cursor: pointer;
     }
 

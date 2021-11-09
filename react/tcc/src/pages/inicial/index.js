@@ -48,7 +48,7 @@ export default function Index() {
                 <div className="container-banner">
                     <div className="banner"> <img src="./assets/images/Banner-All-Market.png" alt="" /> </div>
                     <div className="container-pontos">
-                        <div className="pontos"></div>
+                        <div className="pontos-1"></div>
                         <div className="pontos"></div>
                         <div className="pontos"></div>
                     </div>
