@@ -109,13 +109,14 @@ const ControleProdutosStyled = styled.div`
     background-color: #f9f9f9;
     padding: 1em;
     justify-content: space-between;
-    height: 5.2em;
+    height: 6.6em;
     margin: .5em 0em;
 }
 
 .esquerda {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .imagem img {
@@ -135,9 +136,10 @@ const ControleProdutosStyled = styled.div`
     line-height: 1.6em;
 }
 
-.peso, .preco {
-    font: 500 .8em Roboto;
+.peso, .preco, .descricao {
+    font: 500 .9em Roboto;
 }
+
 
 .botoes {
     display: flex;
