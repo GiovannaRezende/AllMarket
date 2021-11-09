@@ -193,7 +193,7 @@ export default function ControleProdutos() {
                     <div className="form8">
                         <div className="item">Imagem:</div>
                         <div> <img onClick={selectFile} src={previewImage()} alt="" /> </div> 
-                        <input 
+                        <InputCinza
                             id="imagem-input-file"
                             type="file"
                             onChange={e => setImagem(e.target.files[0])}
@@ -216,8 +216,9 @@ export default function ControleProdutos() {
                             <div className="imagem"><img src="/assets/images/coca-cola.svg" alt=""/></div>
                             <div className="textos">
                                 <div className="produto">{item.nm_produto}</div>
-                                <div className="peso">{item.ds_peso}</div>
+                                <div className="peso">Peso: {item.ds_peso}</div>
                                 <div className="preco">R${item.vl_preco}</div>
+                                <div className="descricao">Descrição: {item.ds_descricao}</div>
                             </div>
                         </div>
                         <div className="botoes">
