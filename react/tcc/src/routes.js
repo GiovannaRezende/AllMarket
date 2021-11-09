@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Index from './pages/inicial/';

@@ -109,6 +109,22 @@ app.get('/clientes', async (req, resp) => {
     }
 });
 
+app.get('/clientes/:id', async (req, resp) => {
+    try {
+        let { idCliente } = req.params;
+        let clientes = await db.infoc_tct_cliente.findOne({ 
+            where: { 
+                id_cliente: idCliente
+            },
+            include: ['infoc_tct_compra', 'infoc_tct_cartao, infoc_tct_endereco'],
+        });
+        resp.send(clientes);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.post('/clientes', async (req, resp) => {
     try {
         let { endereco, cartao, nome, email, senha, genero, nascimento, telefone, cpf, login } = req.body;

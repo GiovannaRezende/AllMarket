@@ -30,6 +30,7 @@ export default function LoginUsuario() {
         } else {
             Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/home')
+            loading.current.complete();
         }
     }
  

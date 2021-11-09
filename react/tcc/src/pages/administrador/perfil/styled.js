@@ -5,93 +5,56 @@ const PerfilAdmStyled = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 5em 0em;
+    justify-content: space-evenly;
 }
-
-.admin-infos {
-    display: flex;
-    flex-direction: column;
-    background-color: #FB8500;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 1em;
-    align-items: center;
-    height: 25em;
-    width: 20em;
-    justify-content: center;
-}
-
 .cab.infos {
     background-color: #14213D;
     width: 3em;
 }
-
 .foto-perfil img {
     width: 4em;
     height: 4em;
 }
-
-.info {
+.admin-infos {
     display: flex;
-    color: white;
-    background-color: #219EBC;
-    font: 500 1em Roboto;
-    margin: .7em 0em;
-    padding: .6em;
-    border-radius: .5em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 15em;
-    text-align: center;
-    cursor: pointer;
+    flex-direction: column;
     align-items: center;
 }
-
-.info span {
-    font: 600 1em Roboto;
-}
-
-.editar {
-    background-color: transparent;
+.info {
+    display: flex;
+    background: #F9F9F9;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1.1em;
+    height: 3em;
+    width: 18em;
     outline: none;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5em 0em;
+    padding: 0em .5em;
+}
+.botao {
+    margin: .7em 0em;
+}
+.info button {
+    background-color: transparent;
     border: none;
-    cursor: pointer;
-    
 }
-
-img {
-    width: auto;
-    height: 1.5em;
+.info img {
+    width: 2em;
+    height: 2em;
 }
-
 .admin-funcoes {
     display: flex;
     flex-direction: column;
-    background-color: #FB8500;
-    margin: 1em;
-    padding: 1em 1em 0em 1em;
-    border-radius: 1em;
     align-items: center;
-    height: 25em;
-    width: 20em;
     justify-content: center;
-}
-
-.funcoes button {
-    color: white;
-    background-color: #219EBC;
-    border: none;
-    outline: none;
-    padding: .5em 1em;
-    border-radius: .5em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 1em 0em;
-    font: 500 1em Roboto;
-    width: 15em;
-    cursor: pointer;
 }
 a, button, img {
     cursor: pointer;
 }
-
 a {
    color: white;
 }
