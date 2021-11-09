@@ -1,9 +1,10 @@
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Index from './pages/inicial/';
 
-import Cadastro from './pages/usuario/cadastro/index';
-import Login from './pages/usuario/login/index';
+import CadastroUsuario from './pages/usuario/cadastro/index';
+import LoginUsuario from './pages/usuario/login/index';
 import PerfilUsuario from './pages/usuario/perfil/index';
 import Cartao from './pages/usuario/cadastro-cartao/index';
 import Endereco from './pages/usuario/cadastro-endereco/index';
@@ -28,8 +29,8 @@ export default function Routes() {
             <Switch>
                 <Route path="/home" exact={true} component={Index}/>
 
-                <Route path="/cadastro" component={Cadastro} />
-                <Route path="/login" component={Login} />
+                <Route path="/cadastro" component={CadastroUsuario} />
+                <Route path="/login" component={LoginUsuario} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
                 <Route path="/cadastro-cartao" component={Cartao} />
                 <Route path="/cadastro-endereco" component={Endereco} />
