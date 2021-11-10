@@ -13,37 +13,43 @@ const Container = styled.div`
     max-width: 16em;
 
     .icones:hover {
-    transition: 0.8s;
-    box-shadow: 0px 6px 6px 6px rgba(0, 0, 0, 0.25);
+        transition: 0.8s;
+        box-shadow: 0px 6px 6px 6px rgba(0, 0, 0, 0.25);
     }
 
     .img1 img {
-    height: 8em;
-    width: 8em;
+        height: 8em;
+        width: 8em;
     }
 
     .nome {
-    font: 800 0.9em Roboto;
+        font: 800 0.9em Roboto;
     }
 
     .marca {
-    font: 800 0.9em Roboto;
+        font: 800 0.9em Roboto;
     }
 
     .peso {
-    font-size: 0.7em;
-    margin-top: 0.5em;
-    color: gray;
+        font-size: 0.7em;
+        margin-top: 0.5em;
+        color: gray;
     }
 
     .preco {
-    font-size: 0.9em;
+        font-size: 0.9em;
     }
 
-    .botao {
-    display: flex;
-    justify-content: end;
-    margin-top: 1em;
+    .botao  {
+        display: flex;
+        justify-content: end;
+        margin-top: 1em;
+    }
+
+    .botao button {
+        border-radius: 2em;
+        border: none;
+        background-color: transparent;
     }
 `
 

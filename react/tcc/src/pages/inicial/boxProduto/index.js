@@ -39,7 +39,7 @@ export default function BoxProduto(props) {
             <div class="marca"> {props.info.nm_marca} </div>
             <div class="peso"> {props.info.ds_peso} </div>
             <div class="preco"> {props.info.vl_preco} </div>
-            <div class="botao" onClick={comprar}> <img src="./assets/images/Carrinho-de-Compras-2.png" alt="" /> </div>
+            <div class="botao"> <button onClick={comprar}><img src="./assets/images/Carrinho-de-Compras-2.png" alt="" /> </button> </div>
         </Container>
     )
 }

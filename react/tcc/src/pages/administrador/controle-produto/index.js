@@ -218,7 +218,7 @@ export default function ControleProdutos() {
                                 <div className="produto">{item.nm_produto}</div>
                                 <div className="peso">Peso: {item.ds_peso}</div>
                                 <div className="preco">R${item.vl_preco}</div>
-                                <div className="descricao">Descrição: {item.ds_descricao}</div>
+                                <div className="descricao" title={item.ds_descricao}>Descrição: {item.ds_descricao != null && item.ds_descricao.lenght>= 25 ? item.ds_descricao.substr(0, 25) + "..." : item.ds_descricao}</div>
                             </div>
                         </div>
                         <div className="botoes">
