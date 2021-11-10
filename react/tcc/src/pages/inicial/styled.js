@@ -15,8 +15,7 @@ const Container = styled.div`
         padding: 1em;
     }
 
-    .cabecalho-esq,
-    .cabecalho-dir {
+    .cabecalho-esq, .cabecalho-dir {
         display: flex;
         flex-direction: row;
         align-items: center;
