@@ -46,11 +46,7 @@ export default function Index() {
             <CabecalhoInicial />
             <div className="conteudo">
                 <div className="container-banner">
-                    <div className="banner"> <img src="./assets/images/Banner-All-Market.png" alt="" /> </div>
-                    <div className="container-pontos">
-                        <div className="pontos-1"></div>
-                        <div className="pontos"></div>
-                        <div className="pontos"></div>
+                    <div className="banner"> <img src="./assets/images/Banner-All-Market.png" alt="" />
                     </div>
                 </div>
                 <div className="container-titulo">Categorias</div>

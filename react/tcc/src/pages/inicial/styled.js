@@ -112,26 +112,6 @@ const Container = styled.div`
         justify-content: center;
     }
 
-    .pontos-1 {
-        width: 1.2em;
-        height: 1.2em;
-        margin: 5px;
-
-        border-radius: 10px;
-        background-color: #FB8500;
-        cursor: pointer;
-    }
-
-    .pontos {
-        width: 1.2em;
-        height: 1.2em;
-        margin: 5px;
-
-        border-radius: 10px;
-        background-color: #E5E5E5;
-        cursor: pointer;
-    }
-
     .container-titulo {
         font-size: 2em;
         margin: 2em;
