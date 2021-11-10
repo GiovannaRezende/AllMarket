@@ -62,8 +62,8 @@ const PedidosStyled = styled.div`
     }
 
     .imagem-produto img {
-        width: 17px;
-        height: 60px;
+        height: 3em;
+        width: auto;
     }
 
     .nome-produto {
@@ -89,6 +89,7 @@ const PedidosStyled = styled.div`
         border: none;
 
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 
 `
