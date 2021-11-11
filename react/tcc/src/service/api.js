@@ -78,5 +78,9 @@ export default class Api {
         let r = await api.put('/clientes/'+ id, { nome, email, senha, genero, nascimento, telefone, cpf })
         return r.data;
     }
-    
+
+    async listarPedidos() {
+        let r = await api.get('/compra');
+        return r.data;
+    }
 }

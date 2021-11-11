@@ -1,7 +1,7 @@
 import { PedidosStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Api from '../../../service/api';
 const api = new Api();
@@ -9,6 +9,15 @@ const api = new Api();
 export default function Pedido() {
 
     const [pedidos, setPedidos] = useState([]);
+
+    async function listarPedidos() {
+        let r = await api.listarPedidos();
+        setPedidos(r);
+    }
+
+    useEffect(() => {
+        listarPedidos();
+    }, [])
     
 
     return (
@@ -26,30 +35,12 @@ export default function Pedido() {
                         <div class="box-produto">
                         <div class="imagem-produto"> <img src="/assets/images/coca-cola.png" alt=""/> </div> 
                         <div class="informacoes-produto"> 
-                            <div class="nome-produto">{item.id_produto}</div>
-                            <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
+                            <div class="nome-produto"></div>
+                            <div class="preco"> <b>Preço: </b> R${item.vl_total}</div>
                             <div class="qtd-produto"> <b>Quantidade selecionada: </b> 2 </div>
                         </div>
                     </div>
                     )}
-
-                    <div class="box-produto">
-                        <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div> 
-                        <div class="informacoes-produto"> 
-                            <div class="nome-produto"> Desodorante</div>
-                            <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
-                            <div class="qtd-produto"> <b>Quantidade selecionada: </b> 2 </div>
-                        </div>
-                    </div> 
-                
-                    <div class="box-produto">
-                        <div class="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div> 
-                        <div class="informacoes-produto"> 
-                            <div class="nome-produto"> Desodorante</div>
-                            <div class="preco"> <b>Preço: </b> R$ 8,20 </div>
-                            <div class="qtd-produto"> <b>Quantidade selecionada: </b> 2 </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="botao-voltar"> <button>Voltar</button> </div>
             </div> 
