@@ -19,13 +19,15 @@ export default function GerenciarEntregas() {
 
     async function listarEndereco() {
         let r = await api.listarEndereco();
-        setEndereco(r);
-        //listarEndereco();
+        setEndereco(r && r);
+        console.log(r);
     }
 
-    async function alterarStatus() {
-        let r = await api.alterarStatus();
-        setStatus(r);
+    async function alterarStatus(id) {
+        alert(id);
+        let r = await api.alterarStatus(id);
+        console.log(r);
+        return(r);
 
         setIdAlterando(status);
 
@@ -48,10 +50,10 @@ export default function GerenciarEntregas() {
                             <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                             <div class="textos">
                                 <div class="texto-destino"><span>Destino:</span> {item.nm_rua}, {item.ds_numero} - {item.nm_cidade}</div>
-                                <div class="texto-status"><span>Status:</span> {idAlterando === 0 ? "Em preparo" : "A caminho"}</div>
+                                <div class="texto-status"><span>Status:</span> {item.bt_aprovado === 0 ? "Em preparo" : "A caminho"}</div>
                             </div>
                         </div>
-                        <div class="botao"><BotaoLaranja onClick={alterarStatus}>Atualizar status</BotaoLaranja></div>
+                        <div class="botao"><BotaoLaranja onClick={() => alterarStatus(item.id_endereco)}>Atualizar status</BotaoLaranja></div>
                     </div>
                 </div>
                 )}

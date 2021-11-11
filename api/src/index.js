@@ -267,7 +267,8 @@ app.post('/endereco', async (req, resp) => {
             nm_rua: rua,
             ds_numero: numero,
             ds_complemento: complemento,
-            nm_ponto_referencia: referencia
+            nm_ponto_referencia: referencia,
+            bt_status: 0
         });
         resp.send(r);
 
