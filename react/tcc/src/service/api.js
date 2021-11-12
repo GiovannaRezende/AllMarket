@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = new axios.create({
-baseURL: 'https://allmarket-tcc.herokuapp.com'
+baseURL: 'http://localhost:3030'
 })
 
 
