@@ -46,9 +46,11 @@ export default function CadastroCartao() {
                         </div>
                         <div class="input-3">
                             <div class="input-texto">Tipo de Cartão</div>
-                            <select value={tipo} onChange={e => setTipo(e.target.value)} ></select>
-                            <option>Debito</option>
-                            <option>Debito</option>
+                            <select value={tipo} onChange={e => setTipo(e.target.value)} >
+                                <option>Débito</option>
+                                <option>Crédito</option>
+                            </select>
+
                         </div>
                         <div class="input-4">
                             <div class="input-texto">Data de Validade</div>

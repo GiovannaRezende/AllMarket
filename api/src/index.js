@@ -194,18 +194,37 @@ app.get('/cartao', async (req, resp) => {
 
 app.post('/cartao', async (req, resp) => {
     try {
-        let { dono, cartao, tipo, validade, cvv } = req.body;
+        let { dono, cartao, tipo, validade, cvv, id } = req.body;
         
+        if ( dono === "" )
+           return resp.send ({ erro: 'Usuário não preenchido!' })
+        
+        if (!cartao === Number || cartao === "" )
+        return resp.send ({ erro: 'Cartão não preenchido!' })   
+
+        if ( tipo === "" )
+        return resp.send ({ erro: 'Tipo de cartão não preenchido!' }) 
+        
+        if ( validade === "" )
+        return resp.send ({ erro: 'Validade não preenchido!' }) 
+
+        if ( cvv > 3 && cvv < 3)
+        return resp.send ({ erro: 'Número de CVV inválido!' }) 
+
+
         let r = await db.infoc_tct_cartao.create({
+            id_cliente: id,
             nm_dono: dono,
             nr_cartao: cartao,
             tp_tipo: tipo,
             dt_validade: validade,
             ds_cvv: cvv
         });
-        resp.send(r);
+        ;
 
-    } catch (e) {
+        resp.send(r);
+        }
+        catch (e) {
         resp.send({ erro: e.toString() });
     }
 });
