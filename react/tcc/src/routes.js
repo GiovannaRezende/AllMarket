@@ -42,7 +42,7 @@ export default function Routes() {
 
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 <Route path="/controle-produto" component={ControleProduto} />
-                <Route path="/carrinho" exact={false} component={Carrinho} />
+                <Route path="/carrinho"     component={Carrinho} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
                 <Route path="/mensagens" component={Mensagens} />
 
