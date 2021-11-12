@@ -11,16 +11,28 @@ import { useLoginContext } from "../../../pages/usuario/login/context/loginConte
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    console.log(logado)
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
 
 export default function PerfilUsuario() {
-    const navigation = useHistory();
-    const { loginUsu } = useLoginContext();
 
-    const [usu, setUsu] = useState([])
-    const [nome, setNome] = useState(usu.nm_nome);
-    const [login, setLogin] = useState(usu.ds_login);
-    const [cpf, setCpf] = useState(usu.ds_cpf);
-    const [email, setEmail] = useState(usu.ds_email);
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    //const { loginUsu } = useLoginContext();
+
+    const [usu, setUsu] = useState([]);
+    const [nome, setNome] = useState(usuarioLogado.nm_nome);
+    const [login, setLogin] = useState(usuarioLogado.ds_login);
+    const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
+    const [email, setEmail] = useState(usuarioLogado.ds_email);
     const [idAlterando, setIdAlterando] = useState(0)
 
     const loading = useRef(null);
@@ -32,22 +44,22 @@ export default function PerfilUsuario() {
     const listarLogado = async () => {
         loading.current.continuousStart();
 
-        const usuLogado = await api.listarUsuLogado(loginUsu);
+        let usuLogado = await api.listarUsuLogado(login);
         setUsu(usuLogado);
 
         loading.current.complete();
     }
 
-    //const logoff = () => {
-        //Cookies.remove('usuario-logado')
-        //navigation.push('/')
-    //}
+    const logoff = () => {
+        Cookies.remove('usuario-logado')
+        navigation.push('/')
+    }
 
     async function editarUsu(id) {
         let r = await api.editarUsu(id, nome, login, cpf, email)
     }
 
-    async function editarNome (item) {
+    async function editarNome(item) {
         setNome(item.nm_nome);
         setIdAlterando(item.id_cliente)
     } 
@@ -60,24 +72,21 @@ export default function PerfilUsuario() {
                     <div class="logo-empresa"> <a href="/"> <img src="/assets/images/Logo-AllMarket.jpg" alt="" /> </a> </div>
                     <div class="titulo-cabecalho">Meu perfil</div>
                 </div>
-                <div class="icone-sair"> <img /*onClick={logoff}*/ src="/assets/images/icone-sair.svg" alt="" /> </div>
+                <div class="icone-sair"> <img onClick={logoff} src="/assets/images/icone-sair.svg" alt="" /> </div>
             </div>
             <div class="container">
                 <div class="detalhes-usuario">
                     <div class="background"></div>
                     <div class="imagem-usu"> <img src="/assets/images/Perfil-Usuario.png" alt=""/> </div>
                     <div class="box-informacoes">
-                        {usu.map (x =>
-                            <div key={x.id_cliente}> 
-                                <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} onChange={e => setNome(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarNome(x)} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                                <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> Usuário: </b> <input value={login} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> CPF: </b> <input value={cpf} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> Gênero: </b> <input /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> Data de nascimento: </b> <input /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> Telefone: </b> <input /> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
                                 <div class="informacoes"> <b> Email: </b> <input value={email} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                            </div>
-                        )}
+                           
                     </div>
 
                 <div className="editar-informacao" onClick={editarUsu(usu.id_usuario)}> Terminar edição </div>

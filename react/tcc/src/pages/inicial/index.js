@@ -2,8 +2,9 @@ import { CarouselConfig } from './config';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import { useHistory } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
-
+import Cookies from 'js-cookie'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,15 +15,13 @@ import { Container } from './styled'
 import { useState, useEffect, useRef } from 'react';
 // import Chat from '../../components/outros/chat/chat';
 
-import { useLoginContext } from "../usuario/login/context/loginContext.js";
+//import { useLoginContext } from "../usuario/login/context/loginContext.js";
 
 import Api from '../../service/api'
 const api = new Api();
 
-
 export default function Index() {
-    const { loginUsu } = useLoginContext();
-    console.log(loginUsu)
+    //const { loginUsu } = useLoginContext();
 
     const [produtos, setProdutos] = useState([]);
 
@@ -31,15 +30,6 @@ export default function Index() {
     }, [])
 
     const loading = useRef(null);
-
-    useEffect(() => {
-        listarUsu();
-    }, [])
-
-    async function listarUsu() {
-        let r = await api.listarUsuLogado(loginUsu);
-        console.log(r)
-    }
 
     async function listarProdutos() {
         loading.current.continuousStart();

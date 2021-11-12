@@ -9,13 +9,13 @@ import { useHistory } from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
-import { useLoginContext } from "./context/loginContext.js";
+//import { useLoginContext } from "./context/loginContext.js";
 
 import Api from '../../../service/api'
 const api = new Api();
 
 export default function LoginUsuario() {
-    const { setLoginUsu } = useLoginContext();
+    //const { setLoginUsu } = useLoginContext();
   
 
     const [login, setLogin] = useState('');
@@ -34,7 +34,8 @@ export default function LoginUsuario() {
            toast.error(`${r.erro}`)
            loading.current.complete();
         } else {
-            setLoginUsu(login)
+            //setLoginUsu(login)
+            Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/home')
         }
     }

@@ -20,7 +20,7 @@ export default function BoxItem(props) {
 
     return (
         <Container> 
-            {/* <div class="imagem-produto"> <img src={produto.info.imagem} /> </div> */}
+            <div class="imagem-produto"> <img src={produto.info.img_produto} /> </div> 
             <div class="informacoes-produto">
                 <div class="nome-produto"> {produto.nm_produto} </div>
                 <div class="medida-produto"> {produto.ds_peso} </div>
