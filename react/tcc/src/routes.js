@@ -48,7 +48,6 @@ export default function Routes() {
 
                 <Route path="/pesquisa" component={PaginaPesquisa} />
                 <Route path="/" exact={true} component={Navegacao} />
-                <Route path="*" component={Erro} />
             </Switch>
         </LoginContextProvider>
         </BrowserRouter>
