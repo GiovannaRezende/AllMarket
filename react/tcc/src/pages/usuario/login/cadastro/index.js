@@ -1,6 +1,7 @@
 import { CadastroUsuarioStyled }  from './styled';
 import { BotaoLaranja } from '../../../../components/outros/botoes/styled';
 import {Conteiner} from'../comun'
+import { Link } from 'react-router-dom';
 
 
 export default function CadastroUsuario() {
@@ -26,7 +27,7 @@ export default function CadastroUsuario() {
                         <BotaoLaranja>Cadastrar-se</BotaoLaranja>
                     </div>
                     <div class="rodape">
-                        <div class="conta"><a href="../login">Já tem conta? Entrar</a></div>
+                        <Link to='/login'> <div class="conta"> Já tem conta? Entrar</div> </Link>
                     </div>
               </div>
             </CadastroUsuarioStyled>  

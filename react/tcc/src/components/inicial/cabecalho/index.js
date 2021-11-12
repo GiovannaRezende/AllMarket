@@ -1,29 +1,35 @@
 import { CabInicial }  from './styled';
 import Cookie from 'js-cookie'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { useLoginContext } from "../../../pages/usuario/login/context/loginContext.js";
+//import { useLoginContext } from "../../../pages/usuario/login/context/loginContext.js";
+
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+import { useEffect, useState, useRef } from 'react'
 
 import Api from '../../../service/api'
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    console.log(logado)
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function CabecalhoInicial() {
-    const { loginUsu } = useLoginContext();
-    const [nome, setNome] = useState('')
+    //const { loginUsu } = useLoginContext();
 
     const [pesquisa, setPesquisa] = useState('');
 
-    useEffect(() => {
-        listarUsu();
-    }, [])
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
 
-    async function listarUsu() {
-        let r = await api.listarUsuLogado(loginUsu);
-        console.log(r)
-        let nome = r.nm_nome;
-        setNome(nome);
-    }
+    const [login, setLogin] = useState(usuarioLogado.ds_login);
 
     function contador() {
 
@@ -53,7 +59,7 @@ export default function CabecalhoInicial() {
                 <div class="cabecalho-dir"> 
                     <div class="carrinho"> <a href="/carrinho"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></a></div>
                     <div class="contador"> {contador()} </div>
-                    <div class="texto">Olá, <b> {nome} </b> </div>
+                    <div class="texto">Olá, <b> {login} </b> </div>
                     <div class="foto"> <a href="/perfil-usuario"> <img src="./assets/images/Perfil-Usuario.png" alt=""/></a></div>
                 </div>
             </CabInicial>

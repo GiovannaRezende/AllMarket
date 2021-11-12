@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useHistory } from 'react-router-dom'
 
+import { Link } from 'react-router-dom';
+
 import Api from '../../../service/api'
 const api = new Api();
 
@@ -72,7 +74,7 @@ export default function CadastroUsuario() {
                 <BotaoLaranja onClick={criarConta}>Cadastrar-se</BotaoLaranja>
             </div>
             <div class="rodape">
-                <div class="conta">Já tem conta? Entrar</div>
+                <Link to='/login'> <div class="conta"> Já tem conta? Entrar</div> </Link>
             </div>
         </CadastroUsuarioStyled>  
     ) 

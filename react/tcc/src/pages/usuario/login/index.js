@@ -30,14 +30,19 @@ export default function LoginUsuario() {
       loading.current.continuousStart();
       let r = await api.login(login, senha);
 
-        if(r.erro) {
+      if(r.bt_administrador === true) {
+        Cookies.set('usuario-logado', JSON.stringify(r));
+        navigation.push('/perfil-adm')
+      }
+        
+      if(r.erro) {
            toast.error(`${r.erro}`)
            loading.current.complete();
-        } else {
+      } else {
             //setLoginUsu(login)
             Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/home')
-        }
+      } 
     }
  
 

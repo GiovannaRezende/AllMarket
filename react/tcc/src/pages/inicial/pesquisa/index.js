@@ -1,3 +1,5 @@
+import { CarouselConfig } from '../config';
+import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 import LoadingBar from 'react-top-loading-bar'
@@ -18,14 +20,13 @@ export default function PaginaPesquisa(props) {
     const [produtos, setProdutos] = useState([]);
     const [produtoPesquisado, setProdutoPesquisado] = useState([]);
     const [pesquisa, setPesquisa] = useState(props.location.state);
-    console.log(setPesquisa);
 
     useEffect(() => {
         listarProdutos();
     }, [])
 
     useEffect(() => {
-        //mostrarPesquisa();
+        mostrarPesquisa();
     }, [])
 
     const loading = useRef(null);
@@ -46,7 +47,6 @@ export default function PaginaPesquisa(props) {
         console.log(pesquisa)
         setProdutoPesquisado(resultado)
     }
-    console.log(mostrarPesquisa);
 
     return (
         <Container>
@@ -63,11 +63,16 @@ export default function PaginaPesquisa(props) {
                 <div className="titulo2"> Você também pode gostar de: </div>
                 <div className="container-2">
                     <div className="colunas">
-                        {produtos.map(item => 
-                                <BoxProduto 
-                                 key={item.id_produto}
-                                 info={item}/>
-                            )}
+                    <Carousel 
+                         responsive={CarouselConfig}
+                         containerClass="carousel-container"
+                         >
+                            {produtos.map(item => 
+                                    <BoxProduto 
+                                    key={item.id_produto}
+                                    info={item}/>
+                                )}
+                    </Carousel>
 
                     </div>
             
