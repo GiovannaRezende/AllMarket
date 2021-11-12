@@ -107,8 +107,15 @@ export default function Index() {
                 <Promocionais>
                     <div className="titulo-promocao">Produtos em Promoção</div>
                     <div className="liquidacao">
-                    </div>
-                    <div className="liquidacao">
+                        <Carousel 
+                          responsive={CarouselConfig}
+                          containerClass="carousel-container" >
+                            {lista2.map(item => 
+                                <BoxProduto 
+                                 key={item.id_produto}
+                                 info={item} />
+                            )}
+                        </Carousel> 
                     </div>
                 </Promocionais>
             </div>
