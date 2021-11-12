@@ -1,12 +1,13 @@
 import axios from 'axios'
 const api = new axios.create({
-    baseURL: 'http://localhost:3030'
+
+baseURL: 'https://allmarket-tcc.herokuapp.com'
 })
 
 export default class Api {
     async listar() {
-        let r = await api.get('/produtos');
-        return r.data;
+    let r = await api.get('/produtos');
+    return r.data;
     }
 
     async inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco) {
@@ -33,7 +34,7 @@ export default class Api {
         let r = await api.put('/endereco/' + { status } );
         return r.data;
     }
-    
+
     async adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia) {
         let r = await api.post('/endereco', {cep, estado, cidade, rua, numero, complemento, referencia});
         return r.data;
@@ -70,8 +71,8 @@ export default class Api {
         return r.data;
     }
 
-    async listarUsuLogado(idUsu) {
-        let r = await api.get(`/clientes/${idUsu}`)
+    async listarUsuLogado(loginUsu) {
+        let r = await api.get(`/clientes/${loginUsu}`)
         return r.data;
     }
 

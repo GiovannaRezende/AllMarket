@@ -9,26 +9,32 @@ import { useHistory } from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
+import { useLoginContext } from "./context/loginContext.js";
+
 import Api from '../../../service/api'
 const api = new Api();
 
 export default function LoginUsuario() {
+    const { setLoginUsu } = useLoginContext();
+  
 
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
 
+    console.log(login)
+
     const navigation = useHistory();
     const loading = useRef(null);
 
-    async function loginUsu() {
+    const loginUsu = async () => {
       loading.current.continuousStart();
-        let r = await api.loginUsuario(login, senha);
+      let r = await api.login(login, senha);
 
         if(r.erro) {
            toast.error(`${r.erro}`)
            loading.current.complete();
         } else {
-            Cookies.set('usuario-logado', JSON.stringify(r));
+            setLoginUsu(login)
             navigation.push('/home')
         }
     }

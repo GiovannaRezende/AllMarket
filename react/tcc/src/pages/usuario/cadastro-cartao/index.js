@@ -1,5 +1,5 @@
 import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
-import { CadastroCartaoStyled }  from './styled';
+import { CadastroCartaoStyled } from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCadastro } from '../../../components/outros/inputs/input';
 import { useState } from 'react';
@@ -62,7 +62,7 @@ export default function CadastroCartao() {
                         </div>
                     </div>
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarCartao} >Cadastrar Cartão</BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarCartao}>Cadastrar Cartão</BotaoLaranja></div>
             </div>
         </CadastroCartaoStyled>  
     ) 
