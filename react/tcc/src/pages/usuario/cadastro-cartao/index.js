@@ -15,7 +15,7 @@ export default function CadastroCartao() {
 
     async function adicionarCartao()  {
         let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv);
-        alert('Cartao cadastrado !!');
+        alert(r.erro);
         limpar();
         return(r);
     }
@@ -42,21 +42,23 @@ export default function CadastroCartao() {
                         </div>
                         <div class="input-2">
                             <div class="input-texto">Número do Cartão</div>
-                            <InputCadastro value={cartao} onChange={e => setCartao(e.target.value)}></InputCadastro>
+                            <InputCadastro type="password" value={cartao} onChange={e => setCartao(e.target.value)}></InputCadastro>
                         </div>
                         <div class="input-3">
                             <div class="input-texto">Tipo de Cartão</div>
-                            <InputCadastro value={tipo} onChange={e => setTipo(e.target.value)} ></InputCadastro>
+                            <select value={tipo} onChange={e => setTipo(e.target.value)} ></select>
+                            <option>Debito</option>
+                            <option>Debito</option>
                         </div>
                         <div class="input-4">
                             <div class="input-texto">Data de Validade</div>
-                            <InputCadastro value={validade} onChange={e => setValidade(e.target.value)} ></InputCadastro>
+                            <InputCadastro type="date" value={validade} onChange={e => setValidade(e.target.value)} ></InputCadastro>
                         </div>
                     </div>
                     <div class="container-conteudo-2">
                         <div class="input-5">
                             <div class="input-texto">CVV</div>
-                            <InputCadastro value={cvv} onChange={e => setCvv(e.target.value)}></InputCadastro>
+                            <InputCadastro type="password" value={cvv} onChange={e => setCvv(e.target.value)}></InputCadastro>
                         </div>
                     </div>
                 </div>

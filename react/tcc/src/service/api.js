@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = new axios.create({
-    baseURL: 'https://allmarket-tcc.herokuapp.com'
+    baseURL: 'http://localhost:3030'
 })
 
 export default class Api {
@@ -56,7 +56,8 @@ export default class Api {
 
     async chat(cliente, administrador, mensagem) {
         let r = await api.post('/chat', { cliente, administrador, mensagem });
-        return r.data;
+        return r.data
+        ;
     }
 
     async inserirUsuario(login, senha, cpf, email, ) {
