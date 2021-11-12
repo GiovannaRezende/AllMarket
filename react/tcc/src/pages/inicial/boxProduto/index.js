@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 
 export default function BoxProduto(props) {
     const [produto, setProduto] = useState(props.info);
-
     /* function getImage() {
         return 'https://allmarket-tcc.herokuapp.com/produto?imagem=${props.info.img_imagem}'
     } */
@@ -32,6 +31,7 @@ export default function BoxProduto(props) {
 
     return (
         <Container>
+            <div class="img1"> <img src={props.info.img_produto} /> </div>
             <div class="nome"> {props.info.nm_produto} </div>
             <div class="marca"> {props.info.nm_marca} </div>
             <div class="peso"> {props.info.ds_peso} </div>

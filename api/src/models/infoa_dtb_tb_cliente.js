@@ -18,10 +18,6 @@ export default class infoa_dtb_tb_cliente extends Model {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    DT_NASCIMENTO: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
     NR_CPF: {
       type: DataTypes.STRING(11),
       allowNull: true
@@ -37,6 +33,10 @@ export default class infoa_dtb_tb_cliente extends Model {
     BT_ATIVO: {
       type: DataTypes.BOOLEAN,
       allowNull: true
+    },
+    DS_SENHA: {
+      type: DataTypes.STRING(30),
+      allowNull: false
     }
   }, {
     sequelize,

@@ -1,46 +1,38 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infoa_dtb_tb_venda extends Model {
+export default class infoa_dtn_tb_venda_item extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    ID_VENDA: {
+    id_venda_item: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    ID_VENDA_ITEM: {
+    id_produto: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'infoa_dtb_tb_venda_item',
-        key: 'ID_VENDA_ITEM'
+        model: 'infoa_dtn_tb_produto',
+        key: 'id_produto'
       }
     },
-    ID_CLIENTE: {
+    id_venda: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'infoa_dtb_tb_cliente',
-        key: 'ID_CLIENTE'
+        model: 'infoa_dtn_tb_venda',
+        key: 'id_venda'
       }
     },
-    VL_VENDA: {
-      type: DataTypes.DECIMAL(15,2),
-      allowNull: true
-    },
-    DS_PAGAMENTO: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    DT_VENDA: {
-      type: DataTypes.DATEONLY,
+    qtd_qtd: {
+      type: DataTypes.INTEGER,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infoa_dtb_tb_venda',
+    tableName: 'infoa_dtn_tb_venda_item',
     timestamps: false,
     indexes: [
       {
@@ -48,25 +40,25 @@ export default class infoa_dtb_tb_venda extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "ID_VENDA" },
+          { name: "id_venda_item" },
         ]
       },
       {
-        name: "ID_VENDA_ITEM",
+        name: "id_venda",
         using: "BTREE",
         fields: [
-          { name: "ID_VENDA_ITEM" },
+          { name: "id_venda" },
         ]
       },
       {
-        name: "ID_CLIENTE",
+        name: "id_produto",
         using: "BTREE",
         fields: [
-          { name: "ID_CLIENTE" },
+          { name: "id_produto" },
         ]
       },
     ]
   });
-  return infoa_dtb_tb_venda;
+  return infoa_dtn_tb_venda_item;
   }
 }

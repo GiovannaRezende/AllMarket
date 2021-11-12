@@ -1,50 +1,50 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infoc_tht_lugar extends Model {
+export default class infod_ecm_tb_intm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_lugar: {
+    id_roupa: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    nm_lugar: {
-      type: DataTypes.STRING(100),
+    id_categoria: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    ds_avaliacao: {
-      type: DataTypes.DECIMAL(10,5),
+    ds_roupa: {
+      type: DataTypes.STRING(150),
       allowNull: true
     },
-    ds_endereco: {
-      type: DataTypes.STRING(200),
+    vl_preco: {
+      type: DataTypes.DECIMAL(15,2),
       allowNull: true
     },
-    ds_imagem: {
-      type: DataTypes.STRING(255),
+    tp_roupa: {
+      type: DataTypes.STRING(60),
       allowNull: true
     },
-    ds_informacao: {
-      type: DataTypes.STRING(255),
+    ds_tamanho: {
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
-    ds_horario_fds: {
-      type: DataTypes.DATE,
+    bt_disponivel: {
+      type: DataTypes.BOOLEAN,
       allowNull: true
     },
-    ds_horario_dds: {
-      type: DataTypes.DATE,
+    qtd_disponivel: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    ds_categoria: {
+    ds_cor: {
       type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infoc_tht_lugar',
+    tableName: 'infod_ecm_tb_intm',
     timestamps: false,
     indexes: [
       {
@@ -52,11 +52,18 @@ export default class infoc_tht_lugar extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_lugar" },
+          { name: "id_roupa" },
+        ]
+      },
+      {
+        name: "id_categoria",
+        using: "BTREE",
+        fields: [
+          { name: "id_categoria" },
         ]
       },
     ]
   });
-  return infoc_tht_lugar;
+  return infod_ecm_tb_intm;
   }
 }
