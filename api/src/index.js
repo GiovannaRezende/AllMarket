@@ -10,7 +10,6 @@ import compraController from './controller/compraController.js'
 const app = express();
 app.use(cors());
 app.use(express.json());
-
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'uploads/')
@@ -23,7 +22,6 @@ const storage = multer.diskStorage({
 
 
 const upload = multer({ storage: storage })
-
 app.get('/produtos', async (req, resp) => {
     try {
         let produtos = await db.infoc_tct_produto.findAll({ order: [['id_produto', 'desc' ]] });
@@ -66,7 +64,7 @@ app.put('/produtos/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao } = req.body;
+        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao, imagem } = req.body;
         
         let r = await db.infoc_tct_produto.update(
             {
@@ -77,7 +75,8 @@ app.put('/produtos/:id', async (req, resp) => {
                 nm_marca: marca,
                 ds_peso: peso,
                 ds_descricao: descricao,
-                vl_preco: preco
+                vl_preco: preco,
+                img_produto: imagem
             },
             {
                 where: { id_produto: id }

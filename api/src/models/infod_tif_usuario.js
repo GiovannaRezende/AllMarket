@@ -12,15 +12,15 @@ export default class infod_tif_usuario extends Model {
     },
     nm_usuario: {
       type: DataTypes.STRING(19),
-      allowNull: false
+      allowNull: true
     },
     ds_email: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     ds_senha: {
-      type: DataTypes.STRING(10),
-      allowNull: false
+      type: DataTypes.STRING(32),
+      allowNull: true
     },
     ds_telefone: {
       type: DataTypes.STRING(19),

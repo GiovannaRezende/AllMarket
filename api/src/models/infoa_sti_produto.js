@@ -34,6 +34,10 @@ export default class infoa_sti_produto extends Model {
       type: DataTypes.STRING(255),
       allowNull: true
     },
+    vl_avalicao: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     vl_valor: {
       type: DataTypes.DECIMAL(15,2),
       allowNull: true

@@ -41,6 +41,10 @@ export default class infoc_tct_compra extends Model {
     bt_aprovada: {
       type: DataTypes.BOOLEAN,
       allowNull: true
+    },
+    qtd_quantidade: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,

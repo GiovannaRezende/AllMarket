@@ -5,10 +5,10 @@ export default class infob_apn_tb_user extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     ID_USER: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     NM_USER: {
       type: DataTypes.STRING(100),

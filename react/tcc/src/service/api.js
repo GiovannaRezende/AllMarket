@@ -9,13 +9,13 @@ export default class Api {
     return r.data;
     }
 
-    async inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco) {
-        let r = await api.post('/produtos', { categoria, produto, codigo, embalagem, marca, peso, descricao, preco } );
+    async inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco, imagem) {
+        let r = await api.post('/produtos', { categoria, produto, codigo, embalagem, marca, peso, descricao, preco, imagem } );
         return r.data;
     }
 
-    async alterar(id, categoria, produto, codigo, embalagem, marca, peso, descricao, preco) {
-        let r = await api.put('/produtos/'+ id, { categoria, produto, codigo, embalagem, marca, peso, descricao, preco } );
+    async alterar(id, categoria, produto, codigo, embalagem, marca, peso, descricao, preco, imagem) {
+        let r = await api.put('/produtos/'+ id, { categoria, produto, codigo, embalagem, marca, peso, descricao, preco, imagem } );
         return r.data;
     }
 
