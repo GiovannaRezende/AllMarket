@@ -109,14 +109,13 @@ app.get('/clientes', async (req, resp) => {
     }
 });
 
-app.get('/clientes/:id', async (req, resp) => {
+app.get('/clientes/:loginUsu', async (req, resp) => {
     try {
-        let { idCliente } = req.params;
+        let { loginUsu } = req.params;
         let clientes = await db.infoc_tct_cliente.findOne({ 
             where: { 
-                id_cliente: idCliente
-            },
-            include: ['infoc_tct_compra', 'infoc_tct_cartao, infoc_tct_endereco'],
+                ds_login: loginUsu
+            }
         });
         resp.send(clientes);
 

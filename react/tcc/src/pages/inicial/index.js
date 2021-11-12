@@ -14,11 +14,16 @@ import { Container } from './styled'
 import { useState, useEffect, useRef } from 'react';
 // import Chat from '../../components/outros/chat/chat';
 
+import { useLoginContext } from "../usuario/login/context/loginContext.js";
+
 import Api from '../../service/api'
 const api = new Api();
 
 
 export default function Index() {
+    const { loginUsu } = useLoginContext();
+    console.log(loginUsu)
+
     const [produtos, setProdutos] = useState([]);
 
     useEffect(() => {
@@ -26,6 +31,15 @@ export default function Index() {
     }, [])
 
     const loading = useRef(null);
+
+    useEffect(() => {
+        listarUsu();
+    }, [])
+
+    async function listarUsu() {
+        let r = await api.listarUsuLogado(loginUsu);
+        console.log(r)
+    }
 
     async function listarProdutos() {
         loading.current.continuousStart();

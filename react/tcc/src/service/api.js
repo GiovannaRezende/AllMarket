@@ -1,11 +1,11 @@
-import axios from ‘axios’
+import axios from 'axios'
 const api = new axios.create({
-baseURL: ‘https://allmarket-tcc.herokuapp.com’
+baseURL: 'https://allmarket-tcc.herokuapp.com'
 })
 
 export default class Api {
     async listar() {
-    let r = await api.get(‘/produtos’);
+    let r = await api.get('/produtos');
     return r.data;
     }
 
@@ -70,8 +70,8 @@ export default class Api {
         return r.data;
     }
 
-    async listarUsuLogado(idUsu) {
-        let r = await api.get(`/clientes/${idUsu}`)
+    async listarUsuLogado(loginUsu) {
+        let r = await api.get(`/clientes/${loginUsu}`)
         return r.data;
     }
 
