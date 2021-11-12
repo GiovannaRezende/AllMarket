@@ -213,7 +213,7 @@ export default function ControleProdutos() {
                     {produtos.map((item, i) =>
                     <div className="box">
                         <div className="esquerda">
-                            <div className="imagem"><img src="/assets/images/coca-cola.svg" alt=""/></div>
+                            <div className="imagem"><img src={item.img_produto} alt=""/></div>
                             <div className="textos">
                                 <div className="produto">{item.nm_produto}</div>
                                 <div className="peso">Peso: {item.ds_peso}</div>

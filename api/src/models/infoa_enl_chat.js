@@ -5,26 +5,18 @@ export default class infoa_enl_chat extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_chat: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'infoa_enl_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: false
     },
     id_chat_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'infoa_enl_chat_usuario',
-        key: 'id_chat_usuario'
-      }
+      allowNull: false
     },
     ds_mensagem: {
       type: DataTypes.STRING(100),

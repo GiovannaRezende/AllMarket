@@ -10,7 +10,6 @@ import compraController from './controller/compraController.js'
 const app = express();
 app.use(cors());
 app.use(express.json());
-
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'uploads/')
@@ -23,7 +22,6 @@ const storage = multer.diskStorage({
 
 
 const upload = multer({ storage: storage })
-
 app.get('/produtos', async (req, resp) => {
     try {
         let produtos = await db.infoc_tct_produto.findAll({ order: [['id_produto', 'desc' ]] });
@@ -66,7 +64,7 @@ app.put('/produtos/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao } = req.body;
+        let { categoria, produto, codigo, preco, embalagem, marca, peso, descricao, imagem } = req.body;
         
         let r = await db.infoc_tct_produto.update(
             {
@@ -77,7 +75,8 @@ app.put('/produtos/:id', async (req, resp) => {
                 nm_marca: marca,
                 ds_peso: peso,
                 ds_descricao: descricao,
-                vl_preco: preco
+                vl_preco: preco,
+                img_produto: imagem
             },
             {
                 where: { id_produto: id }
@@ -109,14 +108,13 @@ app.get('/clientes', async (req, resp) => {
     }
 });
 
-app.get('/clientes/:id', async (req, resp) => {
+app.get('/clientes/:loginUsu', async (req, resp) => {
     try {
-        let { idCliente } = req.params;
+        let { loginUsu } = req.params;
         let clientes = await db.infoc_tct_cliente.findOne({ 
             where: { 
-                id_cliente: idCliente
-            },
-            include: ['infoc_tct_compra', 'infoc_tct_cartao, infoc_tct_endereco'],
+                ds_login: loginUsu
+            }
         });
         resp.send(clientes);
 
@@ -196,18 +194,37 @@ app.get('/cartao', async (req, resp) => {
 
 app.post('/cartao', async (req, resp) => {
     try {
-        let { dono, cartao, tipo, validade, cvv } = req.body;
+        let { dono, cartao, tipo, validade, cvv, id } = req.body;
         
+        if ( dono === "" )
+           return resp.send ({ erro: 'Usuário não preenchido!' })
+        
+        if (!cartao === Number || cartao === "" )
+        return resp.send ({ erro: 'Cartão não preenchido!' })   
+
+        if ( tipo === "" )
+        return resp.send ({ erro: 'Tipo de cartão não preenchido!' }) 
+        
+        if ( validade === "" )
+        return resp.send ({ erro: 'Validade não preenchido!' }) 
+
+        if ( cvv > 3 && cvv < 3)
+        return resp.send ({ erro: 'Número de CVV inválido!' }) 
+
+
         let r = await db.infoc_tct_cartao.create({
+            id_cliente: id,
             nm_dono: dono,
             nr_cartao: cartao,
             tp_tipo: tipo,
             dt_validade: validade,
             ds_cvv: cvv
         });
-        resp.send(r);
+        ;
 
-    } catch (e) {
+        resp.send(r);
+        }
+        catch (e) {
         resp.send({ erro: e.toString() });
     }
 });

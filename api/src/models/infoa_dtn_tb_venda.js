@@ -12,30 +12,14 @@ export default class infoa_dtn_tb_venda extends Model {
     },
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_dtn_tb_cliente',
-        key: 'id_cliente'
-      }
-    },
-    ds_nota_fiscal: {
-      type: DataTypes.STRING(100),
       allowNull: true
     },
-    tp_pagamento: {
-      type: DataTypes.STRING(150),
-      allowNull: true
-    },
-    qtd_parcelas: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    bt_presente: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
-    dt_venda: {
+    dt_pedido: {
       type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    ds_situacao: {
+      type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {
@@ -49,13 +33,6 @@ export default class infoa_dtn_tb_venda extends Model {
         using: "BTREE",
         fields: [
           { name: "id_venda" },
-        ]
-      },
-      {
-        name: "id_cliente",
-        using: "BTREE",
-        fields: [
-          { name: "id_cliente" },
         ]
       },
     ]

@@ -22,10 +22,12 @@ import PaginaPesquisa from './pages/inicial/pesquisa/';
 import Navegacao from './pages/navegacao/index';
 import Erro from './pages/usuario/erro404/index';
 
+import LoginContextProvider from './pages/usuario/login/context/loginContext'
 
 export default function Routes() {
     return (
         <BrowserRouter>
+        <LoginContextProvider>
             <Switch>
                 <Route path="/home" component={Index}/>
 
@@ -48,6 +50,7 @@ export default function Routes() {
                 <Route path="/" exact={true} component={Navegacao} />
                 <Route path="*" component={Erro} />
             </Switch>
+        </LoginContextProvider>
         </BrowserRouter>
     );
 };

@@ -5,13 +5,13 @@ export default class infoa_dtn_tb_cliente extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cliente: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_email: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(150),
       allowNull: true
     },
     ds_senha: {
@@ -30,13 +30,9 @@ export default class infoa_dtn_tb_cliente extends Model {
       type: DataTypes.STRING(25),
       allowNull: true
     },
-    dt_nascimento: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
     ds_codigo_rec: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,
