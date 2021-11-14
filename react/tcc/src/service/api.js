@@ -81,7 +81,7 @@ export default class Api {
         return r.data;
     }
 
-    async listarPedidos() {
+    async listarPedido() {
         let r = await api.get('/compra');
         return r.data;
     }
