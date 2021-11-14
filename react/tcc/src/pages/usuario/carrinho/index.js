@@ -112,10 +112,10 @@ export default function Carrinho() {
                 <div class="box-direita">
                     <div class="box-endereco">
                         <div class="titulo-endereco"> Confira o endereco para entrega </div>
-                        <div class="nome-rua"> Rua Maria da Cruz Cunha, 39 </div>
-                        <div class="nome-bairro"> A </div>
+                        <div class="nome-rua"> <span>Logradouro:</span> Rua Maria da Cruz Cunha, 39 </div>
+                        <div class="nome-bairro"> <span>Bairro:</span> Jardim das Flores </div>
                         <div class="cidade-botao"> 
-                            <div class="nome-cidade"> São Paulo/SP </div>
+                            <div class="nome-cidade"> <span>Cidade:</span> São Paulo/SP </div>
                             <button> Alterar </button>
                         </div>
                     </div>

@@ -33,6 +33,7 @@ const Container = styled.div`
         text-decoration: underline;
 
         margin-bottom: 0.3em;
+        cursor: pointer;
     }
 `
 

@@ -106,6 +106,8 @@ const CarrinhoStyled = styled.div`
         border-radius: 10px;
         outline: none;
         border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 
     .box-pagamento {
@@ -139,6 +141,8 @@ const CarrinhoStyled = styled.div`
         border-radius: 7px;
         outline: none;
         border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 
     .box-total {
@@ -169,8 +173,13 @@ const CarrinhoStyled = styled.div`
         border-radius: 15px;
         outline: none;
         border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 
+    span {
+        font-weight: bold;
+    }
 `
 
 export { CarrinhoStyled };
