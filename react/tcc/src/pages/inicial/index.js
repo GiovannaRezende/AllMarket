@@ -2,9 +2,12 @@ import { CarouselConfig } from './config';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { useHistory } from 'react-router-dom'
-import LoadingBar from 'react-top-loading-bar'
-import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom';
+
+import LoadingBar from 'react-top-loading-bar';
+
+import Cookies from 'js-cookie';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
