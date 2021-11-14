@@ -74,9 +74,10 @@ const PedidosStyled = styled.div`
     .botao-voltar {
         display: flex;
         justify-content: end;
+        align-self: flex-end;
     }
 
-    .botao-voltar > button {
+    .botao-voltar button {
         background-color: #219EBC;
         color: white;
         border-radius: 10px;
@@ -91,7 +92,6 @@ const PedidosStyled = styled.div`
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         cursor: pointer;
     }
-
 `
 
 export { PedidosStyled };

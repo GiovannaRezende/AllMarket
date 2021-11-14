@@ -1,8 +1,10 @@
-import { CabecalhoStyledUsu } from './styled'
+import { CabecalhoStyledUsu } from './styled';
 
-import Cookies from 'js-cookie'
-import { useHistory } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import Cookies from 'js-cookie';
+import { useHistory } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+
+import { Link } from 'react-router-dom';
 
 function lerUsuarioLogado(navigation) {
     let logado = Cookies.get('usuario-logado')
@@ -24,10 +26,10 @@ export default function CabecalhoUsu() {
 
     return (
         <CabecalhoStyledUsu>
-                <div class="logo-allmarket"> <a href="/"> <img src="/assets/images/logo-allmarket.png" alt=""/> </a> </div>
+                <div class="logo-allmarket"> <Link to="/home"> <img src="/assets/images/logo-allmarket.png" alt=""/> </Link> </div>
                 <div class="cacebalho-direita"> 
                     <div class="nome-usuario"> Olá, <b> {login} </b> </div>
-                    <div class="imagem-usuario"> <img src="/assets/images/imagem-usu.png" alt=""/> </div>
+                    <div class="imagem-usuario"> <Link to="/perfil-usuario"><img src="/assets/images/imagem-usu.png" alt=""/> </Link> </div>
                 </div>
         </CabecalhoStyledUsu>
     )
