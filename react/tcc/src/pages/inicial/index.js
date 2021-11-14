@@ -8,6 +8,8 @@ import Cookies from 'js-cookie'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Link } from 'react-router-dom';
+
 import CabecalhoInicial from '../../components/inicial/cabecalho';
 import BoxProduto from './boxProduto';
 import { Promocionais } from '../../components/inicial/promocionais/styled';
@@ -56,27 +58,27 @@ export default function Index() {
                 <div className="container-titulo">Categorias</div>
                 <div className="categorias">
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./congelados.html"> <img src="./assets/images/Ícone-Congelados.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Congelados.png" alt="" /></Link></div>
                         <div className="texts">Congelados</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./laticinios.html"> <img src="./assets/images/Ícone-Laticínios.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Laticínios.png" alt="" /></Link></div>
                         <div className="texts">Laticínios</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./hortifruti.html"> <img src="./assets/images/Ícone-Hortifruti.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Hortifruti.png" alt="" /></Link></div>
                         <div className="texts">Hortifruti</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./carnes.html"> <img src="./assets/images/Ícone-Carnes.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Carnes.png" alt="" /></Link></div>
                         <div className="texts">Carnes</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./limpeza.html"> <img src="./assets/images/Ícone-Limpeza.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Limpeza.png" alt="" /></Link></div>
                         <div className="texts">Limpeza</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <a href="./higiene.html"> <img src="./assets/images/Ícone-Higiene.png" alt="" /></a></div>
+                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Higiene.png" alt="" /></Link></div>
                         <div className="texts">Higiene</div>
                     </div>
                 </div>
