@@ -21,6 +21,7 @@ const Container = styled.div`
 
         width: 34px;
         height: 19px;
+        cursor: pointer;
     }
 
 `

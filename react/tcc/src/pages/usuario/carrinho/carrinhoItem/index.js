@@ -24,7 +24,7 @@ export default function BoxItem(props) {
             <div class="informacoes-produto">
                 <div class="nome-produto"> {produto.nm_produto} </div>
                 <div class="medida-produto"> {produto.ds_peso} </div>
-                <div class="preco-produto"> {produto.vl_preco} </div> 
+                <div class="preco-produto"> R${produto.vl_preco} </div> 
                 <div class="quantidade-produto">  
                     <div class="remover-produto" onClick={removerProduto}> Remover </div>
                     <Contador onChange={alterarQtd} quantidade={produto.qtd} />

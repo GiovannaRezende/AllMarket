@@ -16,6 +16,7 @@ const CabecalhoStyledUsu = styled.div`
     .logo-allmarket img {
         width: 49px;
         height: 44px;
+        cursor: pointer;
     }
 
     .cacebalho-direita img {
@@ -31,6 +32,10 @@ const CabecalhoStyledUsu = styled.div`
 
     .imagem-usuario {
         margin-left: .7em;
+    }
+
+    .imagem-usuario img {
+        cursor: pointer;
     }
 `
 

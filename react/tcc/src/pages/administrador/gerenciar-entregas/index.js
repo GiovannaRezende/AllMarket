@@ -4,10 +4,6 @@ import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 
 import { useState, useEffect } from 'react';
 
-import 'react-confirm-alert/src/react-confirm-alert.css';
-
-import 'react-toastify/dist/ReactToastify.css';
-
 import Api from '../../../service/api';
 const api = new Api();
 
