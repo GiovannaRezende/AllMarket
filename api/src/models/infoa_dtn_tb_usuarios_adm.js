@@ -5,10 +5,10 @@ export default class infoa_dtn_tb_usuarios_adm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_usuarios_adm: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_adm: {
       type: DataTypes.STRING(200),

@@ -37,6 +37,10 @@ export default class infod_tif_usuario extends Model {
     ds_perfil: {
       type: DataTypes.STRING(255),
       allowNull: true
+    },
+    ds_biografia: {
+      type: DataTypes.STRING(3000),
+      allowNull: true
     }
   }, {
     sequelize,

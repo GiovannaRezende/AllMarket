@@ -35,13 +35,13 @@ export default class Api {
         return r.data;
     }
 
-    async adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia) {
-        let r = await api.post('/endereco', {cep, estado, cidade, rua, numero, complemento, referencia});
+    async adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idCliente) {
+        let r = await api.post('/endereco', { cep, estado, cidade, rua, numero, complemento, referencia, idCliente });
         return r.data;
     }
 
-    async adicionarCartao(dono, cartao, tipo, validade, cvv) {
-        let r = await api.post('/cartao', {dono, cartao, tipo, validade, cvv});
+    async adicionarCartao(dono, cartao, tipo, validade, cvv, idCliente) {
+        let r = await api.post('/cartao', { dono, cartao, tipo, validade, cvv, idCliente });
         return r.data;
     }
 
@@ -78,6 +78,21 @@ export default class Api {
 
     async editarUsu(id, nome, email, senha, genero, nascimento, telefone, cpf) {
         let r = await api.put('/clientes/'+ id, { nome, email, senha, genero, nascimento, telefone, cpf })
+        return r.data;
+    }
+
+    async listarEndereco(idUsu) {
+        let r = await api.get(`/clientes/endereco/${idUsu}`)
+        return r.data
+    }
+
+    async listarCartao(idUsu) {
+        let r = await api.get(`/clientes/cartao/${idUsu}`)
+        return r.data
+    }
+
+    async listarCompra(idUsu) {
+        let r = await api.get(`/compra/${idUsu}`)
         return r.data;
     }
 

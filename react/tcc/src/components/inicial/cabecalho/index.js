@@ -57,7 +57,7 @@ export default function CabecalhoInicial() {
                     </div>
                 </div>
                 <div class="cabecalho-dir"> 
-                    <div class="carrinho"> <Link to="/perfil-usuario"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></Link></div>
+                    <div class="carrinho"> <Link to="/carrinho"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></Link></div>
                     <div class="contador"> {contador()} </div>
                     <div class="texto">Olá, <b> {login} </b> </div>
                     <div class="foto"> <a href="/perfil-usuario"> <img src="./assets/images/Perfil-Usuario.png" alt=""/></a></div>

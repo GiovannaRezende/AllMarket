@@ -43,27 +43,6 @@ export default class infob_hdm_usuario extends Model {
           { name: "id_HDM_usuario" },
         ]
       },
-      {
-        name: "nm_HDM_nome",
-        using: "BTREE",
-        fields: [
-          { name: "nm_HDM_nome" },
-        ]
-      },
-      {
-        name: "nm_HDM_email",
-        using: "BTREE",
-        fields: [
-          { name: "nm_HDM_email" },
-        ]
-      },
-      {
-        name: "ds_HDM_senha",
-        using: "BTREE",
-        fields: [
-          { name: "ds_HDM_senha" },
-        ]
-      },
     ]
   });
   return infob_hdm_usuario;

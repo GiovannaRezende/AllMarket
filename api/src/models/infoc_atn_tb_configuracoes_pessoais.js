@@ -5,10 +5,10 @@ export default class infoc_atn_tb_configuracoes_pessoais extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_pessoal: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_sobre: {
       type: DataTypes.STRING(100),

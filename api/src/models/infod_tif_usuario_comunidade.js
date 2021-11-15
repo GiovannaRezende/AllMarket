@@ -12,11 +12,19 @@ export default class infod_tif_usuario_comunidade extends Model {
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_tif_usuario',
+        key: 'id_usuario'
+      }
     },
     id_comunidade: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_tif_comunidade',
+        key: 'id_comunidade'
+      }
     }
   }, {
     sequelize,

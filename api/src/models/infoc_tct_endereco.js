@@ -41,6 +41,10 @@ export default class infoc_tct_endereco extends Model {
     bt_status: {
       type: DataTypes.BOOLEAN,
       allowNull: true
+    },
+    id_cliente: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,

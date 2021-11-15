@@ -6,17 +6,13 @@ export default class infoa_sti_endereco extends Model {
   super.init({
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_sti_cliente',
-        key: 'id_cliente'
-      }
+      allowNull: true
     },
     id_endereco: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_endereco: {
       type: DataTypes.STRING(255),

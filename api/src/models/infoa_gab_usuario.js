@@ -5,10 +5,10 @@ export default class infoa_gab_usuario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_usuario: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_usuario: {
       type: DataTypes.STRING(255),

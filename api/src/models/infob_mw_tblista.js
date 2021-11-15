@@ -1,7 +1,7 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_lista extends Model {
+export default class infob_mw_tblista extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_lista: {
@@ -12,19 +12,23 @@ export default class infob_mw_lista extends Model {
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_usuario',
+        key: 'id_usuario'
+      }
     },
     nm_lista: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
     ds_descricao: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(300),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_lista',
+    tableName: 'infob_mw_tblista',
     timestamps: false,
     indexes: [
       {
@@ -44,6 +48,6 @@ export default class infob_mw_lista extends Model {
       },
     ]
   });
-  return infob_mw_lista;
+  return infob_mw_tblista;
   }
 }

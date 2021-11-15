@@ -12,11 +12,19 @@ export default class infod_tif_chat extends Model {
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_tif_usuario',
+        key: 'id_usuario'
+      }
     },
     id_comunidade: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_tif_comunidade',
+        key: 'id_comunidade'
+      }
     },
     ds_mensagem: {
       type: DataTypes.STRING(255),

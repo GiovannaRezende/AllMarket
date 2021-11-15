@@ -5,26 +5,18 @@ export default class infoa_dtn_tb_favoritos extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_fav: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_produto: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_dtn_tb_produto',
-        key: 'id_produto'
-      }
+      allowNull: true
     },
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_dtn_tb_cliente',
-        key: 'id_cliente'
-      }
+      allowNull: true
     }
   }, {
     sequelize,

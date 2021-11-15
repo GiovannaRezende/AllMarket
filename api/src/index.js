@@ -123,6 +123,8 @@ app.get('/clientes/:loginUsu', async (req, resp) => {
     }
 });
 
+
+
 app.post('/clientes', async (req, resp) => {
     try {
         let { endereco, cartao, nome, email, senha, genero, nascimento, telefone, cpf, login } = req.body;
@@ -150,7 +152,7 @@ app.put('/clientes/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let { nome, email, senha, genero, nascimento, telefone, cpf } = req.body;
+        let { nome, email, senha, genero, nascimento, telefone, cpf, login } = req.body;
         
         let r = await db.infoc_tct_cliente.update(
             {
@@ -160,7 +162,8 @@ app.put('/clientes/:id', async (req, resp) => {
                 ds_genero: genero,
                 dt_nascimento: nascimento,
                 ds_telefone: telefone,
-                ds_cpf: cpf
+                ds_cpf: cpf,
+                ds_login: login
             },
             {
                 where: { id_cliente: id }
@@ -182,6 +185,24 @@ app.delete('/clientes/:id', async (req, resp) => {
     }
 });
 
+app.get('/clientes/cartao/:idUsu', async (req, resp) => {
+    try {
+        let { idUsu } = req.params;
+
+        let r = await db.infoc_tct_cliente.findOne({ where: { id_cliente: idUsu }});
+
+        let endereco = await db.infoc_tct_cartao.findOne({ 
+            where: { 
+                id_cliente: r.id_cliente
+            }
+        });
+        resp.send(endereco);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.get('/cartao', async (req, resp) => {
     try {
         let cartao = await db.infoc_tct_cartao.findAll({ order: [['id_cartao', 'desc' ]] });
@@ -194,7 +215,9 @@ app.get('/cartao', async (req, resp) => {
 
 app.post('/cartao', async (req, resp) => {
     try {
-        let { dono, cartao, tipo, validade, cvv, id } = req.body;
+        let { dono, cartao, tipo, validade, cvv, idCliente } = req.body;
+
+        let usu = await db.infoc_tct_cliente.findOne({ where: {id_cliente: idCliente }})
         
         if ( dono === "" )
            return resp.send ({ erro: 'Usuário não preenchido!' })
@@ -213,18 +236,16 @@ app.post('/cartao', async (req, resp) => {
 
 
         let r = await db.infoc_tct_cartao.create({
-            id_cliente: id,
             nm_dono: dono,
             nr_cartao: cartao,
             tp_tipo: tipo,
             dt_validade: validade,
-            ds_cvv: cvv
+            ds_cvv: cvv,
+            id_cliente: usu.id_cliente
         });
-        ;
 
         resp.send(r);
-        }
-        catch (e) {
+        } catch (e) {
         resp.send({ erro: e.toString() });
     }
 });
@@ -263,6 +284,24 @@ app.delete('/cartao/:id', async (req, resp) => {
     }
 });
 
+app.get('/clientes/endereco/:idUsu', async (req, resp) => {
+    try {
+        let { idUsu } = req.params;
+
+        let r = await db.infoc_tct_cliente.findOne({ where: { id_cliente: idUsu }});
+
+        let endereco = await db.infoc_tct_endereco.findOne({ 
+            where: { 
+                id_cliente: r.id_cliente
+            }
+        });
+        resp.send(endereco);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.get('/endereco', async (req, resp) => {
     try {
         let endereco = await db.infoc_tct_endereco.findAll({ order: [['id_endereco', 'desc' ]] });
@@ -275,8 +314,10 @@ app.get('/endereco', async (req, resp) => {
 
 app.post('/endereco', async (req, resp) => {
     try {
-        let { cep, estado, cidade, rua, numero, complemento, referencia } = req.body;
+        let { cep, estado, cidade, rua, numero, complemento, referencia, idCliente } = req.body;
         
+        let usu = await db.infoc_tct_cliente.findOne({ where: { id_cliente: idCliente }})
+
         let r = await db.infoc_tct_endereco.create({
             ds_cep: cep,
             ds_estado: estado,
@@ -285,7 +326,8 @@ app.post('/endereco', async (req, resp) => {
             ds_numero: numero,
             ds_complemento: complemento,
             nm_ponto_referencia: referencia,
-            bt_status: 0
+            bt_status: 0,
+            id_cliente: usu.id_cliente
         });
         resp.send(r);
 

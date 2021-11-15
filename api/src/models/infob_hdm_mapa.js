@@ -5,10 +5,10 @@ export default class infob_hdm_mapa extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_HDM_mapa: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_HDM_endereco: {
       type: DataTypes.STRING(500),

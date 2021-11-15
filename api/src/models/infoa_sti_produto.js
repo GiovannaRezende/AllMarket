@@ -5,10 +5,10 @@ export default class infoa_sti_produto extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_produto: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     img_produto: {
       type: DataTypes.STRING(8000),
@@ -24,11 +24,7 @@ export default class infoa_sti_produto extends Model {
     },
     id_categoria: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_sti_categoria',
-        key: 'id_categoria'
-      }
+      allowNull: true
     },
     ds_descricao: {
       type: DataTypes.STRING(255),

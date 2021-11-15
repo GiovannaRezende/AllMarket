@@ -2,11 +2,29 @@ import CabecalhoStyledUsu from '../../../components/cabecalhos/usu/cabecalho-usu
 import { CadastroEnderecoStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCadastro } from '../../../components/outros/inputs/input';
-import Api from '../../../service/api';
+
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
 import { useState } from 'react';
+
+import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    console.log(logado)
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function CadastroEndereco() {
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+    
     const [cep, setCep] = useState('');
     const [estado, setEstado] = useState('');
     const [cidade, setCidade] = useState('');
@@ -14,16 +32,12 @@ export default function CadastroEndereco() {
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
     const [referencia, setReferencia] = useState('');
+    const [idCliente] = useState(usuarioLogado.id_cliente);
 
     async function adicionarEnd() {
-        if(cep === "" || estado === "" || cidade === "" || rua === "" || numero === "" || complemento === "" || referencia === "") {
-            return alert('Os campos nulos sao obrigatorios !!');
-        } else {
-            let r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia);
-            alert('Endereço foi cadastrado com sucesso !!');
-            limpar();
+            let r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idCliente);
+            console.log(r)
             return(r);
-        }
     }
 
     function limpar() {

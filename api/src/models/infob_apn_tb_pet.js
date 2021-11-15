@@ -5,10 +5,10 @@ export default class infob_apn_tb_pet extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     ID_PET: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     NM_PET: {
       type: DataTypes.STRING(100),

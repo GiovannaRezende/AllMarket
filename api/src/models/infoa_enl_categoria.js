@@ -5,10 +5,10 @@ export default class infoa_enl_categoria extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_categoria: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_categoria: {
       type: DataTypes.STRING(100),

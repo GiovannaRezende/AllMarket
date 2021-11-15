@@ -12,7 +12,11 @@ export default class infod_tif_comunidade extends Model {
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infod_tif_usuario',
+        key: 'id_usuario'
+      }
     },
     ds_capa: {
       type: DataTypes.STRING(1555),

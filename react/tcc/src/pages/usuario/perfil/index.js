@@ -4,6 +4,11 @@ import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
 
+import { CarouselConfig } from '../../inicial/config';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+import { Link } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 
 import { useLoginContext } from "../../../pages/usuario/login/context/loginContext.js";
@@ -29,16 +34,23 @@ export default function PerfilUsuario() {
     //const { loginUsu } = useLoginContext();
 
     const [usu, setUsu] = useState([]);
+    const [idUsu] = useState(usuarioLogado.id_cliente)
     const [nome, setNome] = useState(usuarioLogado.nm_nome);
     const [login, setLogin] = useState(usuarioLogado.ds_login);
     const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
     const [email, setEmail] = useState(usuarioLogado.ds_email);
     const [idAlterando, setIdAlterando] = useState(0)
+    const [endereco, setEndereco] = useState([]);
+    const [cartao, setCartao] = useState([]);
+    const [compra, setCompra] = useState([]);
 
     const loading = useRef(null);
 
     useEffect(() => {
         listarLogado();
+        listarEndereco();
+        listarCartao();
+        listarCompra();
     }, [])
 
     const listarLogado = async () => {
@@ -46,6 +58,33 @@ export default function PerfilUsuario() {
 
         let usuLogado = await api.listarUsuLogado(login);
         setUsu(usuLogado);
+
+        loading.current.complete();
+    }
+
+    const listarEndereco = async () => {
+        loading.current.continuousStart();
+
+        let endereco = await api.listarEndereco(idUsu);
+        setEndereco(endereco);
+
+        loading.current.complete();
+    }
+
+    const listarCartao = async () => {
+        loading.current.continuousStart();
+
+        let cartao = await api.listarCartao(idUsu);
+        setCartao(cartao);
+
+        loading.current.complete();
+    }
+
+    const listarCompra = async () => {
+        loading.current.continuousStart();
+
+        let compra = await api.listarCompra(idUsu);
+        setCompra(compra);
 
         loading.current.complete();
     }
@@ -97,50 +136,48 @@ export default function PerfilUsuario() {
                             <div class="titulo-enderecos">Meus endereços</div>
                             <div class="informacoes-endereco">
                                 <div class="box-esq">
-                                    <div class="informacoes-box">Rua Maria da Cruz Cunha, 39</div>
-                                    <div class="informacoes-box">Jardim das Flores</div>
-                                    <div class="informacoes-box">São Paulo/SP</div>
-                                </div>
-                                <div class="proximo">
-                                    <img class="icone-seta" src="/assets/images/Ícone-Seta-2.png" alt="" />
+                                    <div class="informacoes-box"> {endereco.nm_rua}, {endereco.ds_numero} </div>
+                                    <div class="informacoes-box"> {endereco.nm_estado} </div>
+                                    <div class="informacoes-box"> {endereco.nm_cidade} </div>
                                 </div>
                             </div>
                             <div class="editar">
-                                <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" />
+                                <Link to='/cadastro-endereco'> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </Link>
                             </div>
                     </div>
                     <div class="box-contas">
                         <div class="informacoes-conta">
                             <div class="box-esq">
                                 <div class="titulo-contas">Contas bancárias/Cartões</div>
-                                <div class="informacoes-box">Banco Itaucard</div>
-                                <div class="informacoes-box">**** **** **** 9993</div>
-                                <div class="informacoes-box">Val: 03/2023</div>
-                                <div class="informacoes-box">CVV: 963</div>
-                            </div>
-                            <div class="proximo">
-                                <img class="icone-seta" src="/assets/images/Ícone-Seta-2.png" alt="" />
+                                <div class="informacoes-box"> {cartao.nr_cartao} Banco Itaucard</div>
+                                <div class="informacoes-box"> Número: {cartao.nr_cartao} </div>
+                                <div class="informacoes-box">Val: {cartao.dt_validade} </div>
+                                <div class="informacoes-box">CVV: {cartao.ds_cvv} </div>
                             </div>
                         </div>
                         <div class="editar">
-                            <img class="icone-editar" src="/assets/images/Ícone-Editar.png"  alt="" />
+                            <Link to='/cadastro-cartao'> <img class="icone-editar" src="/assets/images/Ícone-Editar.png"  alt="" /> </Link>
                         </div>
                     </div>
-                    <div class="box-pedidos">
-                        <div class="titulo-pedido">Meus pedidos</div>
-                        <div class="informacoes-pedido">
-                            <div class="box-esq">
-                                <div class="informacoes-box">Código da Compra: 96472</div>
-                                <div class="informacoes-box">Valor total: R$180,67</div>
-                                <div class="informacoes-box">Status: A caminho</div>
+                    <Carousel 
+                         responsive={CarouselConfig}
+                         containerClass="carousel-container"
+                         > 
+                            <div class="box-pedidos">
+                                <div class="titulo-pedido">Meus pedidos</div>
+                                <div class="informacoes-pedido">
+                                    <div class="box-esq">
+                                        <div class="informacoes-box">Código da Compra: {compra.id_compra} </div>
+                                        <div class="informacoes-box">Valor total: R$180,67</div>
+                                        <div class="informacoes-box">Status: A caminho</div>
+                                    </div>
+                                </div>
+                                <div class="cancelar-detalhes">
+                                    <div class="cancelar-pedido">Cancelar o pedido</div>
+                                    <button>Ver detalhes</button>
+                                </div>
                             </div>
-                            <img class="seta-pedido" src="/assets/images/Ícone-Seta-2.png" alt="" />
-                        </div>
-                        <div class="cancelar-detalhes">
-                            <div class="cancelar-pedido">Cancelar o pedido</div>
-                            <button>Ver detalhes</button>
-                        </div>
-                    </div>
+                    </Carousel>
                 </div>
             </div>
         </PerfilUsuarioStyled>

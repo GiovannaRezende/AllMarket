@@ -2,21 +2,39 @@ import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-a
 import { CadastroCartaoStyled } from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCadastro } from '../../../components/outros/inputs/input';
+
+
 import { useState } from 'react';
+
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    console.log(logado)
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function CadastroCartao() {
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
     const [dono, setDono] = useState('');
     const [cartao, setCartao] = useState('');
     const [tipo, setTipo] = useState('');
     const [validade, setValidade] = useState('');
     const [cvv, setCvv] = useState('');
+    const [idCliente] = useState(usuarioLogado.id_cliente);
 
     async function adicionarCartao()  {
-        let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv);
-        alert(r.erro);
-        limpar();
+        let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv, idCliente);
         return(r);
     }
 
