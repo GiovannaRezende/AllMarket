@@ -1,10 +1,11 @@
 import { PerfilUsuarioStyled } from './styled';
+import BoxCompra from './boxCompra/index'
 
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
 
-import { CarouselConfig } from '../../inicial/config';
+import { CarouselConfigCompra } from './config';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -47,9 +48,11 @@ export default function PerfilUsuario() {
     const loading = useRef(null);
 
     useEffect(() => {
-        listarLogado();
         listarEndereco();
         listarCartao();
+    }, [])
+
+    useEffect(() => {
         listarCompra();
     }, [])
 
@@ -83,7 +86,7 @@ export default function PerfilUsuario() {
     const listarCompra = async () => {
         loading.current.continuousStart();
 
-        let compra = await api.listarCompra(idUsu);
+        let compra = await api.listarPedido();
         setCompra(compra);
 
         loading.current.complete();
@@ -93,6 +96,10 @@ export default function PerfilUsuario() {
         Cookies.remove('usuario-logado')
         navigation.push('/')
     }
+
+    const comprasUsu = compra.filter(p => p.id_cliente === idUsu);
+    console.log(comprasUsu)
+    console.log(compra)
 
     async function editarUsu(id) {
         let r = await api.editarUsu(id, nome, login, cpf, email)
@@ -136,9 +143,9 @@ export default function PerfilUsuario() {
                             <div class="titulo-enderecos">Meus endereços</div>
                             <div class="informacoes-endereco">
                                 <div class="box-esq">
-                                    <div class="informacoes-box"> {endereco.nm_rua}, {endereco.ds_numero} </div>
-                                    <div class="informacoes-box"> {endereco.nm_estado} </div>
-                                    <div class="informacoes-box"> {endereco.nm_cidade} </div>
+                                    <div class="informacoes-box"> Rua: {endereco.nm_rua}, Número: {endereco.ds_numero} </div>
+                                    <div class="informacoes-box"> Estado: {endereco.ds_estado} </div>
+                                    <div class="informacoes-box"> Cidade: {endereco.nm_cidade} </div>
                                 </div>
                             </div>
                             <div class="editar">
@@ -159,25 +166,18 @@ export default function PerfilUsuario() {
                             <Link to='/cadastro-cartao'> <img class="icone-editar" src="/assets/images/Ícone-Editar.png"  alt="" /> </Link>
                         </div>
                     </div>
-                    <Carousel 
-                         responsive={CarouselConfig}
-                         containerClass="carousel-container"
-                         > 
-                            <div class="box-pedidos">
-                                <div class="titulo-pedido">Meus pedidos</div>
-                                <div class="informacoes-pedido">
-                                    <div class="box-esq">
-                                        <div class="informacoes-box">Código da Compra: {compra.id_compra} </div>
-                                        <div class="informacoes-box">Valor total: R$180,67</div>
-                                        <div class="informacoes-box">Status: A caminho</div>
-                                    </div>
-                                </div>
-                                <div class="cancelar-detalhes">
-                                    <div class="cancelar-pedido">Cancelar o pedido</div>
-                                    <button>Ver detalhes</button>
-                                </div>
-                            </div>
-                    </Carousel>
+                    <div className="carousel-compra"> 
+                        <Carousel 
+                            responsive={CarouselConfigCompra}
+                            containerClass="carousel-container"
+                            > 
+                            {comprasUsu.map(item => 
+                                <BoxCompra
+                                    key={item.id_compra}
+                                    info={item}/>
+                            )}
+                        </Carousel>
+                    </div>
                 </div>
             </div>
         </PerfilUsuarioStyled>

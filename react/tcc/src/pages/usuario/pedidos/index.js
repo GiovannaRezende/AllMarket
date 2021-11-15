@@ -10,14 +10,16 @@ import LoadingBar from 'react-top-loading-bar';
 import Api from '../../../service/api';
 const api = new Api();
 
-export default function Pedido() {
+export default function Pedido(props) {
 
     const [pedido, setPedido] = useState([]);
+    const [idCompra] = useState(props.location.state)
     const loading = useRef(null);
+
 
     async function listarPedido() {
         loading.current.continuousStart();
-        let r = await api.listarPedido();
+        let r = await api.produtosPedido(idCompra);
         setPedido(r);
         loading.current.complete();
     }
@@ -40,10 +42,10 @@ export default function Pedido() {
                 <div className="box-lista">
                     {pedido.map((item, i) =>
                         <div className="box-produto">
-                        <div className="imagem-produto"> <img src="/assets/images/coca-cola.svg" alt=""/> </div> 
+                        <div className="imagem-produto"> <img src={item.img_produto} alt=""/> </div> 
                         <div className="informacoes-produto"> 
-                            <div className="nome-produto">aaa</div>
-                            <div className="preco"> <b>Preço: </b>R${item.vl_valor}</div>
+                            <div className="nome-produto"> {item.nm_produto} </div>
+                            <div className="preco"> <b>Preço: </b>R${item.vl_preco}</div>
                             <div className="qtd-produto"> <b>Quantidade selecionada: </b>{item.qtd_quantidade}</div>
                         </div>
                     </div>

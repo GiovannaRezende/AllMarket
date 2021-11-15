@@ -6,10 +6,47 @@ const app = Router();
 app.get('/', async (req, resp) => {
     try {
         let compra = await db.infoc_tct_compra.findAll({ 
-            attributes: getFields(), 
             order: [['id_compra', 'desc' ]] 
         });
         resp.send(compra);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.get('/compraitem', async (req, resp) => {
+    try {
+        let compraItem = await db.infoc_tct_compra_item.findAll();
+        resp.send(compraItem);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.get('/pedidousu/:idCompra', async (req, resp) => {
+    try {
+        let { idCompra } = req.params;
+        let pedido = ([])
+
+        let compraItem = await db.infoc_tct_compra_item.findAll({ 
+            where: { 
+                id_compra: idCompra 
+        }});
+
+        for (var compra of compraItem) {
+
+            let produtos = await db.infoc_tct_produto.findAll({
+                where: { 
+                    id_produto: compra.id_produto 
+            }});
+
+            pedido = produtos;
+
+        }
+        
+        resp.send(pedido);
 
     } catch (e) {
         resp.send({ erro: e.toString()});
@@ -63,7 +100,7 @@ app.post('/', async (req, resp) => {
     }
 });
 
-app.delete('/compra/:id', async (req, resp) => {
+app.delete('/:id', async (req, resp) => {
     try {
         let r = await db.infoc_tct_compra.destroy({ where: {id_compra: req.params.id }})
         resp.sendStatus(200);
@@ -72,15 +109,6 @@ app.delete('/compra/:id', async (req, resp) => {
     }
 });
 
-app.get('/compraitem', async (req, resp) => {
-    try {
-        let compraItem = await db.infoc_tct_compra_item.findAll();
-        resp.send(compraItem);
-
-    } catch (e) {
-        resp.send({ erro: e.toString()});
-    }
-});
 
 function getFields() {
     return [

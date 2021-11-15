@@ -120,8 +120,7 @@ const PerfilUsuarioStyled = styled.div`
 }
 
 .titulo-enderecos, 
-.titulo-contas,
-.titulo-pedido {
+.titulo-contas {
     font-size: 1.3em;
     font-weight: bold;
 
@@ -133,8 +132,7 @@ const PerfilUsuarioStyled = styled.div`
 }
 
 .informacoes-endereco, 
-.informacoes-conta,
-.informacoes-pedido {
+.informacoes-conta {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,18 +144,7 @@ const PerfilUsuarioStyled = styled.div`
     justify-content: end;
 }
 
-.cancelar-detalhes {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
 
-    margin-top: 1em;
-}
-
-.cancelar-pedido {
-    text-decoration: underline;
-}
 
 button {
     font: 800 1.1em Roboto;
@@ -193,6 +180,11 @@ button {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #219EBC;
+}
+
+.carousel-container {
+        width: 27em;
+        height: 14.3em;
 }
 `
 
