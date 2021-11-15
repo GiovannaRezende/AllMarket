@@ -80,7 +80,22 @@ export default class Api {
         let r = await api.put('/clientes/'+ id, { nome, email, senha, genero, nascimento, telefone, cpf })
         return r.data;
     }
-    
+
+    async listarEndereco(idUsu) {
+        let r = await api.get(`/clientes/endereco/${idUsu}`)
+        return r.data
+    }
+
+    async listarCartao(idUsu) {
+        let r = await api.get(`/clientes/cartao/${idUsu}`)
+        return r.data
+    }
+
+    async listarCompra(idUsu) {
+        let r = await api.get(`/compra/${idUsu}`)
+        return r.data;
+    }
+
     async listarPedido() {
         let r = await api.get('/compra');
         return r.data;
