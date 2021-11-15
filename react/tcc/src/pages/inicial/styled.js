@@ -73,6 +73,8 @@ const Container = styled.div`
         background-color: #FB8500;
         color: white;
         border-radius: 50px;
+        margin-top: -3em;
+        margin-left: -1em;
     }
 
     .texto {
@@ -259,11 +261,16 @@ const Container = styled.div`
         height: 3em;
     }
 
+    .contato {
+        margin-left: 1em;
+    }
+
     .linha {
-        width: 100%;
+        width: 99.5%;
         height: 0.11em;
         margin: 1em 0em 2em 0em;
         background-color: #FB8500;
+        margin-left: 0.5em;
     }
 
     .img2 img {

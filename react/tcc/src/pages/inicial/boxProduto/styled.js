@@ -17,6 +17,10 @@ const Container = styled.div`
         box-shadow: 0px 6px 6px 6px rgba(0, 0, 0, 0.25);
     }
 
+    .img1 {
+        margin-left: 1.4em;
+    }
+
     .img1 img {
         height: 8em;
         width: 8em;
@@ -44,6 +48,11 @@ const Container = styled.div`
         display: flex;
         justify-content: end;
         margin-top: 1em;
+    }
+
+    .botao img {
+        height: 2.8em;
+        width: 2.8em;
     }
 
     .botao button {

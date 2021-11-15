@@ -71,11 +71,11 @@ export default function LoginUsuario() {
                       onChange= {e => setSenha(e.target.value)} />
               </div>
               <div class="rodape">
-                  <div class="senha">Esqueci a senha</div>
+                <div class="senha">Esqueci a Senha</div>
                 </div>
               <div class="corpo2">
                 <BotaoLaranja onClick={loginUsu}>Entrar</BotaoLaranja>
               </div>
-            </LoginUsuarioStyled>  
+            </LoginUsuarioStyled>
     ) 
 }

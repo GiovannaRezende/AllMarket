@@ -142,24 +142,24 @@ export default function Index() {
                         </div>   
                     </div>
                     <div className="atendimento">
-                        <div className="titulo-atendimento">Atendimento</div>
-                        <div className="horario-normal">Segundas as sextas das 8h ás 22h</div>
-                        <div className="horario-feriado">Sábados, domingos e feriados das 9h ás 20h </div>
+                        <div className="titulo-atendimento">Atendimento Online</div>
+                        <div className="horario-normal">Segundas às Sextas das 8h ás 22h</div>
+                        <div className="horario-feriado">Sábados, Domingos e Feriados das 9h ás 20h</div>
                     </div>
                     <div className="redes">
-                        <div className="titulo-redes">Nos siga nas redes sociais!</div>
+                        <div className="titulo-redes">Nos Siga nas Redes Sociais!</div>
                         <div className="redes-sociais">
                             <div className="facebook"> <img src="./assets/images/Imagem-Facebook.png" alt="" /> </div>
                             <div className="twitter"> <img src="./assets/images/Imagem-Twitter.png" alt="" /> </div>
                             <div className="instagram"> <img src="./assets/images/Imagem-Instagram.png" alt="" /> </div>
                             <div className="whats"> <img src="./assets/images/Imagem-WhatsApp.png" alt="" /> </div>
                         </div>
-                        <div className="contato">contato@allmaket.com.br</div>
+                        <div className="contato">weballmarket@gmail.com</div>
                     </div>
                 </div>
                 <div className="rodape">
                     <div className="linha">ㅤ</div>
-                    <div className="texto-final">©CopyRight All Market 2021 | Todos os direitos reservados</div>
+                    <div className="texto-final">© CopyRight All-Market 2021 | Todos os Direitos Reservados</div>
                 </div>
             </div>
         </Container>
