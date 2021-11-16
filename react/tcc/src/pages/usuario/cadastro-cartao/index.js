@@ -1,4 +1,4 @@
-import CabecalhoStyledUsu from '../../../components/cabecalhos/admin/cabecalho-admin';
+import CabecalhoStyledUsu from '../../../components/cabecalhos/usu/cabecalho-usu';
 import { CadastroCartaoStyled } from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCadastro } from '../../../components/outros/inputs/input';
