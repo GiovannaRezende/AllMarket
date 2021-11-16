@@ -65,7 +65,7 @@ export default function CadastroUsuario() {
                       value= {email}
                       onChange= {e => setEmail(e.target.value)}/>
                 <input 
-                      type="text" 
+                      type="password" 
                       placeholder="Senha"
                       value= {senha}
                       onChange= {e => setSenha(e.target.value)}/>

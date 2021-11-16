@@ -61,27 +61,27 @@ export default function Index() {
                 <div className="container-titulo">Categorias</div>
                 <div className="categorias">
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Congelados.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Congelados.png" alt="" /></Link></div>
                         <div className="texts">Congelados</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Laticínios.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Laticínios.png" alt="" /></Link></div>
                         <div className="texts">Laticínios</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Hortifruti.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Hortifruti.png" alt="" /></Link></div>
                         <div className="texts">Hortifruti</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Carnes.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Carnes.png" alt="" /></Link></div>
                         <div className="texts">Carnes</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Limpeza.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Limpeza.png" alt="" /></Link></div>
                         <div className="texts">Limpeza</div>
                     </div>
                     <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/"> <img src="./assets/images/Ícone-Higiene.png" alt="" /></Link></div>
+                        <div className="img-categorias"> <Link to="/home"> <img src="./assets/images/Ícone-Higiene.png" alt="" /></Link></div>
                         <div className="texts">Higiene</div>
                     </div>
                 </div>

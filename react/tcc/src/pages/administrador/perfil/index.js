@@ -48,7 +48,6 @@ export default function PerfilAdm() {
             <div className="admin-funcoes">
                 <div className="botao"><BotaoLaranja><Link to="/controle-produto">Administrar produtos</Link></BotaoLaranja></div>
                 <div className="botao"><BotaoLaranja><Link to="/aprovar-compra">Aprovar compras</Link></BotaoLaranja></div>
-                <div className="botao"><BotaoLaranja><Link to="/mensagens">Responder mensagens</Link></BotaoLaranja></div>
                 <div className="botao"><BotaoLaranja><Link to="/gerenciar-entregas">Gerenciar entregas</Link></BotaoLaranja></div>
                 <div className="botao"><BotaoLaranja><Link to="/home">Modo usuário</Link></BotaoLaranja></div>
             </div>

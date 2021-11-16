@@ -15,7 +15,6 @@ export default function Navegacao() {
             <div className="link"><Link to='/cadastro-cartao'> <BotaoLaranja>Cadastro Cartão</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/cadastro-endereco'><BotaoLaranja>Cadastro Endereço</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/carrinho'> <BotaoLaranja>Carrinho</BotaoLaranja> </Link> </div>
-            <div className="link"><Link to='/chat'> <BotaoLaranja>Chat Usuário</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/pedidos'> <BotaoLaranja>Meus Pedidos</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/pesquisa'> <BotaoLaranja>Pesquisa</BotaoLaranja> </Link> </div>
 
@@ -24,7 +23,6 @@ export default function Navegacao() {
             <div className="link"><Link to='/controle-produto'> <BotaoLaranja>Controle Produto</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/aprovar-compra'> <BotaoLaranja>Aprovar Compra</BotaoLaranja> </Link> </div>
             <div className="link"><Link to='/gerenciar-entregas'> <BotaoLaranja>Gerenciar Entregas</BotaoLaranja> </Link> </div>
-            <div className="link"><Link to='/mensagens'> <BotaoLaranja>Mensagens</BotaoLaranja> </Link> </div>
         </Container>
     );
 };

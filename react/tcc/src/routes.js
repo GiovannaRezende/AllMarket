@@ -31,7 +31,7 @@ export default function Routes() {
             <Switch>
                 <Route path="/home" component={Index}/>
 
-                <Route path="/cadastro" component={CadastroUsuario} />
+                <Route path="/" exact={true}component={CadastroUsuario} />
                 <Route path="/login" component={LoginUsuario} />
                 <Route path="/perfil-usuario" component={PerfilUsuario} />
                 <Route path="/cadastro-cartao" component={Cartao} />
@@ -42,12 +42,12 @@ export default function Routes() {
 
                 <Route path="/perfil-adm" component={PerfilAdm} />
                 <Route path="/controle-produto" component={ControleProduto} />
-                <Route path="/carrinho"     component={Carrinho} />
+                <Route path="/carrinho" component={Carrinho} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
                 <Route path="/mensagens" component={Mensagens} />
 
                 <Route path="/pesquisa" component={PaginaPesquisa} />
-                <Route path="/" exact={true} component={Navegacao} />
+                <Route path="/navegacao" component={Navegacao} />
             </Switch>
         </LoginContextProvider>
         </BrowserRouter>
