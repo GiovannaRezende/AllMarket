@@ -1,7 +1,12 @@
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Index from './pages/inicial/';
+import CategoriaHortifruti from './pages/inicial/categoria-hortifruti/index';
+import CategoriaHigiene from './pages/inicial/categoria-higiene/index';
+import CategoriaCarnes from './pages/inicial/categoria-carnes/index';
+import CategoriaLaticinios from './pages/inicial/categoria-laticinios/index';
+import CategoriaLimpeza from './pages/inicial/categoria-limpeza/index';
+import CategoriaCongelados from './pages/inicial/categoria-congelados/index';
 
 import CadastroUsuario from './pages/usuario/cadastro/index';
 import LoginUsuario from './pages/usuario/login/index';
@@ -22,14 +27,20 @@ import PaginaPesquisa from './pages/inicial/pesquisa/';
 import Navegacao from './pages/navegacao/index';
 import Erro from './pages/usuario/erro404/index';
 
-import LoginContextProvider from './pages/usuario/login/context/loginContext'
+import LoginContextProvider from './pages/usuario/login/context/loginContext';
 
 export default function Routes() {
     return (
         <BrowserRouter>
         <LoginContextProvider>
             <Switch>
-                <Route path="/home" component={Index}/>
+                <Route path="/home" component={Index} />
+                <Route path="/categoria-hortifruti" component={CategoriaHortifruti} />
+                <Route path="/categoria-higiene" component={CategoriaHigiene} />
+                <Route path="/categoria-carnes" component={CategoriaCarnes} />
+                <Route path="/categoria-laticinios" component={CategoriaLaticinios} />
+                <Route path="/categoria-limpeza" component={CategoriaLimpeza} />
+                <Route path="/categoria-congelados" component={CategoriaCongelados} />
 
                 <Route path="/" exact={true}component={CadastroUsuario} />
                 <Route path="/login" component={LoginUsuario} />
