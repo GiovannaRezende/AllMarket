@@ -98,8 +98,6 @@ export default function PerfilUsuario() {
     }
 
     const comprasUsu = compra.filter(p => p.id_cliente === idUsu);
-    console.log(comprasUsu)
-    console.log(compra)
 
     async function editarUsu(id) {
         let r = await api.editarUsu(id, nome, login, cpf, email)

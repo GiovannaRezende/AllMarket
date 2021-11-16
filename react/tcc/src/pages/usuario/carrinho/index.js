@@ -28,18 +28,24 @@ export default function Carrinho() {
     let usuarioLogado = lerUsuarioLogado(navigation);
 
     const [cliente, setCliente] = useState(usuarioLogado);
+    const [idUsu] = useState(usuarioLogado.id_cliente)
     const [produtos, setProdutos] = useState([]);
     const [pagamento, setPagamento] = useState('');
     const [notaFiscal, setNotaFiscal] = useState('');
     const [endereco, setEndereco] = useState([]);
+    const [qtd, setQtd] = useState(produtos.qtd);
+    const [valorTotal, setValorTotal] = useState(0);
+
 
     useEffect(() => {
         listarCarrinho();
+        listarEndereco();
+        totalCompra();
     }, [])
 
     async function finalizarCompra() {
 
-        let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos)
+        let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd)
 
         console.log(r)
 
@@ -79,13 +85,22 @@ export default function Carrinho() {
         
     }
 
-    function valorTotal() {
+    function totalCompra() {
         let a = 0;
         for (var v of produtos) {
             a = a + Number(v.vl_preco)
         }
 
-        return a;
+        setValorTotal(a)
+    }
+
+    const listarEndereco = async () => {
+        loading.current.continuousStart();
+
+        let endereco = await api.listarEndereco(idUsu);
+        setEndereco(endereco);
+
+        loading.current.complete();
     }
 
     /* function formaPagamento(forma) {
@@ -111,11 +126,12 @@ export default function Carrinho() {
                 </div>
                 <div class="box-direita">
                     <div class="box-endereco">
-                        <div class="titulo-endereco"> Confira o Endereco para Entrega: </div>
-                        <div class="nome-rua"> <span>Logradouro:</span> Rua Maria da Cruz Cunha, 39 </div>
+                        <div class="titulo-endereco"> Confira o endereco para entrega </div>
+                        <div class="nome-rua"> <span>Logradouro:</span> {endereco.nm_rua}, {endereco.ds_numero} </div>
+
                         <div class="nome-bairro"> <span>Bairro:</span> Jardim das Flores </div>
                         <div class="cidade-botao"> 
-                            <div class="nome-cidade"> <span>Cidade:</span> São Paulo/SP </div>
+                            <div class="nome-cidade"> <span>Cidade:</span> {endereco.nm_cidade} </div>
                             <button> Alterar </button>
                         </div>
                     </div>
@@ -128,8 +144,9 @@ export default function Carrinho() {
                             <button /*onClick={formaPagamento('Pix')}*/ > Pix </button>
                         </div>
                     </div>
-                    <div class="box-total"> O Total da Sua Compra Foi de: <b> R$ {valorTotal()} </b> </div>
-                    <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar Compra </button> </div>
+                    <div class="box-total"> O total da sua compra foi de: <b> R$ {valorTotal} </b> </div>
+                    <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar compra </button> </div>
+
                 </div>
             </div>
         </CarrinhoStyled>
