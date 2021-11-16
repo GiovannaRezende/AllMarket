@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 
 const CadastroUsuarioStyled = styled.div`
+    background-image: url("/assets/images/Background-Login.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,9 +20,7 @@ const CadastroUsuarioStyled = styled.div`
     border-radius: .7em;
 
     background-color: #14213D;
-    margin-top: 3em;
-    margin-left: 30em;
-
+}
 
 .titulo {
     font: 500 1.7em Roboto;

@@ -50,6 +50,7 @@ export default function LoginUsuario() {
             <LoginUsuarioStyled>
               <ToastContainer />
               <LoadingBar color="#FB8500" ref={loading} />
+              <div className="container">
               <div class="cabecalho">
                 <div class="titulo">FAZER LOGIN</div>
                 <div class="logos">
@@ -75,6 +76,7 @@ export default function LoginUsuario() {
                 </div>
               <div class="corpo2">
                 <BotaoLaranja onClick={loginUsu}>Entrar</BotaoLaranja>
+              </div>
               </div>
             </LoginUsuarioStyled>
     ) 

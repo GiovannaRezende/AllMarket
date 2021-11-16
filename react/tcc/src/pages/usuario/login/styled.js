@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 
 const LoginUsuarioStyled = styled.div`
+    background-image: url("/assets/images/Background-Login.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,9 +19,8 @@ const LoginUsuarioStyled = styled.div`
     width: 24em;
     height: 23em;
     border-radius: .7em;
-    margin-top: 3em;
-    margin-left: 30em;
 
+}
 
 .titulo {
     font: 500 1.7em Roboto;

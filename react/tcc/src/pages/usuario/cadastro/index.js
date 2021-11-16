@@ -40,6 +40,7 @@ export default function CadastroUsuario() {
         <CadastroUsuarioStyled>
             <ToastContainer />
             <LoadingBar color="#FB8500" ref={loading} />
+            <div className="container">
             <div class="cabecalho">
                 <div class="titulo">CRIAR CONTA</div>
                 <div class="logos">
@@ -75,6 +76,7 @@ export default function CadastroUsuario() {
             </div>
             <div class="rodape">
                 <Link to='/login'> <div class="conta"> Já Possui Uma Conta? Entre!</div> </Link>
+            </div>
             </div>
         </CadastroUsuarioStyled>  
     ) 
