@@ -114,7 +114,7 @@ export default function Carrinho() {
             <CabecalhoUsu/>
             <div class="conteudo">
                 <div class="box-esquerda"> 
-                    <div class="topo-box-esq"> Confira a sua lista de produtos </div>
+                    <div class="topo-box-esq"> Confira a Sua Lista de Produtos: </div>
                     <div class="lista-produtos">
                         {produtos.map(item => 
                             <BoxItem key={item.id_produto}
@@ -128,6 +128,7 @@ export default function Carrinho() {
                     <div class="box-endereco">
                         <div class="titulo-endereco"> Confira o endereco para entrega </div>
                         <div class="nome-rua"> <span>Logradouro:</span> {endereco.nm_rua}, {endereco.ds_numero} </div>
+
                         <div class="nome-bairro"> <span>Bairro:</span> Jardim das Flores </div>
                         <div class="cidade-botao"> 
                             <div class="nome-cidade"> <span>Cidade:</span> {endereco.nm_cidade} </div>
@@ -135,7 +136,7 @@ export default function Carrinho() {
                         </div>
                     </div>
                     <div class="box-pagamento">
-                        <div class="titulo-pagamento"> Selecione o método de pagamento: </div>
+                        <div class="titulo-pagamento"> Selecione o Método de Pagamento: </div>
                         <div class="box-botoes">
                             <button /*onClick={formaPagamento('Cartão de Crédito')}*/ > Cartão de Crédito </button>
                             <button /*onClick={formaPagamento('Cartão de Débito')}*/ > Cartão de Débito </button>
@@ -145,6 +146,7 @@ export default function Carrinho() {
                     </div>
                     <div class="box-total"> O total da sua compra foi de: <b> R$ {valorTotal} </b> </div>
                     <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar compra </button> </div>
+
                 </div>
             </div>
         </CarrinhoStyled>

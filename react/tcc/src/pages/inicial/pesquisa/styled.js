@@ -74,6 +74,8 @@ const Container = styled.div`
         background-color: #FB8500;
         color: white;
         border-radius: 50px;
+        margin-top: -3em;
+        margin-left: -1em;
     }
 
     .texto {

@@ -10,6 +10,8 @@ const LoginUsuarioStyled = styled.div`
     width: 24em;
     height: 23em;
     border-radius: .7em;
+    margin-top: 3em;
+    margin-left: 30em;
 
 
 .titulo {

@@ -11,6 +11,8 @@ const CadastroUsuarioStyled = styled.div`
     border-radius: .7em;
 
     background-color: #14213D;
+    margin-top: 3em;
+    margin-left: 30em;
 
 
 .titulo {

@@ -74,7 +74,7 @@ export default function CadastroUsuario() {
                 <BotaoLaranja onClick={criarConta}>Cadastrar-se</BotaoLaranja>
             </div>
             <div class="rodape">
-                <Link to='/login'> <div class="conta"> Já tem conta? Entrar</div> </Link>
+                <Link to='/login'> <div class="conta"> Já Possui Uma Conta? Entre!</div> </Link>
             </div>
         </CadastroUsuarioStyled>  
     ) 
