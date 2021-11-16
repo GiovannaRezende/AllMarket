@@ -186,6 +186,10 @@ button {
         width: 27em;
         height: 14.3em;
 }
+
+.img {
+    cursor: pointer;
+}
 `
 
 export { PerfilUsuarioStyled };

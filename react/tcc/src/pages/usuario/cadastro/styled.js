@@ -16,7 +16,7 @@ const CadastroUsuarioStyled = styled.div`
 
     padding: 1em;
     width: 26em;
-    height: 31.5em;
+    height: 29em;
     border-radius: .7em;
 
     background-color: #14213D;
@@ -76,7 +76,7 @@ button {
     outline: none;
     padding: .7em 1em;
     border-radius: .8em;
-    font: 700 1em Roboto;
+    font: 500 1em Roboto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 `

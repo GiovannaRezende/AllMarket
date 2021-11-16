@@ -17,7 +17,7 @@ const LoginUsuarioStyled = styled.div`
     align-items: center;
     padding: 1em;
     width: 24em;
-    height: 23em;
+    height: 19.5em;
     border-radius: .7em;
 
 }

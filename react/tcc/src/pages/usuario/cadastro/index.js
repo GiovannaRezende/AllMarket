@@ -43,11 +43,11 @@ export default function CadastroUsuario() {
             <div className="container">
             <div class="cabecalho">
                 <div class="titulo">CRIAR CONTA</div>
-                <div class="logos">
+                {/* <div class="logos">
                     <img src="/assets/images/logo-google+.svg" alt=""/>
                     <img src="/assets/images/logo-facebook.svg" alt=""/>
                     <img src="/assets/images/logo-twitter.svg" alt=""/>
-            </div>
+            </div> */}
             </div>
             <div class="corpo">
                 <input 
@@ -75,7 +75,7 @@ export default function CadastroUsuario() {
                 <BotaoLaranja onClick={criarConta}>Cadastrar-se</BotaoLaranja>
             </div>
             <div class="rodape">
-                <Link to='/login'> <div class="conta"> Já Possui Uma Conta? Entre!</div> </Link>
+                <Link to='/login'> <div class="conta"> Já tem uma conta? Entre aqui!</div> </Link>
             </div>
             </div>
         </CadastroUsuarioStyled>  

@@ -113,7 +113,7 @@ export default function PerfilUsuario() {
             <LoadingBar color="#FB8500" ref={loading} />
             <div class="cabecalho">
                 <div class="cabecalho-esquerdo">
-                    <div class="logo-empresa"> <a href="/"> <img src="/assets/images/Logo-AllMarket.jpg" alt="" /> </a> </div>
+                    <div class="logo-empresa"> <Link to="/home"> <img src="/assets/images/Logo-AllMarket.jpg" alt="" /> </Link> </div>
                     <div class="titulo-cabecalho">Meu perfil</div>
                 </div>
                 <div class="icone-sair"> <img onClick={logoff} src="/assets/images/icone-sair.svg" alt="" /> </div>

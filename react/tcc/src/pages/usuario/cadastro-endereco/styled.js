@@ -53,8 +53,9 @@ input {
 }
 
 .botao-cadastro {
-    display: flex;
-    justify-content: end;
+    position:absolute;
+    top: 80%;
+    left: 86%;
 }
 
 button {
