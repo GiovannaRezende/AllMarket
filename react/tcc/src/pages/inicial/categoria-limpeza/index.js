@@ -13,16 +13,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from 'react-router-dom';
 
-import CabecalhoInicial from '../../components/inicial/cabecalho';
-import BoxProduto from './boxProduto';
-import { Promocionais } from '../../components/inicial/promocionais/styled';
+import CabecalhoInicial from '../../../components/inicial/cabecalho';
+import BoxProduto from '../boxProduto';
 import { Container } from './styled'
 import { useState, useEffect, useRef } from 'react';
 // import Chat from '../../components/outros/chat/chat';
 
 //import { useLoginContext } from "../usuario/login/context/loginContext.js";
 
-import Api from '../../service/api'
+import Api from '../../../service/api'
 const api = new Api();
 
 export default function Index() {
@@ -45,8 +44,8 @@ export default function Index() {
         loading.current.complete();
     }
 
-    let lista1 = produtos.filter(p => p.id_categoria === 6 || p.id_categoria === 4 || p.id_categoria === 2);
-    let lista2 = produtos.filter(p => p.id_categoria === 5 || p.id_categoria === 3 || p.id_categoria === 1);
+    let lista1 = produtos.filter(p => p.id_categoria === 4);
+    let lista2 = produtos.filter(p => p.id_categoria === 3);
 
     return (
         <Container>
@@ -55,37 +54,10 @@ export default function Index() {
             <CabecalhoInicial />
             <div className="conteudo">
                 <div className="container-banner">
-                    <div className="banner"> <img src="./assets/images/Banner-All-Market.png" alt="" />
+                    <div className="banner"> <img src="./assets/images/Banner-Limpeza.png" alt="" />
                     </div>
                 </div>
-                <div className="container-titulo">Categorias</div>
-                <div className="categorias">
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-congelados"> <img src="./assets/images/Ícone-Congelados.png" alt="" /></Link></div>
-                        <div className="texts">Congelados</div>
-                    </div>
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-laticinios"> <img src="./assets/images/Ícone-Laticínios.png" alt="" /></Link></div>
-                        <div className="texts">Laticínios</div>
-                    </div>
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-hortifruti"> <img src="./assets/images/Ícone-Hortifruti.png" alt="" /></Link></div>
-                        <div className="texts">Hortifruti</div>
-                    </div>
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-carnes"> <img src="./assets/images/Ícone-Carnes.png" alt="" /></Link></div>
-                        <div className="texts">Carnes</div>
-                    </div>
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-limpeza"> <img src="./assets/images/Ícone-Limpeza.png" alt="" /></Link></div>
-                        <div className="texts">Limpeza</div>
-                    </div>
-                    <div className="categorias-icones">
-                        <div className="img-categorias"> <Link to="/categoria-higiene"> <img src="./assets/images/Ícone-Higiene.png" alt="" /></Link></div>
-                        <div className="texts">Higiene</div>
-                    </div>
-                </div>
-                <div className="titulo2">Mais Vendidos</div>
+                <div className="titulo2">Limpeza</div>
                 <div className="container-2">
                     <div className="colunas">
                         {/* <Chat /> */}
@@ -113,20 +85,6 @@ export default function Index() {
                         </Carousel>
                     </div>
                 </div>
-                <Promocionais>
-                    <div className="titulo-promocao">Produtos em Promoção</div>
-                    <div className="liquidacao">
-                        <Carousel 
-                          responsive={CarouselConfig}
-                          containerClass="carousel-container" >
-                            {lista2.map(item => 
-                                <BoxProduto 
-                                 key={item.id_produto}
-                                 info={item} />
-                            )}
-                        </Carousel> 
-                    </div>
-                </Promocionais>
             </div>
             <div className="final">
                 <div className="informacoes">
