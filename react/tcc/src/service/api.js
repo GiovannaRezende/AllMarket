@@ -50,8 +50,8 @@ export default class Api {
         return r.data;
     }
 
-    async finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos) {
-        let r = await api.post('/compra', {cliente, endereco, notaFiscal, pagamento, produtos});
+    async finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd) {
+        let r = await api.post('/compra', {cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd});
         return r.data;
     }
 

@@ -16,6 +16,11 @@ export default function Pedido(props) {
     const [idCompra] = useState(props.location.state)
     const loading = useRef(null);
 
+    console.log(pedido)
+
+    useEffect(() => {
+        listarPedido();
+    }, [])
 
     async function listarPedido() {
         loading.current.continuousStart();
@@ -24,9 +29,6 @@ export default function Pedido(props) {
         loading.current.complete();
     }
 
-    useEffect(() => {
-        listarPedido();
-    }, [])
 
     return (
         <PedidosStyled>

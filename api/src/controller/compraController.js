@@ -73,14 +73,16 @@ app.get('/:idUsu', async (req, resp) => {
 
 app.post('/', async (req, resp) => {
     try {
-        const { cliente, endereco, notaFiscal, pagamento, produtos } = req.body;
+        const { cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd } = req.body;
 
         const r = await db.infoc_tct_compra.create({
             id_cliente: cliente.id_cliente,
             id_endereco: endereco.id_endereco,
             ds_nota_fiscal: notaFiscal,
             ds_forma_pagamento: pagamento,
-            bt_entrega: null
+            bt_entrega: null,
+            vl_total: valorTotal,
+            qtd_quantidade: qtd
         });
 
         for (var produto of produtos) {
