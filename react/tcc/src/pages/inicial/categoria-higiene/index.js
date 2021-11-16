@@ -44,8 +44,8 @@ export default function Index() {
         loading.current.complete();
     }
 
-    let lista1 = produtos.filter(p => p.id_categoria === 4);
-    let lista2 = produtos.filter(p => p.id_categoria === 3);
+    let lista1 = produtos.filter(p => p.id_categoria === 8);
+    let lista2 = produtos.filter(p => p.id_categoria === 7);
 
     return (
         <Container>
@@ -98,11 +98,6 @@ export default function Index() {
                             <div className="limpeza">Limpeza</div>
                             <div className="higiene">Higiene</div>
                         </div>   
-                    </div>
-                    <div className="atendimento">
-                        <div className="titulo-atendimento">Atendimento Online</div>
-                        <div className="horario-normal">Segundas às Sextas das 8h ás 22h</div>
-                        <div className="horario-feriado">Sábados, Domingos e Feriados das 9h ás 20h</div>
                     </div>
                     <div className="redes">
                         <div className="titulo-redes">Nos Siga nas Redes Sociais!</div>

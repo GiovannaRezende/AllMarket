@@ -126,7 +126,7 @@ export default function Carrinho() {
                 </div>
                 <div class="box-direita">
                     <div class="box-endereco">
-                        <div class="titulo-endereco"> Confira o endereco para entrega </div>
+                        <div class="titulo-endereco"> Confira o Endereço para Entrega: </div>
                         <div class="nome-rua"> <span>Logradouro:</span> {endereco.nm_rua}, {endereco.ds_numero} </div>
 
                         <div class="nome-bairro"> <span>Bairro:</span> Jardim das Flores </div>
@@ -144,8 +144,8 @@ export default function Carrinho() {
                             <button /*onClick={formaPagamento('Pix')}*/ > Pix </button>
                         </div>
                     </div>
-                    <div class="box-total"> O total da sua compra foi de: <b> R$ {valorTotal} </b> </div>
-                    <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar compra </button> </div>
+                    <div class="box-total"> O Total da Sua Compra Foi de: <b> R$ {valorTotal} </b> </div>
+                    <div class="botao-finalizar"> <button onClick={finalizarCompra}> Finalizar Compra </button> </div>
 
                 </div>
             </div>

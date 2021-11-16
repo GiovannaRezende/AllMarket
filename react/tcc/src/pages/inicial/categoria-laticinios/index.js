@@ -99,11 +99,6 @@ export default function Index() {
                             <div className="higiene">Higiene</div>
                         </div>   
                     </div>
-                    <div className="atendimento">
-                        <div className="titulo-atendimento">Atendimento Online</div>
-                        <div className="horario-normal">Segundas às Sextas das 8h ás 22h</div>
-                        <div className="horario-feriado">Sábados, Domingos e Feriados das 9h ás 20h</div>
-                    </div>
                     <div className="redes">
                         <div className="titulo-redes">Nos Siga nas Redes Sociais!</div>
                         <div className="redes-sociais">
