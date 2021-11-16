@@ -48,11 +48,12 @@ const PerfilUsuarioStyled = styled.div`
     align-items: center;
     flex-grow: 1;
 
-    margin-right: 3em;
+    margin-right: 2em;
 
     background-color: #FB8500;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em;
+    height: 38.5em;
 }
 
 
@@ -187,8 +188,16 @@ button {
         height: 14.3em;
 }
 
-.img {
+img {
     cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font: 500 1em Roboto; 
 }
 `
 

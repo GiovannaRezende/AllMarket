@@ -142,7 +142,7 @@ const Container = styled.div`
     }
 
     .img-categorias img {
-        height: 5em;
+        height: 6em;
         width: 6em;
     }
 

@@ -123,17 +123,16 @@ export default function PerfilUsuario() {
                     <div class="background"></div>
                     <div class="imagem-usu"> <img src="/assets/images/Perfil-Usuario.png" alt=""/> </div>
                     <div class="box-informacoes">
-                                <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> Usuário: </b> <input value={login} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> CPF: </b> <input value={cpf} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> Gênero: </b> <input /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> Data de nascimento: </b> <input /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> Telefone: </b> <input /> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
-                                <div class="informacoes"> <b> Email: </b> <input value={email} /> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                           
+                        <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Usuário: </b> <input value={login} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> CPF: </b> <input value={cpf} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Gênero: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Data de nascimento: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Telefone: </b> <input /> </div> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Email: </b> <input value={email} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                     </div>
 
-                <div className="editar-informacao" onClick={editarUsu(usu.id_usuario)}> Terminar edição </div>
+                <div className="editar-informacao" onClick={editarUsu(usu.id_usuario)}>  </div>
                     
                 </div>
                 <div class="box-direita"> 
