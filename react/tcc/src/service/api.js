@@ -101,6 +101,11 @@ export default class Api {
         return r.data;
     }
 
+    async listarAprovacao() {
+        let r = await api.get('/compra');
+        return r.data;
+    }
+
     async produtosPedido(idCompra) {
         let r = await api.get(`/compra/pedidousu/${idCompra}`);
         return r.data;
