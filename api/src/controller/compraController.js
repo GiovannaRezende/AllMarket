@@ -25,28 +25,39 @@ app.get('/compraitem', async (req, resp) => {
     }
 });
 
+
 app.get('/pedidousu/:idCompra', async (req, resp) => {
     try {
         let { idCompra } = req.params;
-        let pedido = ([])
 
-        let compraItem = await db.infoc_tct_compra_item.findAll({ 
+        let compraItem = await db.infoc_tct_produto.findAll({ 
             where: { 
-                id_compra: idCompra 
-        }});
+                '$infoc_tct_compra_items.id_compra$': idCompra 
+            },
+            include: [
+                {
+                    model: db.infoc_tct_compra_item,
+                    as: 'infoc_tct_compra_items',
+                    required: true,
+                    attributes: []
+                }
+            ],
+            attributes: [
+                "id_produto",
+                "id_categoria",
+                "nm_produto",
+                "nr_codigo",
+                "vl_preco",
+                "ds_embalagem",
+                "nm_marca",
+                "ds_peso",
+                "ds_descricao",
+                "bt_promocao",
+                "img_produto"
+            ]
+        });
 
-        for (var compra of compraItem) {
-
-            let produtos = await db.infoc_tct_produto.findAll({
-                where: { 
-                    id_produto: compra.id_produto 
-            }});
-
-            pedido = produtos;
-
-        }
-        
-        resp.send(pedido);
+        resp.send(compraItem);
 
     } catch (e) {
         resp.send({ erro: e.toString()});
