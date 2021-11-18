@@ -3,16 +3,42 @@ import { AprovarCompraStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { useState, useEffect } from 'react';
 
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function AprovarCompra() {
 
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [admin, setAdmin] = useState(usuarioLogado);
+
     const [aprovacao, setAprovacao] = useState([]);
+    const [compras, setCompras] = useState([]);
+    const [aprovado, setAprovado] = useState([]);
+
+    if (admin.bt_administrador === null)
+        navigation.push('/home')
 
     async function listarAprovacao() {
         let r = await api.listarAprovacao();
-        setAprovacao(r);
+        setCompras(r);
+    }
+
+    async function aprovar(id) {
+        let r = await api.aprovarCompra(id);
     }
 
     useEffect(() => {
@@ -42,7 +68,7 @@ export default function AprovarCompra() {
                     </div>
                 </div>
                 )}
-                <div className="botao"><BotaoLaranja>Aprovar Compras</BotaoLaranja></div>
+                <div className="botao"><BotaoLaranja /*onClick={aprovar(item.id_compra)}*/>Aprovar Compras</BotaoLaranja></div>
             </div>
             </div>
         </AprovarCompraStyled>  

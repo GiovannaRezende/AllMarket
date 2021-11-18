@@ -80,7 +80,7 @@ app.post('/', async (req, resp) => {
             id_endereco: endereco.id_endereco,
             ds_nota_fiscal: notaFiscal,
             ds_forma_pagamento: pagamento,
-            bt_entrega: null,
+            bt_aprovada: null,
             vl_total: valorTotal,
             qtd_quantidade: qtd
         });
@@ -111,6 +111,25 @@ app.delete('/:id', async (req, resp) => {
     }
 });
 
+
+app.put('/aprovacao/:idCompra', async (req, resp) => {
+    try {
+        let { idCompra } = req.params;
+
+        const r = await db.infoc_tct_compra.update(
+            {
+                bt_aprovada: true
+            },
+            {
+                where: { id_compra: idCompra }
+            });        
+        
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
 
 function getFields() {
     return [

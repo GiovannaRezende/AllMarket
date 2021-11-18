@@ -106,6 +106,11 @@ export default class Api {
         return r.data;
     }
 
+    async aprovarCompra(idCompra) {
+        let r = await api.put(`/compra/aprovacao${idCompra}`);
+        return r.data;
+    }
+
     async produtosPedido(idCompra) {
         let r = await api.get(`/compra/pedidousu/${idCompra}`);
         return r.data;

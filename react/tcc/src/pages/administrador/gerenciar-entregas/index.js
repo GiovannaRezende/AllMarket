@@ -4,14 +4,35 @@ import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 
 import { useState, useEffect } from 'react';
 
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function GerenciarEntregas() {
+
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [admin, setAdmin] = useState(usuarioLogado);
 
     const [endereco, setEndereco] = useState([]);
     const [status, setStatus] = useState([]);
     const [idAlterando, setIdAlterando] = useState(0);
+
+    if (admin.bt_administrador === null)
+        navigation.push('/home')
 
     async function listarEndereco() {
         let r = await api.listarEndereco();

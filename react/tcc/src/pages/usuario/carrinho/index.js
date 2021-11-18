@@ -1,6 +1,7 @@
 import { CarrinhoStyled } from './styled'
 import CabecalhoUsu from '../../../components/cabecalhos/usu/cabecalho-usu'
 import BoxItem from './carrinhoItem/index'
+import { BotaoLaranja } from '../../../components/outros/botoes/styled'
 
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState, useRef } from "react"
@@ -8,8 +9,11 @@ import Cookie from 'js-cookie'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Link } from 'react-router-dom'
+
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
+import Modal from '../login/modal';
 
 import Api from '../../../service/api';
 const api = new Api();
@@ -26,6 +30,8 @@ function lerUsuarioLogado(navigation) {
 export default function Carrinho() {
     const navigation = useHistory();
     let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [exibirModal, setExibirModal] = useState({show: false});
 
     const [cliente, setCliente] = useState(usuarioLogado);
     const [idUsu] = useState(usuarioLogado.id_cliente)
@@ -53,6 +59,7 @@ export default function Carrinho() {
             toast.error(`${r.erro}`);
             console.log(r);
         } else {
+            Cookies.remove('carrinho')
             toast.dark("Compra Finalizada Com Sucesso")
         }
     }
@@ -149,6 +156,15 @@ export default function Carrinho() {
 
                 </div>
             </div>
+            <Modal options={exibirModal}>                    
+                    <div class="container-modal">
+                        <div class="titulo-modal"> Parabéns, sua compra foi finalizada e entrará em processo de análise</div>
+                        <div class="aviso"> e </div>
+                        <div class="botao">
+                            <Link to="/home"> <BotaoLaranja> Ir para a tela inicial </BotaoLaranja> </Link>
+                        </div>
+                    </div>
+            </Modal>
         </CarrinhoStyled>
     )
 }

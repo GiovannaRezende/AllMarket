@@ -14,11 +14,28 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import axios from 'axios'
 
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
+
+
 import Api from '../../../service/api';
 const api = new Api();
 
+function lerUsuarioLogado(navigation) {
+    let logado = Cookies.get('usuario-logado')
+    if (logado === null)
+        navigation.push('/login');
+
+    let usuarioLogado = JSON.parse(logado);
+    return usuarioLogado;
+}
+
 export default function ControleProdutos() {
 
+    const navigation = useHistory();
+    let usuarioLogado = lerUsuarioLogado(navigation);
+
+    const [admin, setAdmin] = useState(usuarioLogado);
     const [produtos, setProdutos] = useState([]);
     const [categoria, setCategoria] = useState('');
     const [produto, setProduto] = useState('');
@@ -30,6 +47,9 @@ export default function ControleProdutos() {
     const [preco, setPreco] = useState(0.0);
     const [imagem, setImagem] = useState(null)
     const [idAlterando, setIdAlterando] = useState(0);
+
+    if (admin.bt_administrador === null)
+        navigation.push('/home')
 
     async function inserir() {
  
