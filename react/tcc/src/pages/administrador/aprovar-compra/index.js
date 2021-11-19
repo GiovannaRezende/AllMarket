@@ -53,8 +53,7 @@ export default function AprovarCompra() {
             <div class="corpo-conteudo">
             {aprovacao.map((item, i) =>
                 <div className="box-ckeck-conteudo">
-                    <div className="checkbox"><input type="checkbox" style={{"width": "2.2em", "height": "2.2em"}}/></div>
-                        <div className="box-aprovacao">
+                    <div className="box-aprovacao">
                         <div className="foto-nome-usuario">
                             <div className="foto-usuario"><img src="/assets/images/perfil-gabi.svg" alt=""/></div>
                             <div className="nome-usuario">{item.id_cliente}</div>
@@ -66,9 +65,9 @@ export default function AprovarCompra() {
                             <div className="destino"><span>Destino:</span> {item.id_endereco}</div>
                         </div>
                     </div>
+                    <div className="botao"><BotaoLaranja /*onClick={aprovar(item.id_compra)}*/>Aprovar Compras</BotaoLaranja></div>
                 </div>
                 )}
-                <div className="botao"><BotaoLaranja /*onClick={aprovar(item.id_compra)}*/>Aprovar Compras</BotaoLaranja></div>
             </div>
             </div>
         </AprovarCompraStyled>  
