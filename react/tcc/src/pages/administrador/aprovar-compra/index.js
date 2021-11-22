@@ -3,6 +3,9 @@ import { AprovarCompraStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { useState, useEffect } from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 
@@ -34,24 +37,34 @@ export default function AprovarCompra() {
 
     async function listarAprovacao() {
         let r = await api.listarAprovacao();
-        setCompras(r);
+        let comprasAprovar = r.filter(c => c.bt_aprovada === null)
+        console.log(comprasAprovar)
+        setCompras(comprasAprovar);
+
     }
 
-    async function aprovar(id) {
-        let r = await api.aprovarCompra(id);
+    async function aprovarCompra(idCompra) {
+        console.log(idCompra)
+        let r = await api.aprovarCompra(idCompra);
+        return r;
     }
 
     useEffect(() => {
         listarAprovacao();
     }, [])
 
+    useEffect(() => {
+        listarAprovacao();
+    }, [compras])
+
     return(
         <AprovarCompraStyled>
+            <ToastContainer />
             <CabecalhoAdm/>
             <div className="conteudo-aprovacao">
                 <div className="cab-conteudo">Aprovar Compras</div>
             <div class="corpo-conteudo">
-            {aprovacao.map((item, i) =>
+            {compras.map((item, i) =>
                 <div className="box-ckeck-conteudo">
                     <div className="box-aprovacao">
                         <div className="foto-nome-usuario">
@@ -59,13 +72,14 @@ export default function AprovarCompra() {
                             <div className="nome-usuario">{item.id_cliente}</div>
                         </div>
                         <div className="textos">
-                            <div className="status"><span>Status:</span> {item.ds_nota_fiscal}</div>
+                            <div className="código-ompra"><span> Código: {item.id_compra} </span> {item.ds_nota_fiscal}</div>
+                            <div className="status"><span>Status: Pagamento Aprovado</span> {item.ds_nota_fiscal}</div>
                             <div className="itens"><span>Itens:</span> {item.qtd_quantidade}</div>
                             <div className="valor"><span>Valor total:</span> {item.vl_total}</div>
                             <div className="destino"><span>Destino:</span> {item.id_endereco}</div>
                         </div>
+                        <div className="botao"> <BotaoLaranja onClick={() => aprovarCompra(item.id_compra)} > Aprovar Compra </BotaoLaranja> </div>
                     </div>
-                    <div className="botao"><BotaoLaranja /*onClick={aprovar(item.id_compra)}*/>Aprovar Compras</BotaoLaranja></div>
                 </div>
                 )}
             </div>

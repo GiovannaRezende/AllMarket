@@ -25,8 +25,6 @@ app.get('/endereco/:idCompra', async (req, resp) => {
             }
         });
 
-        console.log(compra)
-
         let endereco = await db.infoc_tct_endereco.findOne({
             where: { id_endereco: compra.id_endereco }
         })
@@ -105,7 +103,7 @@ app.get('/:idUsu', async (req, resp) => {
     }
 });
 
-app.get('/:idCompra', async (req, resp) => {
+app.get('/entrega/:idCompra', async (req, resp) => {
     try {
         let { idCompra } = req.params;
 
@@ -162,6 +160,8 @@ app.delete('/:id', async (req, resp) => {
 app.put('/aprovacao/:idCompra', async (req, resp) => {
     try {
         let { idCompra } = req.params;
+
+        console.log(idCompra)
 
         const r = await db.infoc_tct_compra.update(
             {

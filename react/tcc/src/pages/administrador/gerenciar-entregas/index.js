@@ -36,13 +36,14 @@ export default function GerenciarEntregas() {
 
     async function listarCompras() {
         let r = await api.listarPedido();
-        let aprovacao = r.filter(p => !(p.ds_status === "Entregue"))
+        let aprovacao = r.filter(p => !(p.ds_status === "Entregue") && p.bt_aprovada === true)
         setCompras(aprovacao);
     }
 
     async function alterarStatus(idCompra) {
 
         let compra = await api.listarCompraEntrega(idCompra);
+        console.log(compra)
         let status = compra.ds_status;
 
         let r = await api.alterarStatus(idCompra, status);
@@ -50,9 +51,30 @@ export default function GerenciarEntregas() {
         return(r);
     }
 
+    async function listarEndereco(idCompra) {
+        console.log(idCompra)
+        let r = await api.enderecoPedido(idCompra);
+        let a = r.nm_cidade
+        console.log(a)
+        return a;
+    }
+
+    async function listarRua(idCompra) {
+        let r = await api.enderecoPedido(idCompra);
+        let a = r.nm_cidade
+        console.log(a)
+        return a;
+    }
+
+
     useEffect(() => {
         listarCompras();
+        listarEndereco();
     }, [])
+
+    useEffect(() => {
+        listarCompras();
+    }, [compras])
 
     return(
         <GerenciarEntregasStyled>
@@ -66,7 +88,7 @@ export default function GerenciarEntregas() {
                         <div class="foto-textos">
                             <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                             <div class="textos">
-                                <div class="texto-destino"><span>Destino:</span> Rua: {}, Número: {} - Cidade: {} </div>
+                                <div class="texto-destino"><span>Destino:</span> Rua: {() => listarEndereco(item.id_compra)}, Número: {} - Cidade: {} </div>
                                 <div class="texto-status"><span>Status:</span> {item.ds_status}</div>
                             </div>
                         </div>

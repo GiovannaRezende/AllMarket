@@ -98,7 +98,7 @@ export default class Api {
     }
 
     async listarCompraEntrega(idCompra) {
-        let r = await api.get(`/compra/${idCompra}`)
+        let r = await api.get(`/compra/entrega/${idCompra}`)
         return r.data;
     }
 
@@ -113,7 +113,7 @@ export default class Api {
     }
 
     async aprovarCompra(idCompra) {
-        let r = await api.put(`/compra/aprovacao${idCompra}`);
+        let r = await api.put(`/compra/aprovacao/${idCompra}`);
         return r.data;
     }
 
