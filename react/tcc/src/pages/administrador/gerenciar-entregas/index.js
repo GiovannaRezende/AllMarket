@@ -1,12 +1,14 @@
 import CabecalhoAdm from '../../../components/cabecalhos/admin/cabecalho-admin';
 import { GerenciarEntregasStyled }  from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
+import BoxPedidoGerenciamento from './box-pedido/'
 
 import { useState, useEffect } from 'react';
 
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
 
 import Api from '../../../service/api';
 const api = new Api();
@@ -40,17 +42,6 @@ export default function GerenciarEntregas() {
         setCompras(aprovacao);
     }
 
-    async function alterarStatus(idCompra) {
-
-        let compra = await api.listarCompraEntrega(idCompra);
-        console.log(compra)
-        let status = compra.ds_status;
-
-        let r = await api.alterarStatus(idCompra, status);
-        console.log(r);
-        return(r);
-    }
-
     async function listarEndereco(idCompra) {
         console.log(idCompra)
         let r = await api.enderecoPedido(idCompra);
@@ -72,9 +63,6 @@ export default function GerenciarEntregas() {
         listarEndereco();
     }, [])
 
-    useEffect(() => {
-        listarCompras();
-    }, [compras])
 
     return(
         <GerenciarEntregasStyled>
@@ -82,19 +70,10 @@ export default function GerenciarEntregas() {
             <div class="conteudo-entregas">
                 <div class="cab-conteudo">Gerenciar Entregas</div>
                 {compras.map((item, i) =>
-                    <div class="box-entregas" key={item.id_compra}>
-                    <div class="pedido"> Pedido: {item.id_compra}</div>
-                    <div class="foto-texto-botao">
-                        <div class="foto-textos">
-                            <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
-                            <div class="textos">
-                                <div class="texto-destino"><span>Destino:</span> Rua: {() => listarEndereco(item.id_compra)}, Número: {} - Cidade: {} </div>
-                                <div class="texto-status"><span>Status:</span> {item.ds_status}</div>
-                            </div>
-                        </div>
-                        <div class="botao"><BotaoLaranja onClick={() => alterarStatus(item.id_compra)}>Atualizar status</BotaoLaranja></div>
-                    </div>
-                </div>
+                    <BoxPedidoGerenciamento 
+                        key={item.id_compra}
+                        info={item}        
+                    />
                 )}
             </div>
         </GerenciarEntregasStyled>

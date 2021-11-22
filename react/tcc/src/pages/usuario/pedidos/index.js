@@ -36,7 +36,7 @@ export default function Pedido(props) {
             <CabecalhoUsu/>
             <div class="conteudo">
                 <div className="numero-pedido"> 
-                    <div className="pedido"> Pedido 0845 </div> 
+                    <div className="pedido"> Pedido {idCompra} </div> 
                     <div className="barra"></div>
                     <div className="status-pedido"> Pedido Entregue </div> 
                 </div>

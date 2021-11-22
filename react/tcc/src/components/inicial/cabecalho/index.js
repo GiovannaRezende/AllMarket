@@ -25,6 +25,7 @@ export default function CabecalhoInicial() {
     //const { loginUsu } = useLoginContext();
 
     const [pesquisa, setPesquisa] = useState('');
+    const [numeroProdutos, setNumeroProdutos] = useState([]);
 
     const navigation = useHistory();
     let usuarioLogado = lerUsuarioLogado(navigation);
@@ -32,15 +33,22 @@ export default function CabecalhoInicial() {
     const [login, setLogin] = useState(usuarioLogado.ds_login);
 
     function contador() {
-
         let carrinho = Cookie.get('carrinho');
         carrinho = carrinho !== undefined
                     ? JSON.parse(carrinho)
                     : [];
 
         let total = carrinho.length;
-        return total;
+        setNumeroProdutos(total);
     }
+
+    useEffect(() => {
+        contador();
+    }, [])
+
+    useEffect(() => {
+        contador();
+    }, [numeroProdutos])
 
     return(
             <CabInicial>
@@ -58,7 +66,7 @@ export default function CabecalhoInicial() {
                 </div>
                 <div class="cabecalho-dir"> 
                     <div class="carrinho"> <Link to="/carrinho"> <img src="./assets/images/Carrinho-de-Compras.png" alt="" /></Link></div>
-                    <div class="contador"> {contador()} </div>
+                    <div class="contador"> {numeroProdutos} </div>
                     <div class="texto">Olá, <b> {login} </b> </div>
                     <div class="foto"> <Link to="/perfil-usuario"> <img src="./assets/images/Perfil-Usuario.png" alt=""/></Link></div>
                 </div>
