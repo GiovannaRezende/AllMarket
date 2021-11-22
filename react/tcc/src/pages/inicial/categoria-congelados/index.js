@@ -44,8 +44,7 @@ export default function Index() {
         loading.current.complete();
     }
 
-    let lista1 = produtos.filter(p => p.id_categoria === 10);
-    let lista2 = produtos.filter(p => p.id_categoria === 9);
+    let lista1 = produtos.filter(p => p.id_categoria === 3);
 
     return (
         <Container>
@@ -73,17 +72,6 @@ export default function Index() {
                         </Carousel>
 
                     </div>
-                    <div className="colunas">
-                        <Carousel 
-                          responsive={CarouselConfig}
-                          containerClass="carousel-container" >
-                            {lista2.map(item => 
-                                <BoxProduto 
-                                 key={item.id_produto}
-                                 info={item} />
-                            )}
-                        </Carousel>
-                    </div>
                 </div>
             </div>
             <div className="final">
@@ -98,6 +86,11 @@ export default function Index() {
                             <div className="limpeza">Limpeza</div>
                             <div className="higiene">Higiene</div>
                         </div>   
+                    </div>
+                    <div className="atendimento">
+                        <div className="titulo-atendimento">Atendimento Online</div>
+                        <div className="horario-normal">Segundas às Sextas das 8h ás 22h</div>
+                        <div className="horario-feriado">Sábados, Domingos e Feriados das 9h ás 20h</div>
                     </div>
                     <div className="redes">
                         <div className="titulo-redes">Nos Siga nas Redes Sociais!</div>
