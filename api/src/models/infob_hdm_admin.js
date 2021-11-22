@@ -21,6 +21,10 @@ export default class infob_hdm_admin extends Model {
     dt_HDM_data: {
       type: DataTypes.DATE,
       allowNull: true
+    },
+    infob_ds_codigo: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     }
   }, {
     sequelize,

@@ -1,7 +1,7 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infod_ecm_tb_intm extends Model {
+export default class infod_ecm_tb_roupas extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_roupa: {
@@ -16,19 +16,19 @@ export default class infod_ecm_tb_intm extends Model {
     },
     ds_roupa: {
       type: DataTypes.STRING(150),
-      allowNull: true
+      allowNull: false
     },
     vl_preco: {
       type: DataTypes.DECIMAL(15,2),
-      allowNull: true
+      allowNull: false
     },
     tp_roupa: {
       type: DataTypes.STRING(60),
-      allowNull: true
+      allowNull: false
     },
     ds_tamanho: {
-      type: DataTypes.CHAR(10),
-      allowNull: true
+      type: DataTypes.STRING(5),
+      allowNull: false
     },
     bt_disponivel: {
       type: DataTypes.BOOLEAN,
@@ -40,11 +40,11 @@ export default class infod_ecm_tb_intm extends Model {
     },
     ds_cor: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'infod_ecm_tb_intm',
+    tableName: 'infod_ecm_tb_roupas',
     timestamps: false,
     indexes: [
       {
@@ -64,6 +64,6 @@ export default class infod_ecm_tb_intm extends Model {
       },
     ]
   });
-  return infod_ecm_tb_intm;
+  return infod_ecm_tb_roupas;
   }
 }

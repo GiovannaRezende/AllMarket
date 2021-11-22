@@ -45,6 +45,10 @@ export default class infoc_tct_compra extends Model {
     qtd_quantidade: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    ds_status: {
+      type: DataTypes.STRING(30),
+      allowNull: true
     }
   }, {
     sequelize,

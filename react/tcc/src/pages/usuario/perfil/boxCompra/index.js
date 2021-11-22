@@ -15,7 +15,7 @@ export default function BoxCompra(props) {
                     <div class="box-esq">
                         <div class="informacoes-box">Código da Compra: {compra.id_compra} </div>
                         <div class="informacoes-box">Valor total: R$180,67</div>
-                        <div class="informacoes-box">Status: A caminho</div>
+                        <div class="informacoes-box">Status: {compra.ds_status} </div>
                     </div>
                 </div>
                 <div class="cancelar-detalhes">

@@ -94,6 +94,7 @@ export default function PerfilUsuario() {
 
     const logoff = () => {
         Cookies.remove('usuario-logado')
+        Cookies.remove('carrinho')
         navigation.push('/')
     }
 

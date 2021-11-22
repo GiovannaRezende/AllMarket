@@ -12,11 +12,19 @@ export default class infob_mw_tbfilmeusu extends Model {
     },
     id_filme: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_filmes',
+        key: 'id_filme'
+      }
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_usuario',
+        key: 'id_usuario'
+      }
     },
     nm_categoria: {
       type: DataTypes.STRING(258),

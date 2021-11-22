@@ -42,9 +42,10 @@ export default function PaginaPesquisa(props) {
 
     async function mostrarPesquisa() {
         let item = await api.listar();
-        console.log(item)
-        let resultado = item.filter(p => p.nm_produto === pesquisa);
         console.log(pesquisa)
+        let resultado = item.filter(p => 
+                                    p.nm_produto === pesquisa);
+        console.log(resultado)
         setProdutoPesquisado(resultado)
     }
 

@@ -29,6 +29,10 @@ export default class infob_hdm_usuario extends Model {
     ds_HDM_cogidoRec: {
       type: DataTypes.STRING(100),
       allowNull: true
+    },
+    ds_codigo: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     }
   }, {
     sequelize,

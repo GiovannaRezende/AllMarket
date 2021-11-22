@@ -27,15 +27,11 @@ export default class infob_hdm_chat extends Model {
       }
     },
     ds_HDM_mensagem: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(8000),
       allowNull: true
     },
     dt_HDM_data: {
       type: DataTypes.DATE,
-      allowNull: true
-    },
-    nm_HDM_usuario: {
-      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {

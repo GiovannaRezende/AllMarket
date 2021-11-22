@@ -15,15 +15,23 @@ export default class infod_omn_vaga extends Model {
       allowNull: true
     },
     vl_salario: {
-      type: DataTypes.DECIMAL(12,5),
+      type: DataTypes.DECIMAL(10,5),
       allowNull: true
     },
     id_empresa: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    nm_empresa: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
     id_area_vaga: {
       type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    nm_area_vaga: {
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     ds_jornada: {

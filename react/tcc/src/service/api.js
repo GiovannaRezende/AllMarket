@@ -30,8 +30,9 @@ export default class Api {
         return r.data;
     }
 
-    async alterarStatus(status) {
-        let r = await api.put('/endereco/' + { status } );
+    async alterarStatus(idCompra, status) {
+        let r = await api.put('/compra/status/', { idCompra, status } );
+        console.log(status)
         return r.data;
     }
 
@@ -96,6 +97,11 @@ export default class Api {
         return r.data;
     }
 
+    async listarCompraEntrega(idCompra) {
+        let r = await api.get(`/compra/${idCompra}`)
+        return r.data;
+    }
+
     async listarPedido() {
         let r = await api.get('/compra');
         return r.data;
@@ -115,4 +121,10 @@ export default class Api {
         let r = await api.get(`/compra/pedidousu/${idCompra}`);
         return r.data;
     }
+
+    async enderecoPedido(idCompra) {
+        let r = await api.get(`/compra/endereco/${idCompra}`);
+        return r.data;
+    }
+
 }

@@ -26,10 +26,6 @@ export default class infod_tif_animes extends Model {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    ds_estrelando: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
     ds_sinopse: {
       type: DataTypes.STRING(5000),
       allowNull: true
@@ -40,10 +36,6 @@ export default class infod_tif_animes extends Model {
     },
     ds_enredo: {
       type: DataTypes.STRING(5000),
-      allowNull: true
-    },
-    ds_capa: {
-      type: DataTypes.STRING(155),
       allowNull: true
     },
     dt_postagem: {
@@ -64,6 +56,10 @@ export default class infod_tif_animes extends Model {
     },
     ds_imagem: {
       type: DataTypes.STRING(1555),
+      allowNull: true
+    },
+    ds_capa: {
+      type: DataTypes.STRING(800),
       allowNull: true
     }
   }, {

@@ -5,14 +5,18 @@ export default class infoa_gab_cartao extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cartao: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'infoa_gab_usuario',
+        key: 'id_usuario'
+      }
     },
     ds_cv: {
       type: DataTypes.INTEGER,

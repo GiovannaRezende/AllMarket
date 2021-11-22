@@ -27,31 +27,31 @@ export default function GerenciarEntregas() {
 
     const [admin, setAdmin] = useState(usuarioLogado);
 
+    const [compras, setCompras] = useState([]);
     const [endereco, setEndereco] = useState([]);
-    const [status, setStatus] = useState([]);
     const [idAlterando, setIdAlterando] = useState(0);
 
     if (admin.bt_administrador === null)
         navigation.push('/home')
 
-    async function listarEndereco() {
-        let r = await api.listarEndereco();
-        setEndereco(r && r);
-        console.log(r);
+    async function listarCompras() {
+        let r = await api.listarPedido();
+        let aprovacao = r.filter(p => !(p.ds_status === "Entregue"))
+        setCompras(aprovacao);
     }
 
-    async function alterarStatus(id) {
-        alert(id);
-        let r = await api.alterarStatus(id);
+    async function alterarStatus(idCompra) {
+
+        let compra = await api.listarCompraEntrega(idCompra);
+        let status = compra.ds_status;
+
+        let r = await api.alterarStatus(idCompra, status);
         console.log(r);
         return(r);
-
-        setIdAlterando(status);
-
     }
 
     useEffect(() => {
-        listarEndereco();
+        listarCompras();
     }, [])
 
     return(
@@ -59,18 +59,18 @@ export default function GerenciarEntregas() {
             <CabecalhoAdm/>
             <div class="conteudo-entregas">
                 <div class="cab-conteudo">Gerenciar Entregas</div>
-                {endereco.map((item, i) =>
-                    <div class="box-entregas">
-                    <div class="pedido">{item.ds_cep}</div>
+                {compras.map((item, i) =>
+                    <div class="box-entregas" key={item.id_compra}>
+                    <div class="pedido"> Pedido: {item.id_compra}</div>
                     <div class="foto-texto-botao">
                         <div class="foto-textos">
                             <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                             <div class="textos">
-                                <div class="texto-destino"><span>Destino:</span> {item.nm_rua}, {item.ds_numero} - {item.nm_cidade}</div>
-                                <div class="texto-status"><span>Status:</span> {item.bt_aprovado === 0 ? "Em preparo" : "A caminho"}</div>
+                                <div class="texto-destino"><span>Destino:</span> Rua: {}, Número: {} - Cidade: {} </div>
+                                <div class="texto-status"><span>Status:</span> {item.ds_status}</div>
                             </div>
                         </div>
-                        <div class="botao"><BotaoLaranja onClick={() => alterarStatus(item.id_endereco)}>Atualizar status</BotaoLaranja></div>
+                        <div class="botao"><BotaoLaranja onClick={() => alterarStatus(item.id_compra)}>Atualizar status</BotaoLaranja></div>
                     </div>
                 </div>
                 )}

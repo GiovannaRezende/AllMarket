@@ -15,6 +15,29 @@ app.get('/', async (req, resp) => {
     }
 });
 
+app.get('/endereco/:idCompra', async (req, resp) => {
+    try {
+        let { idCompra } = req.params;
+
+        let compra = await db.infoc_tct_compra.findOne({ 
+            where: { 
+                id_compra: idCompra  
+            }
+        });
+
+        console.log(compra)
+
+        let endereco = await db.infoc_tct_endereco.findOne({
+            where: { id_endereco: compra.id_endereco }
+        })
+
+        resp.send(endereco);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.get('/compraitem', async (req, resp) => {
     try {
         let compraItem = await db.infoc_tct_compra_item.findAll();
@@ -82,6 +105,19 @@ app.get('/:idUsu', async (req, resp) => {
     }
 });
 
+app.get('/:idCompra', async (req, resp) => {
+    try {
+        let { idCompra } = req.params;
+
+        let r = await db.infoc_tct_compra.findOne({ where: { id_compra: idCompra }});
+
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.post('/', async (req, resp) => {
     try {
         const { cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd } = req.body;
@@ -130,6 +166,35 @@ app.put('/aprovacao/:idCompra', async (req, resp) => {
         const r = await db.infoc_tct_compra.update(
             {
                 bt_aprovada: true
+            },
+            {
+                where: { id_compra: idCompra }
+            });        
+        
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
+app.put('/status/', async (req, resp) => {
+    try {
+        let { idCompra, status } = req.body;
+
+        console.log(status)
+
+        if (status === "A Caminho") {
+            status = "Entregue"
+        } else if (status === "Em Preparo") {
+            status = "A Caminho"
+        } else 
+            status = "Em Preparo"
+        
+
+        const r = await db.infoc_tct_compra.update(
+            {
+                ds_status: status
             },
             {
                 where: { id_compra: idCompra }

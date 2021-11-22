@@ -38,10 +38,6 @@ export default class infoc_tct_endereco extends Model {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    bt_status: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
     id_cliente: {
       type: DataTypes.INTEGER,
       allowNull: true

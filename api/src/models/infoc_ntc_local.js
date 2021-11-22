@@ -5,10 +5,10 @@ export default class infoc_ntc_local extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_local: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     ds_latitude: {
       type: DataTypes.STRING(255),

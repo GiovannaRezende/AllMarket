@@ -11,7 +11,7 @@ export default class infoc_tht_pacote extends Model {
       primaryKey: true
     },
     nm_pacote: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(2000),
       allowNull: true
     },
     dt_data: {
@@ -19,7 +19,7 @@ export default class infoc_tht_pacote extends Model {
       allowNull: true
     },
     ds_ingresso: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING(100),
       allowNull: true
     },
     vl_preco: {
@@ -27,39 +27,43 @@ export default class infoc_tht_pacote extends Model {
       allowNull: true
     },
     ds_horario: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING(100),
       allowNull: true
     },
     ds_cancelamento: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(555),
       allowNull: true
     },
     ds_endereco: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(555),
       allowNull: true
     },
     ds_acesso: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(555),
       allowNull: true
     },
     ds_imagem1: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1255),
       allowNull: true
     },
     ds_imagem2: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1255),
       allowNull: true
     },
     ds_imagem3: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1255),
       allowNull: true
     },
     ds_imagem4: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1255),
       allowNull: true
     },
     ds_link: {
       type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    bt_ativo: {
+      type: DataTypes.BOOLEAN,
       allowNull: true
     }
   }, {

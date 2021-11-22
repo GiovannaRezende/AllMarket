@@ -12,7 +12,11 @@ export default class infob_mw_tbatores extends Model {
     },
     id_filme: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_filmes',
+        key: 'id_filme'
+      }
     },
     nm_ator: {
       type: DataTypes.STRING(255),

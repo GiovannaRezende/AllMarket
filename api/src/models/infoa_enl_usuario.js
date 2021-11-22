@@ -5,10 +5,10 @@ export default class infoa_enl_usuario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_usuario: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     nm_nome: {
       type: DataTypes.STRING(100),
@@ -83,6 +83,10 @@ export default class infoa_enl_usuario extends Model {
       allowNull: false
     },
     nm_rua: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    ds_codigo: {
       type: DataTypes.STRING(100),
       allowNull: true
     }

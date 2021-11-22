@@ -34,10 +34,6 @@ export default class infod_ssc_venda extends Model {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    nm_destinatario: {
-      type: DataTypes.STRING(500),
-      allowNull: true
-    },
     tp_forma_pagamento: {
       type: DataTypes.STRING(255),
       allowNull: true
@@ -52,10 +48,6 @@ export default class infod_ssc_venda extends Model {
     },
     qtd_parcelas: {
       type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    ds_codigo_seguranca: {
-      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
