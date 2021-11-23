@@ -47,9 +47,8 @@ export default function CadastroCartao() {
     const loading = useRef(null);
 
     async function adicionarCartao() {
-        let r = 'Yo'
+        let r = '';
         let idCartao = cartaoInfo.id_cartao
-        console.log('-------------------' + idCartao)
 
         if(cartaoInfo.id_cartao === undefined) {
             let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv, idUsu);

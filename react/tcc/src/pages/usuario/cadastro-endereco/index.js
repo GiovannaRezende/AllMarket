@@ -47,11 +47,11 @@ export default function CadastroEndereco() {
     const loading = useRef(null);
 
     async function adicionarEnd() {
-        let r = 'Yo'
+        let r = ''
         let idEndereco = endereco.id_endereco
         console.log(idEndereco)
 
-        if(endereco.id_endereco === null) {
+        if(endereco.id_endereco === undefined) {
             r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idUsu);
 
             if(r.erro) {
@@ -94,7 +94,9 @@ export default function CadastroEndereco() {
             <ToastContainer />
             <CabecalhoStyledUsu/>
             <div class="container">
-                <div class="container-texto">Cadastrar Novo Endereço</div>
+                <div class="container-texto"> {(endereco.id_endereco != null)
+                                                                ? 'Editar Endereço'
+                                                                : 'Adicionar Novo Endereço' }</div>
                 <div class="container-input">
                     <div class="container-conteudo-1">
                         <div class="input-1">

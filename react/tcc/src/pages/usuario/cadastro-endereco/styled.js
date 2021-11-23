@@ -58,18 +58,6 @@ input {
     left: 86%;
 }
 
-button {
-    background-color: #FB8500;
-    color: white;
-
-    border-radius: 0.7em;
-    border: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font: 500 1em Roboto;
-
-    margin-top: 4em;
-    padding: .7em 1em;
-}
 `
 
 export { CadastroEnderecoStyled };
