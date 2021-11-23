@@ -43,11 +43,13 @@ export default function Carrinho() {
         totalCompra();
     }, [])
 
+    useEffect(() => {
+        totalCompra();
+    }, [produtos])
+
     async function finalizarCompra() {
 
         let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd)
-
-        console.log(r)
 
         if (endereco.id_endereco === null) {
             return toast.error("Para finalizar uma compra é necessário ter um endereço")
@@ -58,6 +60,8 @@ export default function Carrinho() {
             console.log(r);
         } else {
             toast.dark("Compra Finalizada Com Sucesso")
+            navigation.push('/home');
+            Cookie.remove('carrinho')
         }
     }
 
@@ -71,8 +75,11 @@ export default function Carrinho() {
                     ? JSON.parse(carrinho)
                     : [];
 
-        setProdutos(carrinho);
+        if (carrinho.length === 0) {
+            navigation.push('/home');
+        }
 
+        setProdutos(carrinho);
         loading.current.complete();
     }
 
@@ -92,7 +99,10 @@ export default function Carrinho() {
     function totalCompra() {
         let a = 0;
         for (var v of produtos) {
-            a = a + Number(v.vl_preco)
+            console.log(v)
+            let valor = v.qtd * Number(v.vl_preco)
+            console.log(valor)
+            a = a + valor
         }
 
         setValorTotal(a)

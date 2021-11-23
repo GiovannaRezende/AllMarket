@@ -9,6 +9,15 @@ import { useEffect, useState, useRef } from "react"
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
+import Api from '../../../service/api';
+const api = new Api();
+
+
 function lerUsuarioLogado(navigation) {
     let logado = Cookies.get('usuario-logado')
     if (logado === null)
@@ -18,15 +27,6 @@ function lerUsuarioLogado(navigation) {
     return usuarioLogado;
 }
 
-//import { useState } from 'react';
-
-//import { toast, ToastContainer } from 'react-toastify';
-//import 'react-toastify/dist/ReactToastify.css';
-
-//import Api from '../../../service/api';
-//const api = new Api();
-
-
 
 export default function PerfilAdm() {
 
@@ -34,39 +34,62 @@ export default function PerfilAdm() {
     let usuarioLogado = lerUsuarioLogado(navigation);
 
      const [admin, setAdmin] = useState(usuarioLogado);
-     const [nome, setNome] = useState(usuarioLogado.nm_nome);
-     const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
-     const [email, setEmail] = useState(usuarioLogado.ds_email);
-     const [telefone, setTelefone] = useState(usuarioLogado.ds_telefone);
+     const [idUsu] = useState(usuarioLogado.id_cliente)
+     const [login, setLogin] = useState()
+     const [nome, setNome] = useState();
+     const [cpf, setCpf] = useState();
+     const [email, setEmail] = useState();
+     const [telefone, setTelefone] = useState();
      const [idAlterando, setIdAlterando] = useState(0);
 
+    const loading = useRef(null);
 
     if (admin.bt_administrador === null)
         navigation.push('/home')
 
-    // async function alterarAdmin() {
-    //     let r = await api.alterarAdmin(idAlterando, nome, cpf, email, telefone);
-    //     if(r.erro) 
-    //         toast.error(`${r.erro}`); 
-    //     else {
-    //         // toast.success('Admin alterado!');
+    useEffect(() => {
+        listarLogado();
+    }, [])
 
-    //     }
-        
-    // }
+    const listarLogado = async () => {
+        loading.current.continuousStart();
+
+        let usuLogado = await api.listarUsuLogado(usuarioLogado.ds_login);
+        setAdmin(usuLogado)
+        setNome(usuLogado.nm_nome);
+        setLogin(usuLogado.ds_login);
+        setCpf(usuLogado.ds_cpf);
+        setEmail(usuLogado.ds_email);
+
+        loading.current.complete();
+    }
+
+    async function editarUsu() {
+        let id = idUsu;
+        let r = await api.editarUsu(id, nome, email, cpf)
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+        } else {
+            toast.success('Informações Editadas')
+            return r;
+        }
+    }
+
 
     return(
         <PerfilAdmStyled>
+            <LoadingBar color="#FB8500" ref={loading} />
+            <ToastContainer />
             <CabecalhoAdm/>
             <div className="conteudo">
             <div className="admin-infos">
                 <div className="cab-infos">
                     <div className="foto-perfil"><img src="/assets/images/Perfil-Admin.svg" alt=""/></div>
                 </div>
-                <div className="info">Nome: {nome} <button className="editar"><img src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
-                <div className="info">CPF: {cpf} <button className="editar"><img src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
-                <div className="info">Email: {email} <button className="editar"><img src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
-                <div className="info">Telefone: (11)99990-7272<button className="editar"><img src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
+                <div className="info">Nome: <input value={nome} onChange={e => setNome(e.target.value)} /> <button className="editar"><img onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
+                <div className="info">CPF: <input value={cpf} onChange={e => setCpf(e.target.value)} /> <button className="editar"><img onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
+                <div className="info">Email: <input value={email} onChange={e => setEmail(e.target.value)} /> <button className="editar"><img onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
+                <div className="info">Telefone: {telefone} <button className="editar"><img onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt=""/></button></div>
             </div>
             <div className="admin-funcoes">
                 <div className="botao"><BotaoLaranja><Link to="/controle-produto">Administrar produtos</Link></BotaoLaranja></div>

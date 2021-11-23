@@ -9,12 +9,12 @@ export default function BoxItem(props) {
 
     function alterarQtd(qtd) {
         setProduto({...produto, qtd})
-        props.onUpdate(produto.id, qtd)
+        props.onUpdate(produto.id_produto, qtd)
     }
 
     function removerProduto() {
         props.onRemove(produto.id_produto)
-        toast.dark('🗿 Produto Removido do Carrinho')
+        toast.dark('Produto Removido do Carrinho')
 
     }
 

@@ -1,8 +1,6 @@
 import db from './db.js';
 import express from 'express';
 import cors from 'cors';
-import multer from 'multer'
-import path from 'path'
 import crypto from 'crypto-js'
 
 import compraController from './controller/compraController.js'
@@ -153,7 +151,7 @@ app.put('/clientes/:id', async (req, resp) => {
                 where: { id_cliente: id }
             });
             
-            resp.sendStatus(200);
+            resp.send(r);
             
     } catch(e) {
         resp.send({ erro: e.toString()});

@@ -5,6 +5,9 @@ import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { CarouselConfigCompra } from './config';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -36,10 +39,13 @@ export default function PerfilUsuario() {
 
     const [usu, setUsu] = useState([]);
     const [idUsu] = useState(usuarioLogado.id_cliente)
-    const [nome, setNome] = useState(usuarioLogado.nm_nome);
-    const [login, setLogin] = useState(usuarioLogado.ds_login);
-    const [cpf, setCpf] = useState(usuarioLogado.ds_cpf);
-    const [email, setEmail] = useState(usuarioLogado.ds_email);
+    const [nome, setNome] = useState();
+    const [login, setLogin] = useState();
+    const [cpf, setCpf] = useState();
+    const [email, setEmail] = useState();
+    const [telefone, setTelefone] = useState(usuarioLogado.ds_telefone);
+    const [genero, setGenero] = useState(usuarioLogado.ds_genero);
+    const [nascimento, setNascimento] = useState(usuarioLogado.dt_nascimento);
     const [idAlterando, setIdAlterando] = useState(0)
     const [endereco, setEndereco] = useState([]);
     const [cartao, setCartao] = useState([]);
@@ -50,6 +56,7 @@ export default function PerfilUsuario() {
     useEffect(() => {
         listarEndereco();
         listarCartao();
+        listarLogado();
     }, [])
 
     useEffect(() => {
@@ -59,8 +66,12 @@ export default function PerfilUsuario() {
     const listarLogado = async () => {
         loading.current.continuousStart();
 
-        let usuLogado = await api.listarUsuLogado(login);
-        setUsu(usuLogado);
+        let usuLogado = await api.listarUsuLogado(usuarioLogado.ds_login);
+        setUsu(usuLogado)
+        setNome(usuLogado.nm_nome);
+        setLogin(usuLogado.ds_login);
+        setCpf(usuLogado.ds_cpf);
+        setEmail(usuLogado.ds_email);
 
         loading.current.complete();
     }
@@ -100,18 +111,21 @@ export default function PerfilUsuario() {
 
     const comprasUsu = compra.filter(p => p.id_cliente === idUsu);
 
-    async function editarUsu(id) {
-        let r = await api.editarUsu(id, nome, login, cpf, email)
+    async function editarUsu() {
+        let id = idUsu;
+        let r = await api.editarUsu(id, nome, email, cpf, login)
+        if (r.erro) {
+            toast.error(`${r.erro}`)
+        } else {
+            toast.success('Informações Editadas')
+            return r;
+        }
     }
-
-    async function editarNome(item) {
-        setNome(item.nm_nome);
-        setIdAlterando(item.id_cliente)
-    } 
 
     return (
         <PerfilUsuarioStyled>
             <LoadingBar color="#FB8500" ref={loading} />
+            <ToastContainer />
             <div class="cabecalho">
                 <div class="cabecalho-esquerdo">
                     <div class="logo-empresa"> <Link to="/home"> <img src="/assets/images/Logo-AllMarket.jpg" alt="" /> </Link> </div>
@@ -124,17 +138,14 @@ export default function PerfilUsuario() {
                     <div class="background"></div>
                     <div class="imagem-usu"> <img src="/assets/images/Perfil-Usuario.png" alt=""/> </div>
                     <div class="box-informacoes">
-                        <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Usuário: </b> <input value={login} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> CPF: </b> <input value={cpf} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} onChange={e => setNome(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Usuário: </b> <input value={login} onChange={e => setLogin(e.target.value)}/> </div> <img class="icone-editar"  src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> CPF: </b> <input value={cpf} onChange={e => setCpf(e.target.value)} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                         <div class="informacoes"> <div> <b> Gênero: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                         <div class="informacoes"> <div> <b> Data de nascimento: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Telefone: </b> <input /> </div> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Email: </b> <input value={email} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Telefone: </b> <input value={telefone} onChange={e => setTelefone(e.target.value)} /> </div> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Email: </b> <input value={email} onChange={e => setEmail(e.target.value)} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                     </div>
-
-                <div className="editar-informacao" onClick={editarUsu(usu.id_usuario)}>  </div>
-                    
                 </div>
                 <div class="box-direita"> 
                     <div class="box-enderecos">

@@ -77,8 +77,8 @@ export default class Api {
         return r.data;
     }
 
-    async editarUsu(id, nome, email, senha, genero, nascimento, telefone, cpf) {
-        let r = await api.put('/clientes/'+ id, { nome, email, senha, genero, nascimento, telefone, cpf })
+    async editarUsu(id, nome, email, senha, genero, nascimento, telefone, cpf, login) {
+        let r = await api.put('/clientes/' + id , { nome, email, senha, genero, nascimento, telefone, cpf, login })
         return r.data;
     }
 

@@ -58,6 +58,14 @@ a, button, img {
 a {
    color: white;
 }
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    font: 500 1em Roboto; 
+}
 `
 
 export { PerfilAdmStyled };

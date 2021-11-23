@@ -53,7 +53,7 @@ export default function CabecalhoInicial() {
     return(
             <CabInicial>
                 <div class="cabecalho-esq">
-                    <div class="logo"> <img src="./assets/images/Logo-AllMarket.jpg" alt="" /> </div>
+                    <div class="logo"> <Link to="/home"> <img src="./assets/images/Logo-AllMarket.jpg" alt="" /> </Link> </div>
                     <div class="pesquisa"> <input value={pesquisa} onChange={e => setPesquisa(e.target.value)} placeholder="O que você está procurando?"/> </div>
                     <div className="buscar"> 
                         <Link to={{
