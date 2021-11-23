@@ -51,6 +51,8 @@ export default function PerfilUsuario() {
     const [cartao, setCartao] = useState([]);
     const [compra, setCompra] = useState([]);
 
+    console.log(cpf)
+
     const loading = useRef(null);
 
     useEffect(() => {
@@ -113,6 +115,7 @@ export default function PerfilUsuario() {
 
     async function editarUsu() {
         let id = idUsu;
+        console.log(cpf)
         let r = await api.editarUsu(id, nome, email, cpf, login)
         if (r.erro) {
             toast.error(`${r.erro}`)

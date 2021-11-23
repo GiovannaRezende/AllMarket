@@ -134,8 +134,8 @@ app.put('/clientes/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let { nome, email, senha, genero, nascimento, telefone, cpf, login } = req.body;
-        
+        let { nome, email, cpf, login, senha, genero, nascimento, telefone } = req.body;
+
         let r = await db.infoc_tct_cliente.update(
             {
                 nm_nome: nome,
