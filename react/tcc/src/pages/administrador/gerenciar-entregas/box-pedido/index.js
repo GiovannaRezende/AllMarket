@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom'
 
-
-
 import { BoxPedidoGerenciamentoStyled } from './styled'
 import { BotaoLaranja } from '../../../../components/outros/botoes/styled';
 
@@ -25,7 +23,7 @@ export default function BoxPedidoGerenciamento(props) {
         return(r);
     }
 
-    async function listarRua(idCompra) {
+    async function listarEndereco(idCompra) {
         idCompra = compras.id_compra;
         console.log(idCompra)
         let r = await api.enderecoPedido(idCompra);
@@ -34,7 +32,7 @@ export default function BoxPedidoGerenciamento(props) {
     }
 
     useEffect(() => {
-        listarRua();
+        listarEndereco();
     }, [])
 
 
@@ -45,12 +43,12 @@ export default function BoxPedidoGerenciamento(props) {
                 <div class="foto-textos">
                     <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                     <div class="textos">
-                        <div class="texto-destino"><span>Destino:</span> Rua: {endereco.nm_rua}, Número: {} - Cidade: {} </div>
+                        <div class="texto-destino"><span>Destino:</span> Rua: {endereco.nm_rua}, Número: {endereco.ds_numero} - Cidade: {endereco.nm_cidade} </div>
                         <div class="texto-status"><span>Status:</span> {compras.ds_status}</div>
                     </div>
                 </div>
                 <div className="botoes-gerenciamento"> 
-                    <div class="botao"> <Link to={{ pathname: '/pedidos', state: compras.id_compra}}> <BotaoLaranja> Ver Detalhes </BotaoLaranja> </Link> </div>
+                    <div class="botao"> <Link to={{ pathname: '/pedido-entrega', state: compras.id_compra}}> <BotaoLaranja> Ver Detalhes </BotaoLaranja> </Link> </div>
                     <div class="botao"> <BotaoLaranja onClick={() => alterarStatus(compras.id_compra)}>Atualizar status</BotaoLaranja> </div>
                 </div>
             </div>

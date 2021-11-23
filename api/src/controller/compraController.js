@@ -116,6 +116,29 @@ app.get('/entrega/:idCompra', async (req, resp) => {
     }
 });
 
+app.get('/cliente/:idCompra', async (req, resp) => {
+    try {
+        let { idCompra } = req.params;
+
+        let compra = await db.infoc_tct_compra.findOne({ 
+            where: { 
+                id_compra: idCompra
+            }
+        });
+
+        let r = await db.infoc_tct_cliente.findOne({
+             where: { 
+                 id_cliente: compra.id_cliente 
+            }
+        });
+
+        resp.send(r);
+
+    } catch (e) {
+        resp.send({ erro: e.toString()});
+    }
+});
+
 app.post('/', async (req, resp) => {
     try {
         const { cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd } = req.body;

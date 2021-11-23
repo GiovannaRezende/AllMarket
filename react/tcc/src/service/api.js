@@ -127,4 +127,9 @@ export default class Api {
         return r.data;
     }
 
+    async clientePedido(idCompra) {
+        let r = await api.get(`/compra/cliente/${idCompra}`);
+        return r.data;
+    }
+
 }

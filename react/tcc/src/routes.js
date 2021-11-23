@@ -17,6 +17,7 @@ import Carrinho from './pages/usuario/carrinho/index';
 import AprovarCompra from './pages/administrador/aprovar-compra/index';
 import Chat from './components/outros/chat/chat';
 import Pedidos from './pages/usuario/pedidos/index';
+import PedidoEntrega from './pages/administrador/gerenciar-entregas/pedido-entrega/index';
 
 import PerfilAdm from './pages/administrador/perfil/index';
 import ControleProduto from './pages/administrador/controle-produto/index';
@@ -55,6 +56,7 @@ export default function Routes() {
                 <Route path="/controle-produto" component={ControleProduto} />
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path="/gerenciar-entregas" component={GerenciarEntregas} />
+                <Route path="/pedido-entrega" component={PedidoEntrega} />
                 <Route path="/mensagens" component={Mensagens} />
 
                 <Route path="/pesquisa" component={PaginaPesquisa} />

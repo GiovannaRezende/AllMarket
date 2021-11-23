@@ -54,26 +54,10 @@ export default function ControleProdutos() {
     async function inserir() {
  
          if(idAlterando === 0) {
-            let formData = new FormData();
-            formData.append('produto',  produtos);
-            formData.append('categoria', categoria);
-            formData.append('produto', produto);
-            formData.append('codigo', codigo);
-            formData.append('embalagem', embalagem);
-            formData.append('marca', marca);
-            formData.append('peso', peso);
-            formData.append('descricao', descricao);
-            formData.append('preco', preco);
-            formData.append('imagem', imagem);
+            let r = await api.inserir(categoria, produto, codigo, embalagem, marca, peso, descricao, preco, imagem)
 
-            let resp = await axios.post('http://localhost:3030/produtos', formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-            }})
-
-            if(resp.erro) {
-                 toast.error(`${resp.erro}`);
-                 console.log(resp);
+            if(r.erro) {
+                 toast.error(`${r.erro}`);
              } else {
                  toast.success('Produto inserido!');
                  limparCampos();
@@ -104,6 +88,7 @@ export default function ControleProdutos() {
         setPeso('');
         setDescricao('');
         setPreco('');
+        setImagem('');
         setIdAlterando(0);
     }
 
@@ -148,21 +133,8 @@ export default function ControleProdutos() {
         setPeso(item.ds_peso);
         setDescricao(item.ds_descricao);
         setPreco(item.vl_preco);
+        setImagem(item.img_produto);
         setIdAlterando(item.id_produto);
-    }
-
-    
-
-
-    function previewImage() {
-        if (imagem) {
-            return URL.createObjectURL(imagem)
-        }
-    }
-
-    function selectFile() {
-        let input = document.getElementById("imagem-input-file");
-        input.click();
     }
 
     useEffect(() => {
@@ -212,12 +184,7 @@ export default function ControleProdutos() {
                 <div className="corpo-pt3">
                     <div className="form8">
                         <div className="item">Imagem:</div>
-                        <div> <img onClick={selectFile} src={previewImage()} alt="" /> </div> 
-                        <InputCinza
-                            id="imagem-input-file"
-                            type="file"
-                            onChange={e => setImagem(e.target.files[0])}
-                        />
+                        <InputCinza value={imagem} onChange={e => setImagem(e.target.value)} />
                     </div>
                     <div className="form9">
                         <div className="item">Descrição:</div>
