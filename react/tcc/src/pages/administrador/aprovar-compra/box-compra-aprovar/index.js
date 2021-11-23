@@ -53,7 +53,9 @@ export default function BoxCompraAprovar(props) {
                     <div className="box-aprovacao">
                         <div className="foto-nome-usuario">
                             <div className="foto-usuario"><img src="/assets/images/perfil-gabi.svg" alt=""/></div>
-                            <div className="nome-usuario">{cliente.ds_login}</div>
+                            <div className="nome-usuario">{(cliente.nm_nome === null)
+                                                                                ? cliente.ds_login 
+                                                                                : cliente.nm_nome} </div>
                         </div>
                         <div className="textos">
                             <div className="código-ompra"><span> Código: {compras.id_compra} </span> </div>

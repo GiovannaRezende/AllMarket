@@ -41,8 +41,18 @@ export default class Api {
         return r.data;
     }
 
+    async editarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idEndereco) {
+        let r = await api.put('/endereco/' + idEndereco, { cep, estado, cidade, rua, numero, complemento, referencia});
+        return r.data;
+    }
+
     async adicionarCartao(dono, cartao, tipo, validade, cvv, idCliente) {
         let r = await api.post('/cartao', { dono, cartao, tipo, validade, cvv, idCliente });
+        return r.data;
+    }
+
+    async editarCartao(dono, cartao, tipo, validade, cvv, idCartao) {
+        let r = await api.put('/cartao/' + idCartao, { dono, cartao, tipo, validade, cvv });
         return r.data;
     }
 
@@ -77,7 +87,7 @@ export default class Api {
         return r.data;
     }
 
-    async editarUsu(id, nome, email, cpf, login, senha, genero, nascimento, telefone) {
+    async editarUsu(id, nome, email, cpf, login, genero, nascimento, telefone, senha ) {
         let r = await api.put('/clientes/' + id , { nome, email, senha, genero, nascimento, telefone, cpf, login })
         return r.data;
     }

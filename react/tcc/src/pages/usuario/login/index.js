@@ -21,8 +21,6 @@ export default function LoginUsuario() {
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
 
-    console.log(login)
-
     const navigation = useHistory();
     const loading = useRef(null);
 
@@ -35,11 +33,10 @@ export default function LoginUsuario() {
       if(r.erro) {
            toast.error(`${r.erro}`)
            loading.current.complete();
-      } else if(r.bt_administrador === 1) {
+      } else if (r.bt_administrador === 1 || r.bt_administrador === true) {
           Cookies.set('usuario-logado', JSON.stringify(r));
           navigation.push('/perfil-adm')
       } else {
-            //setLoginUsu(login)
             Cookies.set('usuario-logado', JSON.stringify(r));
             navigation.push('/home')
       } 

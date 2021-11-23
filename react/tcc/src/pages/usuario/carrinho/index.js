@@ -8,8 +8,11 @@ import Cookie from 'js-cookie'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
 import Cookies from 'js-cookie'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import Api from '../../../service/api';
 const api = new Api();
@@ -36,7 +39,6 @@ export default function Carrinho() {
     const [qtd, setQtd] = useState(produtos.qtd);
     const [valorTotal, setValorTotal] = useState(0);
 
-
     useEffect(() => {
         listarCarrinho();
         listarEndereco();
@@ -49,20 +51,36 @@ export default function Carrinho() {
 
     async function finalizarCompra() {
 
-        let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd)
-
-        if (endereco.id_endereco === null) {
+        if (endereco.length === 0) {
             return toast.error("Para finalizar uma compra é necessário ter um endereço")
         }
 
-        if(r.erro) {
-            toast.error(`${r.erro}`);
-            console.log(r);
-        } else {
-            toast.dark("Compra Finalizada Com Sucesso")
-            navigation.push('/home');
-            Cookie.remove('carrinho')
-        }
+        confirmAlert({
+            title: 'Finalizar Compra',
+            message: 'Tem certeza que deseja finalizar a compra? Finalizando a mesma você será redirecionado para a tela inicial e para acompanhar a entrega basta acessar o seu perfil.',
+            buttons: [
+                {
+                    label:'Cancelar'
+                },
+                {
+                    label: 'Confirmar',
+                    onClick: async() => {
+                        let r = await api.finalizarCompra(cliente, endereco, notaFiscal, pagamento, produtos, valorTotal, qtd)
+                
+                        if(r.erro) {
+                            toast.error(`${r.erro}`);
+                            console.log(r);
+                        } else {
+                            toast.dark("Compra Finalizada Com Sucesso")
+                            navigation.push('/home');
+                            Cookie.remove('carrinho')
+                        }
+                            
+                    }
+                }
+            ]
+        
+        })
     }
 
     const loading = useRef(null);
@@ -141,12 +159,14 @@ export default function Carrinho() {
                 <div class="box-direita">
                     <div class="box-endereco">
                         <div class="titulo-endereco"> Confira o Endereço para Entrega: </div>
-                        <div class="nome-rua"> <span>Logradouro:</span> {endereco.nm_rua}, {endereco.ds_numero} </div>
+                        <div class="nome-rua"> <span>Logradouro:</span> {(endereco.length === 0)
+                                                                                            ? ''
+                                                                                            : endereco.nm_rua} </div>
 
                         <div class="nome-bairro"> <span>Bairro:</span> Jardim das Flores </div>
                         <div class="cidade-botao"> 
                             <div class="nome-cidade"> <span>Cidade:</span> {endereco.nm_cidade} </div>
-                            <button> Alterar </button>
+                            <Link to='/cadastro-endereco'> <div className="botao-alterar"> <button> Alterar </button>  </div> </Link>
                         </div>
                     </div>
                     <div class="box-pagamento">

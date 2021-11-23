@@ -97,7 +97,7 @@ const CarrinhoStyled = styled.div`
         align-items: center;
     }
 
-    .cidade-botao > button {
+    .botao-alterar > button {
         color: white;
         background: #219EBC;
 

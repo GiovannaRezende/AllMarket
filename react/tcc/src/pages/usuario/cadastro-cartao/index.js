@@ -3,8 +3,12 @@ import { CadastroCartaoStyled } from './styled';
 import { BotaoLaranja } from '../../../components/outros/botoes/styled';
 import { InputCadastro } from '../../../components/outros/inputs/input';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { useState } from 'react';
+import LoadingBar from 'react-top-loading-bar'
+
+import { useState, useEffect, useRef } from 'react';
 
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
@@ -26,32 +30,72 @@ export default function CadastroCartao() {
     const navigation = useHistory();
     let usuarioLogado = lerUsuarioLogado(navigation);
 
+    const [cartaoInfo, setCartaoInfo] = useState([]);
     const [dono, setDono] = useState('');
     const [cartao, setCartao] = useState('');
     const [tipo, setTipo] = useState('');
     const [validade, setValidade] = useState('');
     const [cvv, setCvv] = useState('');
-    const [idCliente] = useState(usuarioLogado.id_cliente);
+    const [idUsu] = useState(usuarioLogado.id_cliente);
 
-    async function adicionarCartao()  {
-        let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv, idCliente);
+    console.log(cartaoInfo)
+
+    useEffect(() => {
+        listarCartao();
+    }, [])
+
+    const loading = useRef(null);
+
+    async function adicionarCartao() {
+        let r = 'Yo'
+        let idCartao = cartaoInfo.id_cartao
+        console.log('-------------------' + idCartao)
+
+        if(cartaoInfo.id_cartao === undefined) {
+            let r = await api.adicionarCartao(dono, cartao, tipo, validade, cvv, idUsu);
+
+            if(r.erro) {
+                toast.error(`${r.erro}`);
+            } else {
+                toast.success('Cartão Cadastrado!');           
+            }
+        } else {
+            r = await api.editarCartao(dono, cartao, tipo, validade, cvv, idCartao)
+
+            if(r.erro) {
+                toast.error(`${r.erro}`);
+            } else {
+                toast.success('Cartão Editado!');           
+            }
+        }
+    
         return(r);
     }
 
-    function limpar() {
-        setDono('');
-        setCartao('');
-        setTipo('');
-        setValidade('');
-        setCvv('');
+    const listarCartao = async () => {
+        loading.current.continuousStart();
+
+        let cartaoUsu = await api.listarCartao(idUsu);
+        console.log(cartaoUsu)
+        setCartaoInfo(cartaoUsu);
+        setDono(cartaoUsu.nm_dono)
+        setCartao(cartaoUsu.nr_cartao)
+        setTipo(cartaoUsu.tp_tipo)
+        setValidade(cartaoUsu.dt_validade)
+        setCvv(cartaoUsu.ds_cvv)
+
+        loading.current.complete();
     }
 
-
-    return(
+    return (
         <CadastroCartaoStyled>
+            <LoadingBar color="#FB8500" ref={loading} />
+            <ToastContainer />
             <CabecalhoStyledUsu/>
             <div class="container">
-                <div class="container-texto">Cadastrar Novo Cartão</div>
+                <div class="container-texto">{(cartaoInfo.id_cartao != null)
+                                                                ? 'Editar Cartão'
+                                                                : 'Adicionar Cartão' } </div>
                 <div class="container-input">
                     <div class="container-conteudo-1">
                         <div class="input-1">
@@ -82,7 +126,9 @@ export default function CadastroCartao() {
                         </div>
                     </div>
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarCartao}>Cadastrar Cartão</BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarCartao}> {(cartaoInfo.id_cartao != null)
+                                                                                                        ? 'Editar Cartão'
+                                                                                                        : 'Adicionar Cartão' } </BotaoLaranja></div>
             </div>
         </CadastroCartaoStyled>  
     ) 

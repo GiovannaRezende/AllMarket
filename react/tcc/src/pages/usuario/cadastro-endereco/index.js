@@ -6,7 +6,12 @@ import { InputCadastro } from '../../../components/outros/inputs/input';
 import Cookies from 'js-cookie'
 import { useHistory } from 'react-router-dom'
 
-import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
+import { useState, useEffect, useRef } from 'react';
 
 import Api from '../../../service/api';
 const api = new Api();
@@ -25,34 +30,68 @@ export default function CadastroEndereco() {
     const navigation = useHistory();
     let usuarioLogado = lerUsuarioLogado(navigation);
     
+    const [endereco, setEndereco] = useState([])
     const [cep, setCep] = useState('');
-    const [estado, setEstado] = useState('');
-    const [cidade, setCidade] = useState('');
-    const [rua, setRua] = useState('');
+    const [estado, setEstado] = useState('');    
+    const [cidade, setCidade] = useState('') 
+    const [rua, setRua] = useState('')
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
     const [referencia, setReferencia] = useState('');
-    const [idCliente] = useState(usuarioLogado.id_cliente);
+    const [idUsu] = useState(usuarioLogado.id_cliente);
+
+    useEffect(() => {
+        listarEndereco();
+    }, [])
+
+    const loading = useRef(null);
 
     async function adicionarEnd() {
-            let r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idCliente);
-            console.log(r)
-            return(r);
+        let r = 'Yo'
+        let idEndereco = endereco.id_endereco
+        console.log(idEndereco)
+
+        if(endereco.id_endereco === null) {
+            r = await api.adicionarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idUsu);
+
+            if(r.erro) {
+                toast.error(`${r.erro}`);
+            } else {
+                toast.success('Endereço Cadastrado!');           
+            }
+        } else {
+            r = await api.editarEndereco(cep, estado, cidade, rua, numero, complemento, referencia, idEndereco)
+
+            if(r.erro) {
+                toast.error(`${r.erro}`);
+            } else {
+                toast.success('Endereço Editado!');           
+            }
+        }
+    
+        return(r);
     }
 
-    function limpar() {
-        setCep('');
-        setEstado('');
-        setCidade('');
-        setRua('');
-        setNumero('');
-        setComplemento('');
-        setReferencia('');
-    }
+    const listarEndereco = async () => {
+        loading.current.continuousStart();
 
+        let enderecoUsu = await api.listarEndereco(idUsu);
+        setEndereco(enderecoUsu);
+        setCep(enderecoUsu.ds_cep)
+        setEstado(enderecoUsu.ds_estado)
+        setCidade(enderecoUsu.nm_cidade)
+        setRua(enderecoUsu.nm_rua)
+        setNumero(enderecoUsu.ds_numero)
+        setReferencia(enderecoUsu.nm_ponto_referencia)
+        setComplemento(enderecoUsu.ds_complemento)
+
+        loading.current.complete();
+    }
 
     return(
         <CadastroEnderecoStyled>
+            <LoadingBar color="#FB8500" ref={loading} />
+            <ToastContainer />
             <CabecalhoStyledUsu/>
             <div class="container">
                 <div class="container-texto">Cadastrar Novo Endereço</div>
@@ -90,7 +129,9 @@ export default function CadastroEndereco() {
                         </div>
                     </div>    
                 </div>
-                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarEnd}>Cadastrar Endereço</BotaoLaranja></div>
+                <div class="botao-cadastro"><BotaoLaranja onClick={adicionarEnd}> {(endereco.id_endereco != null)
+                                                                                                            ? 'Editar Endereço'
+                                                                                                            : 'Cadastrar Endereço'} </BotaoLaranja></div>
             </div>
         </CadastroEnderecoStyled>  
     ) 

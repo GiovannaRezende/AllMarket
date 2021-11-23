@@ -121,7 +121,7 @@ app.post('/clientes', async (req, resp) => {
             dt_nascimento: nascimento,
             ds_telefone: telefone,
             ds_cpf: cpf,
-            ds_login: login  
+            ds_login: login
         });
         resp.send(r);
 
@@ -134,7 +134,9 @@ app.put('/clientes/:id', async (req, resp) => {
     try {
 
         let id = req.params.id;
-        let { nome, email, cpf, login, senha, genero, nascimento, telefone } = req.body;
+        let { nome, email, cpf, login, genero, nascimento, telefone, senha } = req.body;
+
+        console.log(nascimento)
 
         let r = await db.infoc_tct_cliente.update(
             {
@@ -173,12 +175,12 @@ app.get('/clientes/cartao/:idUsu', async (req, resp) => {
 
         let r = await db.infoc_tct_cliente.findOne({ where: { id_cliente: idUsu }});
 
-        let endereco = await db.infoc_tct_cartao.findOne({ 
+        let cartao = await db.infoc_tct_cartao.findOne({ 
             where: { 
                 id_cliente: r.id_cliente
             }
         });
-        resp.send(endereco);
+        resp.send(cartao);
 
     } catch (e) {
         resp.send({ erro: e.toString()});
@@ -232,10 +234,10 @@ app.post('/cartao', async (req, resp) => {
     }
 });
 
-app.put('/cartao/:id', async (req, resp) => {
+app.put('/cartao/:idCartao', async (req, resp) => {
     try {
 
-        let id = req.params.id;
+        let idCartao = req.params.idCartao;
         let { dono, cartao, tipo, validade, cvv } = req.body;
         
         let r = await db.infoc_tct_cartao.update(
@@ -247,7 +249,7 @@ app.put('/cartao/:id', async (req, resp) => {
                 ds_cvv: cvv
             },
             {
-                where: { id_cartao: id }
+                where: { id_cartao: idCartao }
             });
             
             resp.sendStatus(200);
@@ -318,10 +320,10 @@ app.post('/endereco', async (req, resp) => {
     }
 });
 
-app.put('/endereco/:id', async (req, resp) => {
+app.put('/endereco/:idEndereco', async (req, resp) => {
     try {
 
-        let id = req.params.id;
+        let idEndereco = req.params.idEndereco;
         let{ cep, estado, cidade, rua, numero, complemento, referencia} = req.body;
         
         let r = await db.infoc_tct_endereco.update(
@@ -335,7 +337,7 @@ app.put('/endereco/:id', async (req, resp) => {
                 nm_ponto_referencia: referencia
             },
             {
-                where: { id_endereco: id }
+                where: { id_endereco: idEndereco }
             });
             
             resp.sendStatus(200);
@@ -436,8 +438,7 @@ app.post('/login', async (req, resp) => {
             where: { 
                 ds_login: login,
                 ds_senha: cryptoSenha
-            },
-            raw: true
+            }
     });
     
     if (r == null)

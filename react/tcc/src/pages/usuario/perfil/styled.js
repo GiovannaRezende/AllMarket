@@ -199,6 +199,18 @@ input {
     color: white;
     font: 500 1em Roboto; 
 }
+
+select {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font: 500 1em Roboto;
+}
+
+option {
+    color: black;
+}
 `
 
 export { PerfilUsuarioStyled };

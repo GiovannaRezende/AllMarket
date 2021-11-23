@@ -39,13 +39,13 @@ export default function PerfilUsuario() {
 
     const [usu, setUsu] = useState([]);
     const [idUsu] = useState(usuarioLogado.id_cliente)
-    const [nome, setNome] = useState();
-    const [login, setLogin] = useState();
-    const [cpf, setCpf] = useState();
-    const [email, setEmail] = useState();
-    const [telefone, setTelefone] = useState(usuarioLogado.ds_telefone);
-    const [genero, setGenero] = useState(usuarioLogado.ds_genero);
-    const [nascimento, setNascimento] = useState(usuarioLogado.dt_nascimento);
+    const [nome, setNome] = useState('');
+    const [login, setLogin] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [email, setEmail] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [genero, setGenero] = useState('');
+    const [nascimento, setNascimento] = useState('');
     const [idAlterando, setIdAlterando] = useState(0)
     const [endereco, setEndereco] = useState([]);
     const [cartao, setCartao] = useState([]);
@@ -74,6 +74,9 @@ export default function PerfilUsuario() {
         setLogin(usuLogado.ds_login);
         setCpf(usuLogado.ds_cpf);
         setEmail(usuLogado.ds_email);
+        setTelefone(usuLogado.ds_telefone);
+        setGenero(usuLogado.ds_genero);
+        setNascimento(usuLogado.dt_nascimento);
 
         loading.current.complete();
     }
@@ -116,7 +119,7 @@ export default function PerfilUsuario() {
     async function editarUsu() {
         let id = idUsu;
         console.log(cpf)
-        let r = await api.editarUsu(id, nome, email, cpf, login)
+        let r = await api.editarUsu(id, nome, email, cpf, login, genero, nascimento, telefone)
         if (r.erro) {
             toast.error(`${r.erro}`)
         } else {
@@ -142,12 +145,20 @@ export default function PerfilUsuario() {
                     <div class="imagem-usu"> <img src="/assets/images/Perfil-Usuario.png" alt=""/> </div>
                     <div class="box-informacoes">
                         <div class="informacoes"> <div> <b> Nome: </b> <input value={nome} onChange={e => setNome(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Usuário: </b> <input value={login} onChange={e => setLogin(e.target.value)}/> </div> <img class="icone-editar"  src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> CPF: </b> <input value={cpf} onChange={e => setCpf(e.target.value)} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Gênero: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Data de nascimento: </b> <input /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Telefone: </b> <input value={telefone} onChange={e => setTelefone(e.target.value)} /> </div> <img class="icone-editar" src="./assets/images/Ícone-Editar.png" alt="" /> </div>
-                        <div class="informacoes"> <div> <b> Email: </b> <input value={email} onChange={e => setEmail(e.target.value)} /> </div> <img class="icone-editar" src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Usuário: </b> <input value={login} onChange={e => setLogin(e.target.value)}/> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> CPF: </b> <input value={cpf} onChange={e => setCpf(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> 
+                            <div> <b> Gênero: </b> 
+                                <select value={genero} onChange={e => setGenero(e.target.value)}>  
+                                    <option> Masculino </option>
+                                    <option> Feminino </option>
+                                </select> 
+                            </div> 
+                            <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> 
+                        </div>
+                        <div class="informacoes"> <div> <b> Data de nascimento: </b> <input value={nascimento} type="date" onChange={e => setNascimento(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Telefone: </b> <input value={telefone} onChange={e => setTelefone(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="./assets/images/Ícone-Editar.png" alt="" /> </div>
+                        <div class="informacoes"> <div> <b> Email: </b> <input value={email} onChange={e => setEmail(e.target.value)} /> </div> <img class="icone-editar" onClick={() => editarUsu()} src="/assets/images/Ícone-Editar.png" alt="" /> </div>
                     </div>
                 </div>
                 <div class="box-direita"> 

@@ -28,6 +28,8 @@ export default function PedidoEntrega(props) {
     const [admin, setAdmin] = useState(usuarioLogado);
     const [pedido, setPedido] = useState([]);
     const [idCompra] = useState(props.location.state)
+    const [compra, setCompra] = useState([])
+
     const loading = useRef(null);
 
     if (admin.bt_administrador === null)
@@ -35,12 +37,22 @@ export default function PedidoEntrega(props) {
 
     useEffect(() => {
         listarPedido();
+        listarCompra();
     }, [])
 
     async function listarPedido() {
         loading.current.continuousStart();
         let r = await api.produtosPedido(idCompra);
         setPedido(r);
+        loading.current.complete();
+    }
+
+    const listarCompra = async () => {
+        loading.current.continuousStart();
+
+        let compra = await api.listarCompraEntrega(idCompra);
+        setCompra(compra);
+
         loading.current.complete();
     }
 
@@ -53,7 +65,9 @@ export default function PedidoEntrega(props) {
                 <div className="numero-pedido"> 
                     <div className="pedido"> Pedido {idCompra} </div> 
                     <div className="barra"></div>
-                    <div className="status-pedido"> Pedido Entregue </div> 
+                    <div className="status-pedido"> Pedido {(compra.ds_status) === null
+                                                                                ? 'Em Análise'
+                                                                                :  compra.ds_status} </div> 
                 </div>
                 <div className="texto-lista"> Lista de Produtos </div> 
                 <div className="box-lista">

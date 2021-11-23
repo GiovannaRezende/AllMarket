@@ -44,7 +44,9 @@ export default function BoxPedidoGerenciamento(props) {
                     <div class="foto"><img src="/assets/images/em-preparo.svg" alt=""/></div>
                     <div class="textos">
                         <div class="texto-destino"><span>Destino:</span> Rua: {endereco.nm_rua}, Número: {endereco.ds_numero} - Cidade: {endereco.nm_cidade} </div>
-                        <div class="texto-status"><span>Status:</span> {compras.ds_status}</div>
+                        <div class="texto-status"><span>Status:</span> {(compras.ds_status) === null
+                                                                                ? 'Em Análise'
+                                                                                :  compras.ds_status} </div>
                     </div>
                 </div>
                 <div className="botoes-gerenciamento"> 
